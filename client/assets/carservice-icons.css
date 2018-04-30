@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'carservice';
-  src:  url('../font/carservice9594.eot?gdbb9j');
-  src:  url('../font/carservice9594.eot?gdbb9j#iefix') format('embedded-opentype'),
-    url('../font/carservice9594.ttf?gdbb9j') format('truetype'),
-    url('../font/carservice9594.woff?gdbb9j') format('woff'),
-    url('../font/carservice9594.svg?gdbb9j#carservice') format('svg');
+  src:  url('/assets/font/carservice9594.eot?gdbb9j');
+  src:  url('/assets/font/carservice9594.eot?gdbb9j#iefix') format('embedded-opentype'),
+    url('/assets/font/carservice9594.ttf?gdbb9j') format('truetype'),
+    url('/assets/font/carservice9594.woff?gdbb9j') format('woff'),
+    url('/assets/font/carservice9594.svg?gdbb9j#carservice') format('svg');
   font-weight: normal;
   font-style: normal;
 }
