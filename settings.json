@@ -1,0 +1,10 @@
+{
+  "private": {
+      
+  },
+  "public": {
+    "CLOUDINARY_API_KEY": "563392565759232",
+    "CLOUDINARY_CLOUD_NAME": "divk5nutg"
+  },
+  "CLOUDINARY_API_SECRET": "UsPa5uDyP02a2oHcCQDB9ftLkTI"
+}
