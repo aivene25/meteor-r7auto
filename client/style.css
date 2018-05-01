@@ -1124,7 +1124,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 #sidebar .widget.widget_twitter .tweets .tweet-time,
 #footer-widgets .widget.widget_twitter .tweets .tweet-time { position: relative; padding-left: 26px; font-size: 0.75em; margin-top: 8px; }
 #sidebar .widget.widget_twitter .tweets .tweet-time:before,
-#footer-widgets .widget.widget_twitter .tweets .tweet-time:before { content: ""; width: 14px; height: 14px; position: absolute; left: 0; top: 50%; background: url(assets/img/icon-date.html) no-repeat center center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+#footer-widgets .widget.widget_twitter .tweets .tweet-time:before { content: ""; width: 14px; height: 14px; position: absolute; left: 0; top: 50%; background: url(/assets/img/icon-date.html) no-repeat center center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
 
 /* Widget: Search */
 #sidebar .widget.widget_search .search-form,

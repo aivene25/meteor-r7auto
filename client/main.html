@@ -66,9 +66,10 @@
 </body>
 
 <template name="main">
+  {{>header}}
   <div id="wrapper" class="animsition">
     <div id="page" class="clearfix">
-      {{>header}} {{>yield}}
+     {{>yield}}
     </div>
   </div>
   {{>footer}}

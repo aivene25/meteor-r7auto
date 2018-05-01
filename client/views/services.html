@@ -1,0 +1,105 @@
+<template name="services">
+    <!-- CERTIFIED 1 -->
+    <div class="row-certified-1 parallax">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="120" data-mobi="60" data-smobi="60"></div>
+                </div>
+                <!-- /.col-md-12 -->
+
+                <div class="col-md-2">
+                </div>
+                <!-- /.col-md-2 -->
+
+                <div class="col-md-9">
+                    <div class="wprt-animation-block" data-animate="fadeInUpSmall" data-duration="1s" data-delay="0s" data-position="90%">
+                        <div class="wprt-icon-box style-2 clearfix icon-left">
+                            <div class="image-wrap">
+                                <img src="/assets/img/ase.png" alt="Image">
+                            </div>
+
+                            <h3 class="heading">NATA CERTIFIED</h3>
+
+                            <p class="desc">Get in touch with our quality AutoService Shop, let our team of highly trained technicians provide
+                                you with the best car garage services, including MOT testing, car servicing and car repairs
+                                and diagnostics.</p>
+
+                            <div class="elm-btn">
+                                <a class=" wprt-button small outline white" href="#">SCHEDULE AN APPOINTMENT</a>
+                            </div>
+                        </div>
+                        <!-- /.wprt-icon-box -->
+                    </div>
+                    <!-- /.wprt-animation-block -->
+                </div>
+                <!-- /.col-md-9 -->
+
+                <div class="col-md-1">
+                </div>
+                <!-- /.col-md-1 -->
+
+                <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="120" data-mobi="60" data-smobi="60"></div>
+                </div>
+                <!-- /.col-md-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- END CERTIFIED 1 -->
+    <!-- SERVICES -->
+    <div id="row-services" class="row-services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="83" data-mobi="60" data-smobi="60"></div>
+
+                    <div class="wprt-headings style-1 clearfix text-center">
+                        <h2 class="heading clearfix">OUR MAIN SERVICES</h2>
+                        <div class="sep clearfix"></div>
+                        <p class="sub-heading clearfix">Our professionals will perform diagnostic tests, fluid flush and fills, engine replacement, oil changes,
+                            and total vehicle overhauls.</p>
+                    </div>
+                    <!-- /.wprt-headings -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="50" data-mobi="40" data-smobi="40"></div>
+
+                    <div class=" has-bullets bullet-circle bullet40" data-auto="false" data-loop="false" data-gap="30" data-column="3" data-column2="2"
+                        data-column3="1">
+                        {{#with service}} {{#each service}}
+                        <div class="wprt-content-box style-2 col-md-3">
+                            <div class="wprt-icon-box style-6 clearfix icon-top w85 grey-bg align-left has-width text-center">
+                                <div class="icon-wrap">
+                                    <i class="{{Icon}}"></i>
+                                </div>
+
+                                <h3 class="heading">
+                                    <a target="_blank" href="#">{{Service}}</a>
+                                </h3>
+
+                                <p class="desc">{{ShortDescription}}</p>
+
+                                <div class="elm-btn">
+                                    <a class="simple-link2 font-heading" href="/service/{{_id}}">READ MORE</a>
+                                </div>
+                            </div>
+                            <!-- /.wprt-icon-box -->
+                        </div>
+                        {{/each}} {{/with}}
+                        <!-- /.wprt-content-box -->
+                    </div>
+                    <!-- /.wprt-carousel-box -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="75" data-mobi="60" data-smobi="60"></div>
+                </div>
+                <!-- /.col-md-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- END SERVICES -->
+
+</template>
