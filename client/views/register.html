@@ -43,11 +43,21 @@
                 <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="35" data-smobi="35"></div>
             </div><!-- /.col-md-4 -->
 
+            {{#if currentUser}}
+
+            <div class="col-md-8">
+                <div class="wprt-contact-form style-1 margin-top-10">
+                   <p>You are logged in</p>
+                </div><!-- /.wprt-contact-form -->
+            </div><!-- /.col-md-8 -->    
+            {{else}}
+            
             <div class="col-md-8">
                 <div class="wprt-contact-form style-1 margin-top-10">
                    {{>atForm}}
                 </div><!-- /.wprt-contact-form -->
             </div><!-- /.col-md-8 -->
+            {{/if}}
         </div><!-- /.row -->
         <div class="row">
             <div class="col-md-12">
