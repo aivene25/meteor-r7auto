@@ -1,8 +1,4 @@
-Template.services.onCreated(function() {
-  this.subscribe("services.all");
-});
-
-Template.services.onRendered(function() {
+Template.about.onRendered(function() {
   var spacer = function() {
     var mode = "desktop";
 
@@ -25,9 +21,8 @@ Template.services.onRendered(function() {
   var parallax = function() {
     var iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false;
     /*
-         * Please note that background attachment fixed doesn't work on iOS
-         */
-
+      * Please note that background attachment fixed doesn't work on iOS
+    */
     if (!iOS) {
       $(".parallax").css({ backgroundAttachment: "fixed" });
     } else {
@@ -70,14 +65,61 @@ Template.services.onRendered(function() {
       );
     });
   };
+  var counter = function() {
+    if ($().countTo) {
+      $(".wprt-counter").on("on-appear", function() {
+        $(this)
+          .find(".number")
+          .each(function() {
+            var to = $(this).data("to"),
+              speed = $(this).data("speed");
 
+            $(this).countTo({
+              to: to,
+              speed: speed
+            });
+          });
+      });
+    }
+  };
+
+  var accordions = function() {
+    var args = { easing: "easeOutExpo", duration: 300 };
+
+    $(".accordion-item.active")
+      .find(".accordion-content")
+      .show();
+    $(".accordion-heading").on("click", function() {
+      if (
+        !$(this)
+          .parent()
+          .is(".active")
+      ) {
+        $(this)
+          .parent()
+          .toggleClass("active")
+          .children(".accordion-content")
+          .slideToggle(args)
+          .parent()
+          .siblings(".active")
+          .removeClass("active")
+          .children(".accordion-content")
+          .slideToggle(args);
+      } else {
+        $(this)
+          .parent()
+          .toggleClass("active");
+        $(this)
+          .next()
+          .slideToggle(args);
+      }
+    });
+  };
+
+  $(".owl-carousel").owlCarousel();
   animation();
   parallax();
   spacer();
-});
-
-Template.services.helpers({
-  service: () => {
-    return Services.find({}, {}).fetch();
-  }
+  counter();
+  accordions();
 });
