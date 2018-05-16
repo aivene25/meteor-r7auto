@@ -211,5 +211,5 @@ var RevSlider = (function() {
 })();
 
 $(document).ready(function() {
-    RevSlider.init();
+   // RevSlider.init();
 });

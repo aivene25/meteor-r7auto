@@ -109,7 +109,7 @@
                             <li class="menu-item current-menu-item menu-item-has-children">
                                 <a href="{{pathFor route='home'}}">HOME</a>
                             </li>
-                           
+
                             <li class="menu-item menu-item-has-children">
                                 <a href="#">PAGES</a>
                                 <ul class="sub-menu">
@@ -145,7 +145,7 @@
                             </li>
                         </ul>
                     </nav>
-                    
+
                     <div id="header-search">
                         <a class="header-search-icon" href="#">
                             <span class="rt-icon-search2"></span>
@@ -155,6 +155,10 @@
                             <input type="text" value="" name="s" class="header-search-field" placeholder="Type and hit enter...">
                             <button type="submit" class="header-search-submit" title="Search">Search</button>
                         </form>
+                    </div>
+
+                    <div id="header-search">
+                        {{>cart}}
                     </div>
                     <!-- /#header-search -->
                 </div>

@@ -1,0 +1,60 @@
+<template name='cart'>
+  <ul class="nav-extend active">
+    <li class="ext c">
+      <a class="cart-info" href="#" title="View your shopping cart">{{cartLength}} Items
+        <span class="woocommerce-Price-amount amount">
+          <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{totalPrice}}</span>
+      </a>
+    </li>
+  </ul>
+  <!-- /.nav-extend -->
+
+  <div class="nav-top-cart-wrapper">
+    <a class="nav-cart-trigger" href="#">
+      <span class="cart-icon rt-icon-bag">
+        <span class="shopping-cart-items-count">2</span>
+      </span>
+    </a>
+
+    <div class="nav-shop-cart">
+      <div class="widget_shopping_cart_content">
+        <div class="woocommerce-min-cart-wrap">
+          <ul class="woocommerce-mini-cart cart_list product_list_widget ">
+            {{#with data}}
+            {{#each item in data}}
+
+            <li class="woocommerce-mini-cart-item mini_cart_item">
+              <a href="#" class="remove" id="remove-cart-item">
+                <span class="fa fa-close" id="{{item.productId}}" ></span>
+              </a>
+              <a href="#">
+                <img width="150" height="150" src="{{item.product.Image}}" alt="Image">{{Item.product.Title}}
+              </a>
+
+              <span class="quantity">{{item.quantity}} ×
+                <span class="woocommerce-Price-amount amount">
+                  <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{item.product.Price}}</span>
+              </span>
+            </li>
+            {{/each}}
+            {{/with}}
+          </ul>
+
+          <p class="woocommerce-mini-cart__total total">
+            <strong>Subtotal:</strong>
+            <span class="woocommerce-Price-amount amount">
+              <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{totalPrice}}</span>
+          </p>
+
+          <p class="woocommerce-mini-cart__buttons buttons">
+            <a href="#" class="button wc-forward">View cart</a>
+            <a href="#" class="button checkout wc-forward">Checkout</a>
+          </p>
+        </div>
+        <!-- /.widget_shopping_cart_content -->
+      </div>
+    </div>
+    <!-- /.nav-shop-cart -->
+  </div>
+  <!-- /.nav-top-cart-wrapper -->
+</template>

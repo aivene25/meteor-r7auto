@@ -1,48 +1,104 @@
-Template.shopParts.onCreated(function() {
-  this.subscribe("parts.all");
-});
+Template.shopCarsItem.onCreated(function() {});
 
-Template.shopParts.helpers({
-  data: () => {
-    return SpareParts.find({}, {}).fetch();
+Template.shopPartsItem.helpers({
+  relatedProducts: () => {
+    return SpareParts.find().fetch();
   }
 });
 
-Template.shopParts.events({
+Template.shopPartsItem.events({
   "click #add-to-cart": (event, template) => {
     event.preventDefault();
-    console.log(template.data);
-    return;
     let cartItems = Session.get("cartItems") || [];
     let contains = false;
-    if (cartItems.length > 0) {
+    if ( cartItems.length > 0 ) {
       cartItems.forEach((item, index) => {
-        if (template.data._id == item.productId) {
+        if( template.data._id == item.productId){
           item.quantity = item.quantity + 1;
-          contains = true;
+          contains =true;
         }
       });
-      if (contains == false) {
-        let data = {
-          productId: template.data._id,
-          product: template.data,
-          quantity: 1
-        };
-        cartItems.push(data);
+      if( contains == false){
+        let data = { productId: template.data._id, product: template.data, quantity: 1 };
+        cartItems.push(data);  
       }
     } else {
-      let data = {
-        productId: template.data._id,
-        product: template.data,
-        quantity: 1
-      };
+      let data = { productId: template.data._id, product: template.data, quantity: 1 };
       cartItems.push(data);
     } 
     alert('Item added to cart');
     Session.setPersistent("cartItems", cartItems);
-  }
+   }   
+
 });
-Template.shopParts.onRendered(function() {
+
+Template.shopPartsItem.onRendered(function() {
+  var tabs = function() {
+    $(".wprt-tabs").each(function() {
+      var list = "",
+        title = $(this).find(".item-title"),
+        titleWrap = $(this).children(".tab-title");
+
+      title
+        .each(function() {
+          list = list + "<li>" + $(this).html() + "</li>";
+        })
+        .appendTo(titleWrap);
+
+      $(this)
+        .find(".tab-title li")
+        .filter(":first")
+        .addClass("active");
+      $(this)
+        .find(".tab-content-wrap")
+        .children()
+        .hide()
+        .filter(":first")
+        .show();
+
+      $(this)
+        .find(".tab-title li")
+        .on("click", function(e) {
+          var idx = $(this).index(),
+            content = $(this)
+              .closest(".wprt-tabs")
+              .find(".tab-content-wrap")
+              .children()
+              .eq(idx);
+
+          $(this)
+            .addClass("active")
+            .siblings()
+            .removeClass("active");
+          content
+            .fadeIn("slow")
+            .siblings()
+            .hide();
+
+          e.preventDefault();
+        });
+    });
+  };
+
+  var spacer = function() {
+    var mode = "desktop";
+
+    if (matchMedia("only screen and (max-width: 991px)").matches)
+      mode = "mobile";
+
+    if (matchMedia("only screen and (max-width: 767px)").matches)
+      mode = "smobile";
+
+    $(".wprt-spacer").each(function() {
+      if (mode == "desktop") {
+        $(this).attr("style", "height:" + $(this).data("desktop") + "px");
+      } else if (mode == "mobile") {
+        $(this).attr("style", "height:" + $(this).data("mobi") + "px");
+      } else {
+        $(this).attr("style", "height:" + $(this).data("smobi") + "px");
+      }
+    });
+  };
   var parallax = function() {
     var iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false;
     /*
@@ -141,30 +197,11 @@ Template.shopParts.onRendered(function() {
     });
   };
 
-  var spacer = function() {
-    var mode = "desktop";
-
-    if (matchMedia("only screen and (max-width: 991px)").matches)
-      mode = "mobile";
-
-    if (matchMedia("only screen and (max-width: 767px)").matches)
-      mode = "smobile";
-
-    $(".wprt-spacer").each(function() {
-      if (mode == "desktop") {
-        $(this).attr("style", "height:" + $(this).data("desktop") + "px");
-      } else if (mode == "mobile") {
-        $(this).attr("style", "height:" + $(this).data("mobi") + "px");
-      } else {
-        $(this).attr("style", "height:" + $(this).data("smobi") + "px");
-      }
-    });
-  };
-
   $(".owl-carousel").owlCarousel();
   animation();
   parallax();
+  spacer();
   counter();
+  tabs();
   accordions();
-  //spacer();
 });

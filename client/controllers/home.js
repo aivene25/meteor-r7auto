@@ -1,6 +1,7 @@
 Template.home.onRendered(function() {
   // taken from --rev-slider.js to initialize slider
   // Revolution Slider
+  RevSlider.init();
   var parallax = function() {
     var iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false;
     /*
@@ -120,11 +121,11 @@ Template.home.onRendered(function() {
   };
 
   $(".owl-carousel").owlCarousel();
-  //animation();
-  //parallax();
-  //counter();
-  //accordions();
-  //spacer();
+  animation();
+  parallax();
+  counter();
+  accordions();
+  spacer();
 
   /*
   console.log('i m in header')

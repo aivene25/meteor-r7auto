@@ -32,3 +32,5 @@ useraccounts:bootstrap
 check
 mpowaga:autoform-summernote
 session
+okgrow:router-autoscroll
+u2622:persistent-session

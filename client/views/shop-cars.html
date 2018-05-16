@@ -4,10 +4,10 @@
             <div id="featured-title-inner" class="wprt-container clearfix">
                 <div class="featured-title-inner-wrap">
                     <div class="featured-title-heading-wrap">
-                        <h1 class="featured-title-heading">Shop</h1>
+                        <h1 class="featured-title-heading">VEHICLES</h1>
                     </div>
     
-                    <div id="breadcrumbs">
+                    <div id="breadcrumbs"> 
                         <div class="breadcrumbs-inner">
                             <div class="breadcrumb-trail">
                                 <a href="#" title="Home" rel="home" class="trail-begin">Home</a>
@@ -24,7 +24,7 @@
         <!-- #featured-title -->
     
         <!-- Main Content -->
-        <div id="main-content" class="site-main clearfix">
+        <div id="main-content" class="site-main clearfix margin-top-50">
             <div id="content-wrap" class="wprt-container">
                 <div id="site-content" class="site-content clearfix">
                     <div id="inner-content" class="inner-content-wrap">
@@ -45,7 +45,7 @@
     
                             <ul class="products">
                                 {{#each item in data}}
-                                <li class="product first">
+                                <li class="product">
                                     <div class="inner">
                                         <a href="#" class="woocommerce-LoopProduct-link">
                                             <div class="product-thumbnail">
@@ -54,7 +54,7 @@
                                         </a>
     
                                         <div class="product-info">
-                                            <a href="#" class="woocommerce-LoopProduct-link">
+                                            <a href="/shop/cars/{{item._id}}" class="woocommerce-LoopProduct-link">
                                                 <h2 class="woocommerce-loop-product__title">{{item.Name}}</h2>
                                                 <span class="price">
                                                     <span class="woocommerce-Price-amount amount">
@@ -139,7 +139,7 @@
                             <ul class="product_list_widget">
                                     {{#each item in data}}
                                 <li>
-                                    <a href="#">
+                                    <a href="/shop/cars/{{item._id}}">
                                         <img width="150" height="150" src="{{item.Image}}" alt="Image">
                                         <span class="product-title">{{item.Name}}</span>
                                     </a>
@@ -147,13 +147,9 @@
                                         <span class="six">Rated
                                             <strong class="rating">5.00</strong> out of 5</span>
                                     </div>
-                                    <del>
-                                        <span class="woocommerce-Price-amount amount">
-                                            <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{item.Price}}</span>
-                                    </del>
                                     <ins>
                                         <span class="woocommerce-Price-amount amount">
-                                            <span class="woocommerce-Price-currencySymbol">&#8358;</span>60.99</span>
+                                            <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{item.Price}}</span>
                                     </ins>
                                 </li>
                                 {{/each}}
