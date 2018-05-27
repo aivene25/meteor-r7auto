@@ -1,11 +1,21 @@
 /* CSS declarations go here */
-body, span, a{
-     font-family: "Poppins", sans-serif; letter-spacing: 1.4px; line-height: 1.8;  text-rendering: optimizeLegibility; 
-}
-a{
-    font-family: "Poppins", sans-serif; letter-spacing: 1.4px; line-height: 1.8;  text-rendering: optimizeLegibility !important; 
+
+body,
+span,
+a {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  line-height: 1.8;
+  text-rendering: optimizeLegibility;
 }
 
-#main-content{
-    padding: 0 0;
+a {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1.4px;
+  line-height: 1.8;
+  text-rendering: optimizeLegibility !important;
+}
+
+#main-content {
+  padding: 0 0;
 }
