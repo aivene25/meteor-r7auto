@@ -54,10 +54,10 @@
 
                   <div class="product-info">
                     <a href="/shop/parts/{{item._id}}" class="woocommerce-LoopProduct-link">
-                      <h2 class="woocommerce-loop-product__title">{{item.Title}}</h2>
+                      <h2 class="woocommerce-loop-product__title font-weight-600">{{item.Title}}</h2>
                       <span class="price">
                         <span class="woocommerce-Price-amount amount">
-                          <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{item.Price}}</span>
+                          <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice item.Price}}</span>
                       </span>
                     </a>
                     <a href="/shop/parts/{{item._id}}" class="button add_to_cart_button">View</a>
@@ -140,7 +140,7 @@
               <li>
                 <a href="#">
                   <img width="150" height="150" src="{{item.Image}}" alt="Image">
-                  <span class="product-title">{{item.Title}}</span>
+                  <span class="product-title font-weight-600">{{item.Title}}</span>
                 </a>
                 <div class="star-rating">
                   <span class="six">Rated
@@ -148,7 +148,7 @@
                 </div>
                 <ins>
                   <span class="woocommerce-Price-amount amount">
-                    <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{item.Price}}</span>
+                    <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice item.Price}}</span>
                 </ins>
               </li>
               {{/each}}

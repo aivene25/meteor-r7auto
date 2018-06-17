@@ -5,6 +5,10 @@ Template.shopParts.onCreated(function() {
 Template.shopParts.helpers({
   data: () => {
     return SpareParts.find({}, {}).fetch();
+  },
+  formatPrice( price){
+    let val = price.toLocaleString("en");
+    return val;
   }
 });
 

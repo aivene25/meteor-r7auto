@@ -28,6 +28,10 @@ Template.cart.helpers({
     }
     return totalPrice;
   },
+  formatPrice( price){
+    let val = price.toLocaleString("en");
+    return val;
+  }
 });
 
 Template.cart.events({
@@ -43,5 +47,11 @@ Template.cart.events({
       }
     });
     Session.setPersistent("cartItems", arr)
+  }
+});
+Template.cart.events({
+  "click #dh":function(){
+    console.log();
+    
   }
 })

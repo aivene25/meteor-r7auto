@@ -1,6 +1,29 @@
 /* CSS declarations go here */
+.font-weight-600 {
+  font-weight: 600;
+}
+.price {
+  font-size: 17px !important;
+}
 
+.products li .product-info {
+  background-color: #eee;
+}
+.add_to_cart_button {
+  background-color: #eee;
+}
 
-#main-content {
-  padding: 0 0;
+.flexslider .slides img{
+  max-height: 500px;
+}
+
+#wprt-carousel .slides > li {
+  height: 100px;
+}
+
+.owl-carousel .owl-item img{
+  max-height: 200px;
+}
+.uppercase{
+  text-transform: uppercase
 }

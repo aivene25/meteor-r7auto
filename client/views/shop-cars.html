@@ -1,184 +1,186 @@
 <template name="shopCars">
-        <!-- Featured Title -->
-        <div id="featured-title" class="clearfix featured-title-left">
-            <div id="featured-title-inner" class="wprt-container clearfix">
-                <div class="featured-title-inner-wrap">
-                    <div class="featured-title-heading-wrap">
-                        <h1 class="featured-title-heading">VEHICLES</h1>
-                    </div>
-    
-                    <div id="breadcrumbs"> 
-                        <div class="breadcrumbs-inner">
-                            <div class="breadcrumb-trail">
-                                <a href="#" title="Home" rel="home" class="trail-begin">Home</a>
-                                <span class="sep">
-                                    <i class="rt-icon-right-arrow12"></i>
-                                </span>
-                                <span class="trail-end">Products</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- #featured-title -->
-    
-        <!-- Main Content -->
-        <div id="main-content" class="site-main clearfix margin-top-50">
-            <div id="content-wrap" class="wprt-container">
-                <div id="site-content" class="site-content clearfix">
-                    <div id="inner-content" class="inner-content-wrap">
-                        <div class="content-woocommerce">
-                            <p class="woocommerce-result-count">Showing 1–6 of 10 results</p>
-    
-                            <form class="woocommerce-ordering" method="get">
-                                <select name="orderby" class="orderby">
-                                    <option value="menu_order" selected="selected">Default sorting</option>
-                                    <option value="popularity">Sort by popularity</option>
-                                    <option value="rating">Sort by average rating</option>
-                                    <option value="date">Sort by newness</option>
-                                    <option value="price">Sort by price: low to high</option>
-                                    <option value="price-desc">Sort by price: high to low</option>
-                                </select>
-                            </form>
-                            <!-- /.woocommerce-ordering -->
-    
-                            <ul class="products">
-                                {{#each item in data}}
-                                <li class="product">
-                                    <div class="inner">
-                                        <a href="#" class="woocommerce-LoopProduct-link">
-                                            <div class="product-thumbnail">
-                                                <img width="370" height="370" src="{{item.Image}}" alt="Image">
-                                            </div>
-                                        </a>
-    
-                                        <div class="product-info">
-                                            <a href="/shop/cars/{{item._id}}" class="woocommerce-LoopProduct-link">
-                                                <h2 class="woocommerce-loop-product__title">{{item.Name}}</h2>
-                                                <span class="price">
-                                                    <span class="woocommerce-Price-amount amount">
-                                                        <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{item.Price}}</span>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="button add_to_cart_button">Add to cart</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                {{/each}}
-                            </ul>
-                            <!-- /.products -->
-    
-                            <nav class="woocommerce-pagination">
-                                <ul class="page-numbers">
-                                    <li>
-                                        <span class="page-numbers current">1</span>
-                                    </li>
-                                    <li>
-                                        <a class="page-numbers" href="#">2</a>
-                                    </li>
-                                    <li>
-                                        <a class="next page-numbers" href="#">→</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <!-- /.woocommerce-pagination -->
-                        </div>
-                        <!-- /.content-woocommerce -->
-                    </div>
-                    <!-- /#inner-content -->
-                </div>
-                <!-- /#site-content -->
-    
-                <div id="sidebar">
-                    <div id="inner-sidebar" class="inner-content-wrap">
-                        <div class="widget woocommerce widget_product_search">
-                            <h2 class="widget-title">
-                                <span>Product Search</span>
-                            </h2>
-    
-                            <form role="search" method="get" class="woocommerce-product-search" action="#">
-                                <label class="screen-reader-text">Search for:</label>
-                                <input type="search" class="search-field" placeholder="Search products…" value="" name="s">
-                                <button type="submit" class="search-submit">Search</button>
-                            </form>
-                        </div>
-                        <!-- /.widget_product_search -->
-    
-                        <div class="widget woocommerce widget_price_filter">
-                            <h2 class="widget-title">
-                                <span>Price Filter</span>
-                            </h2>
-    
-                            <form method="get" action="#">
-                                <div class="price_slider_wrapper">
-                                    <div class="price_slider ui-slider">
-                                        <div class="ui-slider-range"></div>
-                                        <span class="ui-slider-handle ui-slider-range-min"></span>
-                                        <span class="ui-slider-handle ui-slider-range-min"></span>
-                                    </div>
-    
-                                    <div class="price_slider_amount">
-                                        <button type="submit" class="button">Filter</button>
-                                        <div class="price_label">Price:
-                                            <span class="from">&#8358;9</span> —
-                                            <span class="to">&#8358;126</span>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- /.widget_price_filter -->
-    
-                        <div class="widget woocommerce widget_top_rated_products">
-                            <h2 class="widget-title">
-                                <span>Top Products</span>
-                            </h2>
-    
-                            <ul class="product_list_widget">
-                                    {{#each item in data}}
-                                <li>
-                                    <a href="/shop/cars/{{item._id}}">
-                                        <img width="150" height="150" src="{{item.Image}}" alt="Image">
-                                        <span class="product-title">{{item.Name}}</span>
-                                    </a>
-                                    <div class="star-rating">
-                                        <span class="six">Rated
-                                            <strong class="rating">5.00</strong> out of 5</span>
-                                    </div>
-                                    <ins>
-                                        <span class="woocommerce-Price-amount amount">
-                                            <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{item.Price}}</span>
-                                    </ins>
-                                </li>
-                                {{/each}}
-    
-                            </ul>
-                        </div>
-                        <!-- /.widget_top_rated_products -->
-    
-                        <div class="widget woocommerce widget_product_tag_cloud">
-                            <h2 class="widget-title">
-                                <span>Popular Tags</span>
-                            </h2>
-    
-                            <div class="tagcloud">
-                                <a href="#" class="tag-cloud-link">Business</a>
-                                <a href="#" class="tag-cloud-link">Design</a>
-                                <a href="#" class="tag-cloud-link">Development</a>
-                                <a href="#" class="tag-cloud-link">Entertanment</a>
-                                <a href="#" class="tag-cloud-link">Fashion</a>
-                                <a href="#" class="tag-cloud-link">Logo</a>
-                            </div>
-                        </div>
-                        <!-- /.widget_product_tag_cloud -->
-                    </div>
-                    <!-- /#inner-sidebar -->
-                </div>
-                <!-- /#sidebar -->
-            </div>
-            <!-- /#content-wrap -->
-        </div>
-        <!-- /#main-content -->    
-    </template>
+	<!-- Featured Title -->
+	<div id="featured-title" class="clearfix featured-title-left">
+		<div id="featured-title-inner" class="wprt-container clearfix">
+			<div class="featured-title-inner-wrap">
+				<div class="featured-title-heading-wrap">
+					<h1 class="featured-title-heading">VEHICLES</h1>
+				</div>
+
+				<div id="breadcrumbs">
+					<div class="breadcrumbs-inner">
+						<div class="breadcrumb-trail">
+							<a href="#" title="Home" rel="home" class="trail-begin">Home</a>
+							<span class="sep">
+								<i class="rt-icon-right-arrow12"></i>
+							</span>
+							<span class="trail-end">Products</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- #featured-title -->
+
+	<!-- Main Content -->
+	<div id="main-content" class="site-main clearfix margin-top-50">
+		<div id="content-wrap" class="wprt-container">
+			<div id="site-content" class="site-content clearfix">
+				<div id="inner-content" class="inner-content-wrap">
+					<div class="content-woocommerce">
+						<p class="woocommerce-result-count">Showing 1–6 of 10 results</p>
+
+						<form class="woocommerce-ordering" method="get">
+							<select name="orderby" class="orderby">
+								<option value="menu_order" selected="selected">Default sorting</option>
+								<option value="popularity">Sort by popularity</option>
+								<option value="rating">Sort by average rating</option>
+								<option value="date">Sort by newness</option>
+								<option value="price">Sort by price: low to high</option>
+								<option value="price-desc">Sort by price: high to low</option>
+							</select>
+						</form>
+						<!-- /.woocommerce-ordering -->
+
+						<ul class="products">
+							{{#each item in data}}
+							<li class="product">
+								<div class="inner">
+									<a href="#" class="woocommerce-LoopProduct-link">
+										<div class="product-thumbnail">
+											<img width="370" height="370" src="{{item.Image}}" alt="Image">
+										</div>
+									</a>
+
+									<div class="product-info">
+										<a href="/shop/cars/{{item._id}}" class="woocommerce-LoopProduct-link">
+											<h2 class="woocommerce-loop-product__title font-weight-600">{{item.Name}}</h2>
+											<span class="price">
+												<span class="woocommerce-Price-amount amount">
+													<span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice item.Price}}</span>
+											</span>
+										</a>
+										<a href="/shop/cars/{{item._id}}" class="button add_to_cart_button">View</a>
+									</div>
+								</div>
+							</li>
+							{{/each}}
+						</ul>
+						<!-- /.products -->
+
+						<!--
+						<nav class="woocommerce-pagination">
+							<ul class="page-numbers">
+								<li>
+									<span class="page-numbers current">1</span>
+								</li>
+								<li>
+									<a class="page-numbers" href="#">2</a>
+								</li>
+								<li>
+									<a class="next page-numbers" href="#">→</a>
+								</li>
+							</ul>
+						</nav>
+-->
+						<!-- /.woocommerce-pagination -->
+					</div>
+					<!-- /.content-woocommerce -->
+				</div>
+				<!-- /#inner-content -->
+			</div>
+			<!-- /#site-content -->
+
+			<div id="sidebar">
+				<div id="inner-sidebar" class="inner-content-wrap">
+					<div class="widget woocommerce widget_product_search">
+						<h2 class="widget-title">
+							<span>Product Search</span>
+						</h2>
+
+						<form role="search" method="get" class="woocommerce-product-search" action="#">
+							<label class="screen-reader-text">Search for:</label>
+							<input type="search" class="search-field" placeholder="Search products…" value="" name="s">
+							<button type="submit" class="search-submit">Search</button>
+						</form>
+					</div>
+					<!-- /.widget_product_search -->
+
+					<div class="widget woocommerce widget_price_filter">
+						<h2 class="widget-title">
+							<span>Price Filter</span>
+						</h2>
+
+						<form method="get" action="#">
+							<div class="price_slider_wrapper">
+								<div class="price_slider ui-slider">
+									<div class="ui-slider-range"></div>
+									<span class="ui-slider-handle ui-slider-range-min"></span>
+									<span class="ui-slider-handle ui-slider-range-min"></span>
+								</div>
+
+								<div class="price_slider_amount">
+									<button type="submit" class="button">Filter</button>
+									<div class="price_label">Price:
+										<span class="from">&#8358;9</span> —
+										<span class="to">&#8358;126</span>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-- /.widget_price_filter -->
+
+					<div class="widget woocommerce widget_top_rated_products">
+						<h2 class="widget-title">
+							<span>Top Products</span>
+						</h2>
+
+						<ul class="product_list_widget">
+							{{#each item in data}}
+							<li>
+								<a href="/shop/cars/{{item._id}}">
+									<img width="150" height="150" src="{{item.Image}}" alt="Image">
+									<span class="product-title font-weight-600">{{item.Name}}</span>
+								</a>
+								<div class="star-rating">
+									<span class="six">Rated
+										<strong class="rating">5.00</strong> out of 5</span>
+								</div>
+								<ins>
+									<span class="woocommerce-Price-amount amount">
+										<span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice item.Price}}</span>
+								</ins>
+							</li>
+							{{/each}}
+
+						</ul>
+					</div>
+					<!-- /.widget_top_rated_products -->
+
+					<div class="widget woocommerce widget_product_tag_cloud">
+						<h2 class="widget-title">
+							<span>Popular Tags</span>
+						</h2>
+
+						<div class="tagcloud">
+							<a href="#" class="tag-cloud-link">Business</a>
+							<a href="#" class="tag-cloud-link">Design</a>
+							<a href="#" class="tag-cloud-link">Development</a>
+							<a href="#" class="tag-cloud-link">Entertanment</a>
+							<a href="#" class="tag-cloud-link">Fashion</a>
+							<a href="#" class="tag-cloud-link">Logo</a>
+						</div>
+					</div>
+					<!-- /.widget_product_tag_cloud -->
+				</div>
+				<!-- /#inner-sidebar -->
+			</div>
+			<!-- /#sidebar -->
+		</div>
+		<!-- /#content-wrap -->
+	</div>
+	<!-- /#main-content -->
+</template>

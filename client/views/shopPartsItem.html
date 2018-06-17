@@ -5,17 +5,21 @@
     <div id="featured-title-inner" class="wprt-container clearfix">
       <div class="featured-title-inner-wrap">
         <div class="featured-title-heading-wrap">
-          <h1 class="featured-title-heading">Shop</h1>
+          <h1 class="featured-title-heading font-weight-600">{{Title}}</h1>
         </div>
 
         <div id="breadcrumbs">
           <div class="breadcrumbs-inner">
             <div class="breadcrumb-trail">
-              <a href="#" title="Home" rel="home" class="trail-begin">Home</a>
+              <a href="/" title="Home" rel="home" class="trail-begin">Home</a>
               <span class="sep">
                 <i class="rt-icon-right-arrow12"></i>
               </span>
-              <span class="trail-end">Products</span>
+              <a href="/shop/parts" title="parts" rel="parts" class="trail-begin">Shop</a>
+              <span class="sep">
+                <i class="rt-icon-right-arrow12"></i>
+              </span>
+              <span class="trail-end">Parts</span>
             </div>
           </div>
         </div>
@@ -38,12 +42,11 @@
                 <!-- /.images -->
 
                 <div class="summary entry-summary">
-                  <h1 class="product_title entry-title">{{Title}}</h1>
-
+                  <h1 class="product_title entry-title font-weight-600">{{Title}}</h1>
                   <p class="price">
                     <ins>
                       <span class="woocommerce-Price-amount amount">
-                        <span class="woocommerce-Price-currencySymbol">&#8358; </span>{{Price}}</span>
+                        <span class="woocommerce-Price-currencySymbol">&#8358; </span>{{formatPrice Price}}</span>
                     </ins>
                   </p>
 
@@ -120,9 +123,16 @@
               </div>
               <!-- /.wprt-tabs -->
 
+
+
+
+
+
+
+
               <div class="related products">
                 <h2>Related products</h2>
-
+                <!--
                 <ul class="products">
                   {{#with relatedProducts}} {{#each item in relatedProducts}}
                   <li class="product">
@@ -135,7 +145,7 @@
 
                       <div class="product-info">
                         <a href="/shop/parts/{{item._id}}" class="woocommerce-LoopProduct-link">
-                          <h2 class="woocommerce-loop-product__title">{{item.Title}}</h2>
+                          <h2 class="woocommerce-loop-product__title font-weight-600">{{item.Title}}</h2>
                           <span class="price">
                             <ins>
                               <span class="woocommerce-Price-amount amount">
@@ -149,6 +159,46 @@
                   </li>
                   {{/each}} {{/with}}
                 </ul>
+              -->
+
+                <div class="wprt-carousel-box has-arrows arrow-center offset20 offset-v-120 has-bullets bullet-circle bullet30" data-auto="false"
+                  data-loop="false" data-gap="25" data-column="3" data-column2="2" data-column3="1">
+                  <div class="owl-carousel owl-theme">
+                    {{#each item in relatedProducts}}
+                    <div class="wprt-image-box style-1 clearfix text-center has-shadow">
+                      <div class="item">
+                        <div class="inner">
+                          <div class="thumb">
+                            <img src="{{item.Image}}" alt="Image">
+                          </div>
+
+                          <div class="text-wrap">
+                            <h1 class="uppercase title font-weight-600">
+                              {{item.Title}}
+                            </h1>
+
+                            <p class="price">
+                              <ins>
+                                <span class="woocommerce-Price-amount amount">
+                                  <span class="woocommerce-Price-currencySymbol">&#8358; </span>{{formatPrice item.Price}}</span>
+                              </ins>
+                            </p>
+
+                            <div class="elm-btn">
+                              <a class="small wprt-button outline ol-accent" href="/shop/parts/{{item._id}}">View</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {{/each}}
+                    <!-- /.wprt-image-box -->
+                  </div>
+                </div>
+                <!-- /.wprt-carousel-box -->
+
+                <div class="wprt-spacer clearfix" data-desktop="94" data-mobi="60" data-smobi="60"></div>
+
               </div>
             </div>
             <!-- /.woo-single-post-class -->
@@ -210,12 +260,8 @@
               <li>
                 <a href="#">
                   <img width="150" height="150" src="{{item.Image}}" alt="Image">
-                  <span class="product-title">{{item.Title}}</span>
+                  <span class="product-title font-weight-600">{{item.Title}}</span>
                 </a>
-                <div class="star-rating">
-                  <span class="four">Rated
-                    <strong class="rating">5.00</strong> out of 5</span>
-                </div>
                 <!--
                   <del>
                   <span class="woocommerce-Price-amount amount">
@@ -226,6 +272,11 @@
                   <span class="woocommerce-Price-amount amount">
                     <span class="woocommerce-Price-currencySymbol">&#8358; </span>{{item.Price}}</span>
                 </ins>
+                <div class="star-rating">
+                    <span class="four">Rated
+                      <strong class="rating">5.00</strong> out of 5</span>
+                  </div>
+                  
               </li>
               {{/each}} {{/with}}
             </ul>

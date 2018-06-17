@@ -3,7 +3,7 @@
     <li class="ext c">
       <a class="cart-info" href="#" title="View your shopping cart">{{cartLength}} Items
         <span class="woocommerce-Price-amount amount">
-          <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{totalPrice}}</span>
+          <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{ formatPrice totalPrice}}</span>
       </a>
     </li>
   </ul>
@@ -33,7 +33,7 @@
 
               <span class="quantity">{{item.quantity}} ×
                 <span class="woocommerce-Price-amount amount">
-                  <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{item.product.Price}}</span>
+                  <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice item.product.Price}}</span>
               </span>
             </li>
             {{/each}}
@@ -43,7 +43,7 @@
           <p class="woocommerce-mini-cart__total total">
             <strong>Subtotal:</strong>
             <span class="woocommerce-Price-amount amount">
-              <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{totalPrice}}</span>
+              <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice totalPrice}}</span>
           </p>
 
           <p class="woocommerce-mini-cart__buttons buttons">

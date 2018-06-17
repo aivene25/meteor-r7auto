@@ -4,17 +4,21 @@
     <div id="featured-title-inner" class="wprt-container clearfix">
       <div class="featured-title-inner-wrap">
         <div class="featured-title-heading-wrap">
-          <h1 class="featured-title-heading">Shop</h1>
+          <h1 class="featured-title-heading font-weight-600">{{Name}}</h1>
         </div>
 
         <div id="breadcrumbs">
           <div class="breadcrumbs-inner">
             <div class="breadcrumb-trail">
-              <a href="#" title="Home" rel="home" class="trail-begin">Home</a>
+              <a href="/" title="Home" rel="home" class="trail-begin">Home</a>
               <span class="sep">
                 <i class="rt-icon-right-arrow12"></i>
               </span>
-              <span class="trail-end">Products</span>
+              <a href="/shop/cars" title="Shop" rel="home" class="trail-begin">Shop</a>
+              <span>
+                <i class="rt-icon-right-arrow12"></i>
+              </span>
+              <span class="trail-end">Cars</span>
             </div>
           </div>
         </div>
@@ -27,22 +31,55 @@
   <div id="main-content" class="site-main clearfix margin-top-50 margin-bottom-50">
     <div id="content-wrap" class="wprt-container">
       <div id="site-content" class="site-content clearfix">
+
         <div id="inner-content" class="inner-content-wrap">
           <div class="content-woocommerce">
             <div class="woo-single-post-class">
+
+              <div class="wprt-content-box style-1" style="padding-left:0px">
+                <div class="wprt-thumb-slider" data-width="129.667" data-margin="14">
+                  <div id="wprt-slider" class="flexslider">
+                    <ul class="slides">
+                      {{#each item in Gallery}}
+                      <li class="flex-active-slide">
+                        <a class="zoom-popup" href="{{item}}">
+                          <i class="rt-icon-zoom-in-2"></i>
+                        </a>
+                        <img src="{{item}}" alt="image" />
+                      </li>
+                      {{/each}}
+
+                    </ul>
+                  </div>
+
+                  <div id="wprt-carousel" class="flexslider">
+                    <ul class="slides">
+                      {{#each item in Gallery}}
+                      <li>
+                        <img src="{{item}}" alt="image">
+                      </li>
+                      {{/each}}
+                     
+                    </ul>
+                  </div>
+                </div>
+                <!-- /.wprt-thumb-slider -->
+
+                <div class="wprt-spacer clearfix" data-desktop="40" data-mobi="30" data-smobi="30"></div>
+              </div>
+
               <div class="inner clearfix">
+                <!--
                 <div class="images">
                   <img src="{{Image}}" alt="image" />
                 </div>
-                <!-- /.images -->
-
-                <div class="summary entry-summary">
-                  <h1 class="product_title entry-title">{{Name}}</h1>
-
+          -->
+                <div class="summary entry-summary" style="float: left;">
+                  <h1 class="product_title entry-title font-weight-600">{{Name}}</h1>
                   <p class="price">
                     <ins>
                       <span class="woocommerce-Price-amount amount">
-                        <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{Price}}</span>
+                        <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice Price}}</span>
                     </ins>
                   </p>
 
@@ -134,11 +171,11 @@
 
                       <div class="product-info">
                         <a href="/shop/cars/{{item._id}}" class="woocommerce-LoopProduct-link">
-                          <h2 class="woocommerce-loop-product__title">{{item.Name}}</h2>
+                          <h2 class="woocommerce-loop-product__title font-weight-600">{{item.Name}}</h2>
                           <span class="price">
                             <ins>
                               <span class="woocommerce-Price-amount amount">
-                                <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{item.Price}}</span>
+                                <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice item.Price}}</span>
                             </ins>
                           </span>
                         </a>
@@ -224,7 +261,7 @@
                 -->
                 <ins>
                   <span class="woocommerce-Price-amount amount">
-                    <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{item.Price}}</span>
+                    <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice item.Price}}</span>
                 </ins>
               </li>
               {{/each}} {{/with}}

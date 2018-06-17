@@ -5,6 +5,10 @@ Template.shopCars.onCreated( function(){
 Template.shopCars.helpers({
     data:()=>{
         return Cars.find({},{}).fetch();
+    },
+    formatPrice( price){
+      let val = price.toLocaleString("en");
+      return val;
     }
 });
 

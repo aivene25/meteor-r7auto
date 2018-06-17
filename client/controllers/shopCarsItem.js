@@ -4,7 +4,12 @@ Template.shopCarsItem.onCreated( function(){
 
 Template.shopCarsItem.helpers({
   relatedProducts:()=>{
+    console.log("testing value of undefined");
     return Cars.find().fetch();
+  },
+  formatPrice( price){
+    let val = price.toLocaleString("en");
+    return val;
   }
 })
 
@@ -174,11 +179,67 @@ Template.shopCarsItem.onRendered(function() {
     });
   };
 
+  var thumbSlider = function() {
+    $(".wprt-thumb-slider").each(function() {
+      var itemW = $(this).data("width"),
+        itemM = $(this).data("margin");
+
+      $(this)
+        .children("#wprt-carousel")
+        .flexslider({
+          animation: "slide",
+          controlNav: false,
+          animationLoop: false,
+          slideshow: false,
+          itemWidth: itemW,
+          itemMargin: itemM,
+          asNavFor: $(this).children("#wprt-slider"),
+          prevText: '<i class="rt-icon-left-arrow12"></i>',
+          nextText: '<i class="rt-icon-right-arrow12"></i>'
+        });
+      $(this)
+        .children("#wprt-slider")
+        .flexslider({
+          animation: "slide",
+          controlNav: false,
+          animationLoop: false,
+          slideshow: false,
+          sync: $(this).children("#wprt-carousel"),
+          prevText: '<i class="rt-icon-left-arrow12"></i>',
+          nextText: '<i class="rt-icon-right-arrow12"></i>'
+        });
+    });
+  };
+
+  var imagePopup = function() {
+    if ($().magnificPopup) {
+      $(
+        ".wprt-gallery, .wprt-gallery-grid, .wprt-thumb-slider, .wprt-images-grid"
+      ).each(function() {
+        $(this)
+          .find(".zoom-popup")
+          .magnificPopup({
+            disableOn: 700,
+            type: "image",
+            gallery: {
+              enabled: true
+            },
+            mainClass: "mfp-fade",
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: true
+          });
+      });
+    }
+  };
+
   $(".owl-carousel").owlCarousel();
   animation();
   parallax();
   spacer();
   counter();
   tabs();
+  thumbSlider();
   accordions();
+  imagePopup();
 });

@@ -174,6 +174,39 @@ Template.serviceItem.onCreated(function() {
         }
       });
     };
+
+    var thumbSlider = function() {
+      $(".wprt-thumb-slider").each(function() {
+        var itemW = $(this).data("width"),
+          itemM = $(this).data("margin");
+  
+        $(this)
+          .children("#wprt-carousel")
+          .flexslider({
+            animation: "slide",
+            controlNav: false,
+            animationLoop: false,
+            slideshow: false,
+            itemWidth: itemW,
+            itemMargin: itemM,
+            asNavFor: $(this).children("#wprt-slider"),
+            prevText: '<i class="rt-icon-left-arrow12"></i>',
+            nextText: '<i class="rt-icon-right-arrow12"></i>'
+          });
+        $(this)
+          .children("#wprt-slider")
+          .flexslider({
+            animation: "slide",
+            controlNav: false,
+            animationLoop: false,
+            slideshow: false,
+            sync: $(this).children("#wprt-carousel"),
+            prevText: '<i class="rt-icon-left-arrow12"></i>',
+            nextText: '<i class="rt-icon-right-arrow12"></i>'
+          });
+      });
+    };
+  
   
     $(".owl-carousel").owlCarousel();
     animation();
@@ -182,4 +215,5 @@ Template.serviceItem.onCreated(function() {
     accordions();
     spacer();
     tabs();
+    thumbSlider();
   });
