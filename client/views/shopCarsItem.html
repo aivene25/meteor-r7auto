@@ -28,7 +28,7 @@
   <!-- #featured-title -->
 
   <!-- Main Content -->
-  <div id="main-content" class="site-main clearfix margin-top-50 margin-bottom-50">
+  <div id="main-content" class="site-main clearfix margin-bottom-50">
     <div id="content-wrap" class="wprt-container">
       <div id="site-content" class="site-content clearfix">
 
@@ -157,35 +157,46 @@
               <!-- /.wprt-tabs -->
 
               <div class="related products">
-                <h2>Related products</h2>
-
-                <ul class="products">
-                  {{#with relatedProducts}} {{#each item in relatedProducts}}
-                  <li class="product">
-                    <div class="inner">
-                      <a href="#" class="woocommerce-LoopProduct-link">
-                        <div class="product-thumbnail">
-                          <img width="370" height="370" src="{{item.Image}}" alt="Image">
+                  <h2>Related products</h2>
+                  <div class="wprt-carousel-box has-arrows arrow-center offset20 offset-v-120 has-bullets bullet-circle bullet30" data-auto="false"
+                    data-loop="false" data-gap="25" data-column="3" data-column2="2" data-column3="1">
+                    <div class="owl-carousel owl-theme">
+                      {{#each item in relatedProducts}}
+                      <div class="wprt-image-box style-1 clearfix text-center has-shadow">
+                        <div class="item">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="{{item.Image}}" alt="Image">
+                            </div>
+  
+                            <div class="text-wrap">
+                              <h1 class="uppercase title font-weight-600">
+                                {{item.Name}}
+                              </h1>
+  
+                              <p class="price">
+                                <ins>
+                                  <span class="woocommerce-Price-amount amount">
+                                    <span class="woocommerce-Price-currencySymbol">&#8358; </span>{{formatPrice item.Price}}</span>
+                                </ins>
+                              </p>
+  
+                              <div class="elm-btn">
+                                <a class="small wprt-button outline ol-accent" href="/shop/parts/{{item._id}}">View</a>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                      </a>
-
-                      <div class="product-info">
-                        <a href="/shop/cars/{{item._id}}" class="woocommerce-LoopProduct-link">
-                          <h2 class="woocommerce-loop-product__title font-weight-600">{{item.Name}}</h2>
-                          <span class="price">
-                            <ins>
-                              <span class="woocommerce-Price-amount amount">
-                                <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice item.Price}}</span>
-                            </ins>
-                          </span>
-                        </a>
-                        <a href="#" class="button add_to_cart_button">Add to cart</a>
                       </div>
+                      {{/each}}
+                      <!-- /.wprt-image-box -->
                     </div>
-                  </li>
-                  {{/each}} {{/with}}
-                </ul>
-              </div>
+                  </div>
+                  <!-- /.wprt-carousel-box -->
+  
+                  <div class="wprt-spacer clearfix" data-desktop="94" data-mobi="60" data-smobi="60"></div>
+  
+                </div>
             </div>
             <!-- /.woo-single-post-class -->
           </div>

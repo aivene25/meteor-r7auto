@@ -3,7 +3,7 @@
   font-weight: 600;
 }
 .price {
-  font-size: 17px !important;
+  font-size: 18px !important;
 }
 
 .products li .product-info {
@@ -22,7 +22,7 @@
 }
 
 .owl-carousel .owl-item img{
-  max-height: 200px;
+  height: 250px;
 }
 .uppercase{
   text-transform: uppercase
