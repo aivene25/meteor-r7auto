@@ -145,15 +145,14 @@
             </div>
             <!-- END SLIDER -->
 
-            <!-- SERVICES -->
-            <div class="bg-light-grey">
+            <div id="row-services" class="row-services">
               <div class="container">
                 <div class="row">
                   <div class="col-md-12">
                     <div class="wprt-spacer clearfix" data-desktop="83" data-mobi="60" data-smobi="60"></div>
 
                     <div class="wprt-headings style-1 clearfix text-center">
-                      <h2 class="heading clearfix">OUR SERVICES</h2>
+                      <h2 class="heading clearfix">SERVICES</h2>
                       <div class="sep clearfix"></div>
                       <p class="sub-heading clearfix">Our professionals will perform diagnostic tests, fluid flush and fills, engine replacement, oil changes,
                         and total vehicle overhauls.</p>
@@ -161,102 +160,37 @@
                     <!-- /.wprt-headings -->
 
                     <div class="wprt-spacer clearfix" data-desktop="50" data-mobi="40" data-smobi="40"></div>
-                  </div>
-                  <!-- /.col-md-12 -->
 
-                  <div class="col-md-3">
-                    <div class="wprt-icon-box style-1 clearfix icon-top outline-type grey-outline align-center rounded-100 has-width w100">
-                      <div class="icon-wrap">
-                        <i class="as-icon-air-conditioning"></i>
-                      </div>
+                    <div class="wprt-carousel-box has-bullets bullet-circle bullet40" data-auto="false" data-loop="false" data-gap="30" data-column="3"
+                      data-column2="2" data-column3="1">
+                      <div class="owl-carousel owl-theme">
+                        {{#each item in data }}
+                        <div class="wprt-content-box style-2">
+                          <div class="wprt-icon-box style-6 clearfix icon-top w85 grey-bg align-left has-width text-center">
+                            <div class="icon-wrap">
+                              <i class="{{item.Icon}}"></i>
+                            </div>
 
-                      <h3 class="heading">
-                        <a target="_blank" href="#">AIR CONDITIONING</a>
-                      </h3>
+                            <h3 class="heading">
+                              <a target="_blank" href="#">{{item.Service}}</a>
+                            </h3>
 
-                      <p class="desc">We provide top-notch service for import and domestic car repairs. Servicing Brakes, Tune Ups, Engine
-                        Repairs</p>
+                            <p class="desc">{{item.ShortDescription}}</p>
 
-                      <div class="elm-btn">
-                        <a target="_blank" class=" simple-link font-heading" href="#">READ MORE</a>
-                      </div>
-                    </div>
-                    <!-- /.wprt-icon-box -->
+                            <div class="elm-btn">
+                              <a  class="simple-link2 font-heading" href="/service/{{item._id}}">READ MORE</a>
+                            </div>
+                          </div>
+                          <!-- /.wprt-icon-box -->
 
-                    <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="35" data-smobi="35"></div>
-                  </div>
-                  <!-- /.col-md-3 -->
-
-                  <div class="col-md-3">
-                    <div class="wprt-icon-box style-1 clearfix icon-top outline-type grey-outline align-center rounded-100 has-width w100">
-                      <div class="icon-wrap">
-                        <i class="as-icon-electrical-service"></i>
-                      </div>
-
-                      <h3 class="heading">
-                        <a target="_blank" href="#">ELECTRICAL SYSTEM</a>
-                      </h3>
-
-                      <p class="desc">We provide top-notch service for import and domestic car repairs. Servicing Brakes, Tune Ups, Engine
-                        Repairs</p>
-
-                      <div class="elm-btn">
-                        <a target="_blank" class=" simple-link font-heading" href="#">READ MORE</a>
+                        </div>
+                        <!-- /.wprt-content-box -->
+                        {{/each}}
                       </div>
                     </div>
-                    <!-- /.wprt-icon-box -->
+                    <!-- /.wprt-carousel-box -->
 
-                    <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="35" data-smobi="35"></div>
-                  </div>
-                  <!-- /.col-md-3 -->
-
-                  <div class="col-md-3">
-                    <div class="wprt-icon-box style-1 clearfix icon-top outline-type grey-outline align-center rounded-100 has-width w100">
-                      <div class="icon-wrap">
-                        <i class="as-icon-disc-brake"></i>
-                      </div>
-
-                      <h3 class="heading">
-                        <a target="_blank" href="#">BRAKE REPAIR</a>
-                      </h3>
-
-                      <p class="desc">We provide top-notch service for import and domestic car repairs. Servicing Brakes, Tune Ups, Engine
-                        Repairs</p>
-
-                      <div class="elm-btn">
-                        <a target="_blank" class=" simple-link font-heading" href="#">READ MORE</a>
-                      </div>
-                    </div>
-                    <!-- /.wprt-icon-box -->
-
-                    <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="35" data-smobi="35"></div>
-                  </div>
-                  <!-- /.col-md-3 -->
-
-                  <div class="col-md-3">
-                    <div class="wprt-icon-box style-1 clearfix icon-top outline-type grey-outline align-center rounded-100 has-width w100">
-                      <div class="icon-wrap">
-                        <i class="as-icon-air-filter2"></i>
-                      </div>
-
-                      <h3 class="heading">
-                        <a target="_blank" href="#">AUTOMOTIVE FILTERS</a>
-                      </h3>
-
-                      <p class="desc">We provide top-notch service for import and domestic car repairs. Servicing Brakes, Tune Ups, Engine
-                        Repairs</p>
-
-                      <div class="elm-btn">
-                        <a target="_blank" class=" simple-link font-heading" href="#">READ MORE</a>
-                      </div>
-                    </div>
-                    <!-- /.wprt-icon-box -->
-
-                  </div>
-                  <!-- /.col-md-3 -->
-
-                  <div class="col-md-12">
-                    <div class="wprt-spacer clearfix" data-desktop="104" data-mobi="60" data-smobi="60"></div>
+                    <div class="wprt-spacer clearfix" data-desktop="75" data-mobi="60" data-smobi="60"></div>
                   </div>
                   <!-- /.col-md-12 -->
                 </div>
@@ -265,6 +199,7 @@
               <!-- /.container -->
             </div>
             <!-- END SERVICES -->
+
 
             <!-- GALLERY -->
             <div class="row-gallery">
@@ -438,6 +373,654 @@
               <!-- /.container -->
             </div>
             <!-- END GALLERY -->
+
+
+            <div class="row-team">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="83" data-mobi="60" data-smobi="60"></div>
+
+                    <div class="wprt-headings style-1 clearfix text-center">
+                      <h2 class="heading clearfix">CERTIFIED SPARE PARTS</h2>
+                      <div class="sep clearfix"></div>
+                      <p class="sub-heading clearfix">Our professionals will perform diagnostic tests, fluid flush and fills, engine replacement, oil changes,
+                        and total vehicle overhauls.</p>
+                    </div>
+                    <!-- /.wprt-headings -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="40" data-smobi="40"></div>
+
+                    <div class="wprt-team has-shadow bullet-circle has-bullets" data-auto="false" data-column="4" data-column2="2" data-column3="1"
+                      data-gap="30">
+                      <div class="owl-carousel owl-theme">
+                        <div class="team-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="assets/img/team/member-1-303x363.jpg" alt="Image">
+                              <ul class="socials clearfix">
+                                <li class="twitter">
+                                  <a href="#">
+                                    <i class="rt-icon-twitter"></i>
+                                  </a>
+                                </li>
+                                <li class="facebook">
+                                  <a href="#">
+                                    <i class="rt-icon-facebook"></i>
+                                  </a>
+                                </li>
+                                <li class="linkedin">
+                                  <a href="#">
+                                    <i class="rt-icon-linkedin"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- /.thumb -->
+
+                            <div class="text-wrap">
+                              <h4 class="name">BARBARA MCLAREN</h4>
+                              <div class="position">MARKETING MANAGER</div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.team-item -->
+
+                        <div class="team-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="assets/img/team/member-2-303x363.jpg" alt="Image">
+                              <ul class="socials clearfix">
+                                <li class="twitter">
+                                  <a href="#">
+                                    <i class="rt-icon-twitter"></i>
+                                  </a>
+                                </li>
+                                <li class="facebook">
+                                  <a href="#">
+                                    <i class="rt-icon-facebook"></i>
+                                  </a>
+                                </li>
+                                <li class="linkedin">
+                                  <a href="#">
+                                    <i class="rt-icon-linkedin"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- /.thumb -->
+
+                            <div class="text-wrap">
+                              <h4 class="name">BARBARA MCLAREN</h4>
+                              <div class="position">MARKETING MANAGER</div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.team-item -->
+
+                        <div class="team-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="assets/img/team/member-3-303x363.jpg" alt="Image">
+                              <ul class="socials clearfix">
+                                <li class="twitter">
+                                  <a href="#">
+                                    <i class="rt-icon-twitter"></i>
+                                  </a>
+                                </li>
+                                <li class="facebook">
+                                  <a href="#">
+                                    <i class="rt-icon-facebook"></i>
+                                  </a>
+                                </li>
+                                <li class="linkedin">
+                                  <a href="#">
+                                    <i class="rt-icon-linkedin"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- /.thumb -->
+
+                            <div class="text-wrap">
+                              <h4 class="name">BARBARA MCLAREN</h4>
+                              <div class="position">MARKETING MANAGER</div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.team-item -->
+
+                        <div class="team-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="assets/img/team/member-4-303x363.jpg" alt="Image">
+                              <ul class="socials clearfix">
+                                <li class="twitter">
+                                  <a href="#">
+                                    <i class="rt-icon-twitter"></i>
+                                  </a>
+                                </li>
+                                <li class="facebook">
+                                  <a href="#">
+                                    <i class="rt-icon-facebook"></i>
+                                  </a>
+                                </li>
+                                <li class="linkedin">
+                                  <a href="#">
+                                    <i class="rt-icon-linkedin"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- /.thumb -->
+
+                            <div class="text-wrap">
+                              <h4 class="name">BARBARA MCLAREN</h4>
+                              <div class="position">MARKETING MANAGER</div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.team-item -->
+
+                        <div class="team-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="assets/img/team/member-1-303x363.jpg" alt="Image">
+                              <ul class="socials clearfix">
+                                <li class="twitter">
+                                  <a href="#">
+                                    <i class="rt-icon-twitter"></i>
+                                  </a>
+                                </li>
+                                <li class="facebook">
+                                  <a href="#">
+                                    <i class="rt-icon-facebook"></i>
+                                  </a>
+                                </li>
+                                <li class="linkedin">
+                                  <a href="#">
+                                    <i class="rt-icon-linkedin"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- /.thumb -->
+
+                            <div class="text-wrap">
+                              <h4 class="name">BARBARA MCLAREN</h4>
+                              <div class="position">MARKETING MANAGER</div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.team-item -->
+
+                        <div class="team-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="assets/img/team/member-2-303x363.jpg" alt="Image">
+                              <ul class="socials clearfix">
+                                <li class="twitter">
+                                  <a href="#">
+                                    <i class="rt-icon-twitter"></i>
+                                  </a>
+                                </li>
+                                <li class="facebook">
+                                  <a href="#">
+                                    <i class="rt-icon-facebook"></i>
+                                  </a>
+                                </li>
+                                <li class="linkedin">
+                                  <a href="#">
+                                    <i class="rt-icon-linkedin"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- /.thumb -->
+
+                            <div class="text-wrap">
+                              <h4 class="name">BARBARA MCLAREN</h4>
+                              <div class="position">MARKETING MANAGER</div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.team-item -->
+
+                        <div class="team-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="assets/img/team/member-3-303x363.jpg" alt="Image">
+                              <ul class="socials clearfix">
+                                <li class="twitter">
+                                  <a href="#">
+                                    <i class="rt-icon-twitter"></i>
+                                  </a>
+                                </li>
+                                <li class="facebook">
+                                  <a href="#">
+                                    <i class="rt-icon-facebook"></i>
+                                  </a>
+                                </li>
+                                <li class="linkedin">
+                                  <a href="#">
+                                    <i class="rt-icon-linkedin"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- /.thumb -->
+
+                            <div class="text-wrap">
+                              <h4 class="name">BARBARA MCLAREN</h4>
+                              <div class="position">MARKETING MANAGER</div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.team-item -->
+
+                        <div class="team-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="assets/img/team/member-4-303x363.jpg" alt="Image">
+                              <ul class="socials clearfix">
+                                <li class="twitter">
+                                  <a href="#">
+                                    <i class="rt-icon-twitter"></i>
+                                  </a>
+                                </li>
+                                <li class="facebook">
+                                  <a href="#">
+                                    <i class="rt-icon-facebook"></i>
+                                  </a>
+                                </li>
+                                <li class="linkedin">
+                                  <a href="#">
+                                    <i class="rt-icon-linkedin"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- /.thumb -->
+
+                            <div class="text-wrap">
+                              <h4 class="name">BARBARA MCLAREN</h4>
+                              <div class="position">MARKETING MANAGER</div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.team-item -->
+
+                        <div class="team-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="assets/img/team/member-1-303x363.jpg" alt="Image">
+                              <ul class="socials clearfix">
+                                <li class="twitter">
+                                  <a href="#">
+                                    <i class="rt-icon-twitter"></i>
+                                  </a>
+                                </li>
+                                <li class="facebook">
+                                  <a href="#">
+                                    <i class="rt-icon-facebook"></i>
+                                  </a>
+                                </li>
+                                <li class="linkedin">
+                                  <a href="#">
+                                    <i class="rt-icon-linkedin"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- /.thumb -->
+
+                            <div class="text-wrap">
+                              <h4 class="name">BARBARA MCLAREN</h4>
+                              <div class="position">MARKETING MANAGER</div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.team-item -->
+                      </div>
+                    </div>
+                    <!-- /.wprt-team -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="70" data-mobi="40" data-smobi="40"></div>
+                  </div>
+                  <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.container -->
+            </div>
+            <!-- END TEAM -->
+
+
+
+            <!-- NEWS -->
+            <div class="row-news">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="83" data-mobi="60" data-smobi="60"></div>
+
+                    <div class="wprt-headings style-1 clearfix text-center">
+                      <h2 class="heading clearfix">COMPANY NEWS</h2>
+                      <div class="sep clearfix"></div>
+                      <p class="sub-heading clearfix">Our professionals will perform diagnostic tests, fluid flush and fills, engine replacement, oil changes,
+                        and total vehicle overhauls.</p>
+                    </div>
+                    <!-- /.wprt-headings -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="40" data-smobi="40"></div>
+
+                    <div class="wprt-news has-shadow bullet-circle has-bullets bullet40" data-auto="false" data-column="3" data-column2="2" data-column3="1"
+                      data-gap="30">
+                      <div class="owl-carousel owl-theme">
+                        <div class="news-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="assets/img/news/post-1-640x337.jpg" alt="Image">
+                              <div class="meta">
+                                <span class="post-date">October 3, 2017</span>
+                              </div>
+                            </div>
+                            <div class="text-wrap">
+                              <h3 class="title">
+                                <a href="page-blog-single.html">Get a diagnostic test today</a>
+                              </h3>
+
+                              <p class="excerpt-text">Cras lobortis pellentesque quam non mollis. Curabitur vitae sem ullamcorper elementum.</p>
+
+                              <div class="post-btn">
+                                <a href="page-blog-single.html" class="small wprt-button outline ol-accent" style="">READ MORE</a>
+                              </div>
+                            </div>
+                            <!-- /.text-wrap -->
+                          </div>
+                        </div>
+                        <!-- /.news-item -->
+
+                        <div class="news-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="assets/img/news/post-2-640x337.jpg" alt="Image">
+                              <div class="meta">
+                                <span class="post-date">October 3, 2017</span>
+                              </div>
+                            </div>
+                            <div class="text-wrap">
+                              <h3 class="title">
+                                <a href="page-blog-single.html">Get a diagnostic test today</a>
+                              </h3>
+
+                              <p class="excerpt-text">Cras lobortis pellentesque quam non mollis. Curabitur vitae sem ullamcorper elementum.</p>
+
+                              <div class="post-btn">
+                                <a href="page-blog-single.html" class="small wprt-button outline ol-accent" style="">READ MORE</a>
+                              </div>
+                            </div>
+                            <!-- /.text-wrap -->
+                          </div>
+                        </div>
+                        <!-- /.news-item -->
+
+                        <div class="news-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="assets/img/news/post-3-640x337.jpg" alt="Image">
+                              <div class="meta">
+                                <span class="post-date">October 3, 2017</span>
+                              </div>
+                            </div>
+                            <div class="text-wrap">
+                              <h3 class="title">
+                                <a href="page-blog-single.html">Get a diagnostic test today</a>
+                              </h3>
+
+                              <p class="excerpt-text">Cras lobortis pellentesque quam non mollis. Curabitur vitae sem ullamcorper elementum.</p>
+
+                              <div class="post-btn">
+                                <a href="page-blog-single.html" class="small wprt-button outline ol-accent" style="">READ MORE</a>
+                              </div>
+                            </div>
+                            <!-- /.text-wrap -->
+                          </div>
+                        </div>
+                        <!-- /.news-item -->
+
+                        <div class="news-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="assets/img/news/post-1-640x337.jpg" alt="Image">
+                              <div class="meta">
+                                <span class="post-date">October 3, 2017</span>
+                              </div>
+                            </div>
+                            <div class="text-wrap">
+                              <h3 class="title">
+                                <a href="page-blog-single.html">Get a diagnostic test today</a>
+                              </h3>
+
+                              <p class="excerpt-text">Cras lobortis pellentesque quam non mollis. Curabitur vitae sem ullamcorper elementum.</p>
+
+                              <div class="post-btn">
+                                <a href="page-blog-single.html" class="small wprt-button outline ol-accent" style="">READ MORE</a>
+                              </div>
+                            </div>
+                            <!-- /.text-wrap -->
+                          </div>
+                        </div>
+                        <!-- /.news-item -->
+
+                        <div class="news-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="assets/img/news/post-2-640x337.jpg" alt="Image">
+                              <div class="meta">
+                                <span class="post-date">October 3, 2017</span>
+                              </div>
+                            </div>
+                            <div class="text-wrap">
+                              <h3 class="title">
+                                <a href="page-blog-single.html">Get a diagnostic test today</a>
+                              </h3>
+
+                              <p class="excerpt-text">Cras lobortis pellentesque quam non mollis. Curabitur vitae sem ullamcorper elementum.</p>
+
+                              <div class="post-btn">
+                                <a href="page-blog-single.html" class="small wprt-button outline ol-accent" style="">READ MORE</a>
+                              </div>
+                            </div>
+                            <!-- /.text-wrap -->
+                          </div>
+                        </div>
+                        <!-- /.news-item -->
+
+                        <div class="news-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="assets/img/news/post-3-640x337.jpg" alt="Image">
+                              <div class="meta">
+                                <span class="post-date">October 3, 2017</span>
+                              </div>
+                            </div>
+                            <div class="text-wrap">
+                              <h3 class="title">
+                                <a href="page-blog-single.html">Get a diagnostic test today</a>
+                              </h3>
+
+                              <p class="excerpt-text">Cras lobortis pellentesque quam non mollis. Curabitur vitae sem ullamcorper elementum.</p>
+
+                              <div class="post-btn">
+                                <a href="page-blog-single.html" class="small wprt-button outline ol-accent" style="">READ MORE</a>
+                              </div>
+                            </div>
+                            <!-- /.text-wrap -->
+                          </div>
+                        </div>
+                        <!-- /.news-item -->
+
+                        <div class="news-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="assets/img/news/post-1-640x337.jpg" alt="Image">
+                              <div class="meta">
+                                <span class="post-date">October 3, 2017</span>
+                              </div>
+                            </div>
+                            <div class="text-wrap">
+                              <h3 class="title">
+                                <a href="page-blog-single.html">Get a diagnostic test today</a>
+                              </h3>
+
+                              <p class="excerpt-text">Cras lobortis pellentesque quam non mollis. Curabitur vitae sem ullamcorper elementum.</p>
+
+                              <div class="post-btn">
+                                <a href="page-blog-single.html" class="small wprt-button outline ol-accent" style="">READ MORE</a>
+                              </div>
+                            </div>
+                            <!-- /.text-wrap -->
+                          </div>
+                        </div>
+                        <!-- /.news-item -->
+                      </div>
+                    </div>
+                    <!-- /.wprt-news -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="80" data-mobi="50" data-smobi="50"></div>
+                  </div>
+                  <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.container -->
+            </div>
+            <!-- END NEWS -->
+
+
+            <div class="row-facts-1 parallax">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="90" data-mobi="60" data-smobi="60"></div>
+                  </div>
+                  <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+
+                <div class="row separator dark">
+                  <div class="col-md-3">
+                    <div class="wprt-counter style-2 clearfix icon-left text-center">
+                      <div class="inner">
+                        <div class="icon-wrap">
+                          <div class="icon">
+                            <i class="as-icon-mechanic"></i>
+                          </div>
+                        </div>
+
+                        <div class="text-wrap">
+                          <div class="number-wrap font-heading">
+                            <span class="prefix"></span>
+                            <span class="number " data-speed="2000" data-to="320" data-inviewport="yes">320</span>
+                            <span class="suffix">+</span>
+                          </div>
+                          <h3 class="heading">TECHNICIALS</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.wprt-counter -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="35" data-smobi="35"></div>
+                  </div>
+                  <!-- /.col-md-3 -->
+
+                  <div class="col-md-3">
+                    <div class="wprt-counter style-2 clearfix icon-left text-center">
+                      <div class="inner">
+                        <div class="icon-wrap">
+                          <div class="icon">
+                            <i class="as-icon-key2"></i>
+                          </div>
+                        </div>
+
+                        <div class="text-wrap">
+                          <div class="number-wrap font-heading">
+                            <span class="prefix"></span>
+                            <span class="number " data-speed="2000" data-to="100" data-inviewport="yes">100</span>
+                            <span class="suffix">%</span>
+                          </div>
+                          <h3 class="heading">TRANSPARENCY</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.wprt-counter -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="35" data-smobi="35"></div>
+                  </div>
+                  <!-- /.col-md-3 -->
+
+                  <div class="col-md-3">
+                    <div class="wprt-counter style-2 clearfix icon-left text-center">
+                      <div class="inner">
+                        <div class="icon-wrap">
+                          <div class="icon">
+                            <i class="as-icon-inspection"></i>
+                          </div>
+                        </div>
+
+                        <div class="text-wrap">
+                          <div class="number-wrap font-heading">
+                            <span class="prefix"></span>
+                            <span class="number " data-speed="2000" data-to="890" data-inviewport="yes">890</span>
+                            <span class="suffix">+</span>
+                          </div>
+                          <h3 class="heading">DONE PROJECTS</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.wprt-counter -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="35" data-smobi="35"></div>
+                  </div>
+                  <!-- /.col-md-3 -->
+
+                  <div class="col-md-3">
+                    <div class="wprt-counter style-2 clearfix icon-left text-center">
+                      <div class="inner">
+                        <div class="icon-wrap">
+                          <div class="icon">
+                            <i class="as-icon-diagnostic"></i>
+                          </div>
+                        </div>
+                        <div class="text-wrap">
+                          <div class="number-wrap font-heading">
+                            <span class="prefix"></span>
+                            <span class="number " data-speed="2000" data-to="640" data-inviewport="yes">640</span>
+                            <span class="suffix">+</span>
+                          </div>
+                          <h3 class="heading">WON AWARDS</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.wprt-counter -->
+                  </div>
+                  <!-- /.col-md-3 -->
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="90" data-mobi="60" data-smobi="60"></div>
+                  </div>
+                  <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.container -->
+            </div>
+
+
 
             <!-- PROMOTION -->
             <div class="row-promotion bg-accent">

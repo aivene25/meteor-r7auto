@@ -5,7 +5,7 @@
     <div id="featured-title-inner" class="wprt-container clearfix">
       <div class="featured-title-inner-wrap">
         <div class="featured-title-heading-wrap">
-          <h1 class="featured-title-heading">{{Service}} Services</h1>
+          <h1 class="featured-title-heading font-weight-600">{{Service}} Service</h1>
         </div>
         <div id="breadcrumbs">
           <div class="breadcrumbs-inner">
@@ -156,7 +156,7 @@
 
                     <div class="wprt-spacer clearfix" data-desktop="40" data-mobi="30" data-smobi="30"></div>
                     {{#with data}}
-                    <h3>{{Service}}</h3>
+                    <h4 class="font-weight-600">What is {{Service}} about ? </h4>
                     <p>{{{Description}}}</p>
                     {{/with}}
                     <div class="wprt-spacer clearfix" data-desktop="10" data-mobi="10" data-smobi="10"></div>
@@ -164,8 +164,8 @@
 
                     <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="40" data-smobi="40"></div>
                     <div class="wprt-divider divider-center divider-solid"></div>
-                    <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="35" data-smobi="35"></div>
 
+                    <h4 class="font-weight-600">How it is done</h4>
                     {{#with data}}
                     <div class="row">
                       <div class="col-md-12">
@@ -174,7 +174,7 @@
                           <div>
                             <span>
                               <span class="icon">
-                                <i class="fa fa-circle-o font-size-12 text-accent-color"></i>
+                                <i class="fa fa-circle-o font-size-8 text-accent-color"></i>
                               </span>
                               <span class="font-size-15">{{step}}</span>
                             </span>
@@ -186,126 +186,94 @@
                     {{/with}}
                     <!-- /.col-md-6 -->
 
-                    <div class="wprt-spacer clearfix" data-desktop="40" data-mobi="40" data-smobi="40"></div>
-                    <div class="wprt-divider divider-center divider-solid"></div>
-                    <div class="row very-small-gutters">
-                      <div class="col-md-4">
-                        <div class="wprt-content-box style-2">
-                          <div class="wprt-icon-box style-6 clearfix icon-top w75 accent-bg align-center rounded-100 has-width">
-                            <div class="icon-wrap">
-                              <i class="as-icon-car-parts-28"></i>
-                            </div>
+                    <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="35" data-smobi="35"></div>
 
-                            <h3 class="heading">
-                              <a href="/services">Tires, Steering & Suspension</a>
-                            </h3>
+                    {{#with data}}
+                    <h4 class="font-weight-600">How important is this service? </h4>
+                    <p>{{{Importance}}}</p>
+                    {{/with}}
+
+                    <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="35" data-smobi="35"></div>
+
+                    <h4 class="font-weight-600">
+                      What common symptoms indicate you may need to perform this service ?
+                    </h4>
+                    {{#with data}}
+                    <div class="row">
+                      <div class="col-md-12">
+                        {{#each item in Symptoms}}
+                        <div class="wprt-list clearfix icon-left style-3 has-border-bottom">
+                          <div>
+                            <span>
+                              <span class="icon">
+                                <i class="fa fa-circle-o font-size-8 text-accent-color"></i>
+                              </span>
+                              <span class="font-size-15">{{item}}</span>
+                            </span>
                           </div>
-                          <!-- /.wprt-icon-box -->
                         </div>
-                        <!-- /.wprt-content-box -->
-
-                        <div class="wprt-spacer clearfix" data-desktop="20" data-mobi="20" data-smobi="20"></div>
-
-                        <div class="wprt-content-box style-2">
-                          <div class="wprt-icon-box style-6 clearfix icon-top w75 accent-bg align-center rounded-100 has-width">
-                            <div class="icon-wrap">
-                              <i class="as-icon-car-parts-14"></i>
-                            </div>
-
-                            <h3 class="heading">
-                              <a href="/services">Oil, Fluids & Maintenance</a>
-                            </h3>
-                          </div>
-                          <!-- /.wprt-icon-box -->
-                        </div>
-                        <!-- /.wprt-content-box -->
-
-                        <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="20" data-smobi="20"></div>
+                        {{/each}}
                       </div>
-                      <!-- /.col-md-4 -->
-
-                      <div class="col-md-4">
-                        <div class="wprt-content-box style-2">
-                          <div class="wprt-icon-box style-6 clearfix icon-top w75 accent-bg align-center rounded-100 has-width">
-                            <div class="icon-wrap">
-                              <i class="as-icon-car-parts-16"></i>
-                            </div>
-
-                            <h3 class="heading">
-                              <a href="/services">Electrical System Service</a>
-                            </h3>
-                          </div>
-                          <!-- /.wprt-icon-box -->
-                        </div>
-                        <!-- /.wprt-content-box -->
-
-                        <div class="wprt-spacer clearfix" data-desktop="20" data-mobi="20" data-smobi="20"></div>
-
-                        <div class="wprt-content-box style-2">
-                          <div class="wprt-icon-box style-6 clearfix icon-top w75 accent-bg align-center rounded-100 has-width">
-                            <div class="icon-wrap">
-                              <i class="as-icon-car-parts-15"></i>
-                            </div>
-
-                            <h3 class="heading">
-                              <a href="/services">Advanced Diagnostic & Engine Test</a>
-                            </h3>
-                          </div>
-                          <!-- /.wprt-icon-box -->
-                        </div>
-                        <!-- /.wprt-content-box -->
-
-                        <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="25" data-smobi="25"></div>
-                      </div>
-                      <!-- /.col-md-4 -->
-
-                      <div class="col-md-4">
-                        <div class="wprt-content-box style-2">
-                          <div class="wprt-icon-box style-6 clearfix icon-top w75 accent-bg align-center rounded-100 has-width">
-                            <div class="icon-wrap">
-                              <i class="as-icon-car-parts-22"></i>
-                            </div>
-
-                            <h3 class="heading">
-                              <a href="/services">Air Conditioning & Automotive Filters</a>
-                            </h3>
-                          </div>
-                          <!-- /.wprt-icon-box -->
-                        </div>
-                        <!-- /.wprt-content-box -->
-
-                        <div class="wprt-spacer clearfix" data-desktop="20" data-mobi="20" data-smobi="20"></div>
-
-                        <div class="wprt-content-box style-2">
-                          <div class="wprt-icon-box style-6 clearfix icon-top w75 accent-bg align-center rounded-100 has-width">
-                            <div class="icon-wrap">
-                              <i class="as-icon-car-parts-27"></i>
-                            </div>
-
-                            <h3 class="heading">
-                              <a href="/services">Vehicle Maintenance Packages</a>
-                            </h3>
-                          </div>
-                          <!-- /.wprt-icon-box -->
-                        </div>
-                        <!-- /.wprt-content-box -->
-                      </div>
-                      <!-- /.col-md-4 -->
                     </div>
+                    {{/with}}
+                    
+                    <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="35" data-smobi="35"></div>
 
+                    {{#with data}}
+                    <h4 class="font-weight-600">Our recommendation </h4>
+                    <p>{{{Recommendation}}}</p>
+                    {{/with}}
+                  
+                    <div class="wprt-divider divider-center divider-solid"></div>                  
                   </div>
                   <!-- /.wprt-content-box -->
                 </div>
                 <!-- /.col-md-9 -->
-
-                <div class="col-md-12">
-                  <div class="wprt-spacer clearfix" data-desktop="90" data-mobi="60" data-smobi="60"></div>
-                </div>
-                <!-- /.col-md-12 -->
               </div>
               <!-- /.row -->
             </div>
             <!-- /.container -->
+
+            <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="94" data-mobi="60" data-smobi="60"></div>
+
+                    <div class="wprt-carousel-box has-bullets bullet-circle bullet25" data-auto="false" data-loop="false" data-gap="25" data-column="4"
+                      data-column2="2" data-column3="1">
+                      <div class="owl-carousel owl-theme">
+
+                        {{#each item in services}}
+                        <div class="wprt-content-box style-2" style="height: 250px;">
+                          <div class="wprt-icon-box style-6 clearfix icon-top w75 accent-bg align-center rounded-100 has-width">
+                            <div class="icon-wrap">
+                              <i class="{{item.Icon}}"></i>
+                            </div>
+
+                            <h3 class="heading">
+                              <a href="/service/{{item._id}}">{{item.Service}}</a>
+                            </h3>
+                          </div>
+                          <!-- /.wprt-icon-box -->
+                        </div>
+                        <!-- /.wprt-content-box -->
+                        {{/each}}
+
+                      </div>
+                    </div>
+                    <!-- /.wprt-carousel-box -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="60" data-mobi="40" data-smobi="40"></div>
+                    <div class="wprt-divider divider-center divider-solid"></div>
+                    <div class="clearfix"></div>
+                   
+                  </div>
+                  <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.container -->
+
 
             <!-- PROMOTION -->
             <div class="row-promotion bg-accent">

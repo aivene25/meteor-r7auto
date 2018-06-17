@@ -1,4 +1,7 @@
 /* CSS declarations go here */
+#main-content{
+  padding: 0 0;
+}
 .font-weight-600 {
   font-weight: 600;
 }
@@ -18,11 +21,11 @@
 }
 
 #wprt-carousel .slides > li {
-  height: 100px;
+  /*height: 100px;*/
 }
 
 .owl-carousel .owl-item img{
-  height: 250px;
+ /* height: 250px; */
 }
 .uppercase{
   text-transform: uppercase

@@ -1,3 +1,21 @@
+Template.home.onCreated(function() {
+  let sub = this.subscribe("services.all");
+  this.autorun(function() {
+    if (sub.ready() == true) {
+      let res = Services.find({}, {}).fetch();
+      Session.setPersistent("services", res);
+    }
+  });
+});
+
+Template.home.helpers({
+  data: function(){
+    return Session.get("services");
+  }
+})
+
+
+
 Template.home.onRendered(function() {
   // taken from --rev-slider.js to initialize slider
   // Revolution Slider
@@ -120,49 +138,70 @@ Template.home.onRendered(function() {
     });
   };
 
-  $(".owl-carousel").owlCarousel();
+  var carouselBoxOwl = function() {
+    if ($().owlCarousel) {
+      $(".wprt-carousel-box").each(function() {
+        var $this = $(this),
+          auto = $this.data("auto"),
+          loop = $this.data("loop"),
+          item = $this.data("column"),
+          item2 = $this.data("column2"),
+          item3 = $this.data("column3"),
+          gap = Number($this.data("gap"));
+
+        $this.find(".owl-carousel").owlCarousel({
+          loop: loop,
+          margin: gap,
+          nav: true,
+          navigation: true,
+          pagination: true,
+          autoplay: auto,
+          autoplayTimeout: 5000,
+          responsive: {
+            0: {
+              items: item3
+            },
+            600: {
+              items: item2
+            },
+            1000: {
+              items: item
+            }
+          }
+        });
+      });
+    }
+  };
+
+  var imagePopup = function() {
+    if ($().magnificPopup) {
+      $(
+        ".wprt-gallery, .wprt-gallery-grid, .wprt-thumb-slider, .wprt-images-grid"
+      ).each(function() {
+        $(this)
+          .find(".zoom-popup")
+          .magnificPopup({
+            disableOn: 700,
+            type: "image",
+            gallery: {
+              enabled: true
+            },
+            mainClass: "mfp-fade",
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: true
+          });
+      });
+    }
+  };
+
+  imagePopup();
+  carouselBoxOwl();
   animation();
   parallax();
   counter();
   accordions();
   spacer();
 
-  /*
-  console.log('i m in header')
-  $.getScript('b-plugins.js', function(data, text, xhr){
-    console.log('i m in header', data);
-    console.log('i m in header', text);
-    console.log('i m in header', xhr.status);
-    console.log('loadperfomerd')
-  });
-  $.getScript('/c-bootstrap.min.js');
-  $.getScript('/d-animstion.js');
-  $.getScript('/e-countto.js');
-  $.getScript('/f-cubeportfolio.js');
-  $.getScript('/fixtext.js');
-  $.getScript('/flexislider.min.js');
-  $.getScript('/g-owl-carousel.min.js');
-  $.getScript('/gmap3.min.js');
-  $.getScript('/h-magnific-popup.min.js');
-  $.getScript('/i-equalize.min.js');
-  $.getScript('/j-shortcodes.js');
-  $.getScript('/k-main.js');
-  $.getScript('/l-jquery.themepunch.tools.min.js');
-  $.getScript('/m-jquery.themepunch.revolution.min.js');
-  $.getScript('/n-rev-slider.js');
-  $.getScript('/o-revolution.extension.actions.min.js');
-  $.getScript('/p-revolution.extension.carousel.min.js');
-  $.getScript('/q-revolution.extension.kenburn.min.js');
-  $.getScript('/r-revolution.extension.layeranimation.min.js');
-  $.getScript('/simple.text.rotator.js');
-  $.getScript('/s-revolution.extension.migration.min.js');
-  $.getScript('/t-revolution.extension.navigation.min.js');
-  $.getScript('/typed.js');
-  $.getScript('/u-revolution.extension.parallax.min.js');
-  $.getScript('/validate.js');
-  $.getScript('/vegas.js');
-  $.getScript('/v-revolution.extension.slideanims.min.js');
-  $.getScript('/w-revolution.extension.video.min.js');
-  console.log('i m out of header')
-  */
+
 });
