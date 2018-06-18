@@ -3,7 +3,7 @@ Template.blog.onCreated(function() {
 });
 
 Template.blog.helpers({
-  post: () => {
+  posts: () => {
     return Posts.find({}, {});
   }
 });

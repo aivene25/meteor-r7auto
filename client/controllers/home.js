@@ -1,19 +1,27 @@
 Template.home.onCreated(function() {
   let sub = this.subscribe("services.all");
+  let blog = this.subscribe("posts.all");
   this.autorun(function() {
     if (sub.ready() == true) {
       let res = Services.find({}, {}).fetch();
       Session.setPersistent("services", res);
     }
+    if(blog.ready() == true) {
+      let res = Posts.find({}, {}).fetch();
+      Session.setPersistent("posts", res);
+    };
   });
 });
 
 Template.home.helpers({
   data: function(){
     return Session.get("services");
+  },
+  posts: function(){
+    console.log(Session.get('posts'));
+    return Session.get('posts');
   }
 })
-
 
 
 Template.home.onRendered(function() {
@@ -195,13 +203,13 @@ Template.home.onRendered(function() {
     }
   };
 
-  imagePopup();
-  carouselBoxOwl();
   animation();
   parallax();
   counter();
   accordions();
   spacer();
-
+  imagePopup();
+  carouselBoxOwl();
+  
 
 });
