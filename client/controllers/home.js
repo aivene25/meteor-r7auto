@@ -6,23 +6,22 @@ Template.home.onCreated(function() {
       let res = Services.find({}, {}).fetch();
       Session.setPersistent("services", res);
     }
-    if(blog.ready() == true) {
+    if (blog.ready() == true) {
       let res = Posts.find({}, {}).fetch();
       Session.setPersistent("posts", res);
-    };
+    }
   });
 });
 
 Template.home.helpers({
-  data: function(){
+  data: function() {
     return Session.get("services");
   },
-  posts: function(){
-    console.log(Session.get('posts'));
-    return Session.get('posts');
+  posts: function() {
+    console.log(Session.get("posts"));
+    return Session.get("posts");
   }
-})
-
+});
 
 Template.home.onRendered(function() {
   // taken from --rev-slider.js to initialize slider
@@ -203,6 +202,143 @@ Template.home.onRendered(function() {
     }
   };
 
+  var galleryOwl = function() {
+    if ($().owlCarousel) {
+      $(".wprt-gallery").each(function() {
+        var $this = $(this),
+          auto = $this.data("auto"),
+          item = $this.data("column"),
+          item2 = $this.data("column2"),
+          item3 = $this.data("column3"),
+          gap = Number($this.data("gap"));
+
+        $this.find(".owl-carousel").owlCarousel({
+          loop: false,
+          margin: gap,
+          nav: true,
+          navigation: true,
+          pagination: true,
+          autoplay: auto,
+          autoplayTimeout: 5000,
+          responsive: {
+            0: {
+              items: item3
+            },
+            600: {
+              items: item2
+            },
+            1000: {
+              items: item
+            }
+          }
+        });
+      });
+    }
+  };
+
+  var newsOwl = function() {
+    if ($().owlCarousel) {
+      $(".wprt-news").each(function() {
+        var $this = $(this),
+          auto = $this.data("auto"),
+          item = $this.data("column"),
+          item2 = $this.data("column2"),
+          item3 = $this.data("column3"),
+          gap = Number($this.data("gap"));
+
+        $this.find(".owl-carousel").owlCarousel({
+          loop: false,
+          margin: gap,
+          nav: true,
+          navigation: true,
+          pagination: true,
+          autoplay: auto,
+          autoplayTimeout: 5000,
+          responsive: {
+            0: {
+              items: item3
+            },
+            600: {
+              items: item2
+            },
+            1000: {
+              items: item
+            }
+          }
+        });
+      });
+    }
+  };
+
+  var teamOwl = function() {
+    if ($().owlCarousel) {
+      $(".wprt-team").each(function() {
+        var $this = $(this),
+          auto = $this.data("auto"),
+          item = $this.data("column"),
+          item2 = $this.data("column2"),
+          item3 = $this.data("column3"),
+          gap = Number($this.data("gap"));
+
+        $this.find(".owl-carousel").owlCarousel({
+          loop: false,
+          margin: gap,
+          nav: true,
+          navigation: true,
+          pagination: true,
+          autoplay: auto,
+          autoplayTimeout: 5000,
+          responsive: {
+            0: {
+              items: item3
+            },
+            600: {
+              items: item2
+            },
+            1000: {
+              items: item
+            }
+          }
+        });
+      });
+    }
+  };
+
+  var partnerOwl = function() {
+    if ($().owlCarousel) {
+      $(".wprt-partner").each(function() {
+        var $this = $(this),
+          auto = $this.data("auto"),
+          loop = $this.data("loop"),
+          item = $this.data("column"),
+          item2 = $this.data("column2"),
+          item3 = $this.data("column3"),
+          gap = Number($this.data("gap"));
+
+        $this.find(".owl-carousel").owlCarousel({
+          loop: loop,
+          margin: gap,
+          nav: true,
+          navigation: true,
+          pagination: true,
+          autoplay: auto,
+          autoplayTimeout: 5000,
+          responsive: {
+            0: {
+              items: item3
+            },
+            600: {
+              items: item2
+            },
+            1000: {
+              items: item
+            }
+          }
+        });
+      });
+    }
+  };
+
   animation();
   parallax();
   counter();
@@ -210,6 +346,7 @@ Template.home.onRendered(function() {
   spacer();
   imagePopup();
   carouselBoxOwl();
-  
-
+  partnerOwl();
+  newsOwl();
+  teamOwl();
 });
