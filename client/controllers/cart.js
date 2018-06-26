@@ -16,7 +16,6 @@ Template.cart.helpers({
   },
 
   totalPrice:()=>{
-    //var cur = Session.get('currency');
     var item = Session.get("cartItems");
     var totalPrice = 0;
     if (item){

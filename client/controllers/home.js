@@ -33,8 +33,38 @@ Template.home.helpers({
   parts: function() {
     return Session.get("parts");
   },
-  cars: function(){
+  cars: function() {
     return Session.get("cars");
+  }
+});
+
+Template.home.events({
+  "click .add-to-cart": function(event, template) {
+    event.preventDefault();
+    let id = event.currentTarget.id;
+    let product = SpareParts.findOne({ _id: id }, {});
+    console.log(product);
+    let cartItems = Session.get("cartItems") || [];
+    let contains = false;
+
+    if (cartItems.length > 0) {
+      cartItems.forEach((item, index) => {
+        if (id == item.productId) {
+          item.quantity = item.quantity + 1;
+          contains = true;
+        }
+      });
+      if (contains == false) {
+        let data = { productId: id, product: product, quantity: 1 };
+        cartItems.push(data);
+      }
+    } else {
+      let data = { productId: id, product: product, quantity: 1 };
+      cartItems.push(data);
+    }
+    alert("Item added to cart");
+    console.log(cartItems);
+    //Session.setPersistent("cartItems", cartItems);
   }
 });
 
@@ -353,6 +383,7 @@ Template.home.onRendered(function() {
       });
     }
   };
+  
   Meteor.setTimeout(() => {
     animation();
     parallax();

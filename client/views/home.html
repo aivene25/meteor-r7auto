@@ -145,6 +145,7 @@
             </div>
             <!-- END SLIDER -->
 
+            <!--SEVICES-->
             <div id="row-services" class="row-services">
               <div class="container">
                 <div class="row">
@@ -207,12 +208,12 @@
             </div>
             <!-- END SERVICES -->
 
+            <!-- END PARTS -->
             <div class="row-team">
               <div class="container">
                 <div class="row">
                   <div class="col-md-12">
                     <div class="wprt-spacer clearfix" data-desktop="83" data-mobi="60" data-smobi="60"></div>
-
                     <div class="wprt-headings style-1 clearfix text-center">
                       <h2 class="heading clearfix">CERTIFIED SPARE PARTS</h2>
                       <div class="sep clearfix"></div>
@@ -235,7 +236,7 @@
                               <ul class="socials clearfix">
                                 <li class="twitter">
                                   <a href="#">
-                                    <i class="rt-icon-cart-2"></i>
+                                    <i class="rt-icon-cart-2 add-to-cart" id={{item._id}}></i>
                                   </a>
                                 </li>
                                 <li class="facebook">
@@ -252,8 +253,8 @@
                             </div>
                             <!-- /.thumb -->
                             <div class="text-wrap">
-                              <a href="/parts/{{item._id}}">
-                                <h4 class="name">{{ item.Title}}</h4>
+                              <a href="/shop/parts/{{item._id}}">
+                                <h4 class="name">{{item.Title}}</h4>
                               </a>
                               <!--<div class="position">MARKETING MANAGER</div>-->
                             </div>
@@ -264,7 +265,16 @@
                       </div>
                     </div>
                     <!-- /.wprt-team -->
-                    <div class="wprt-spacer clearfix" data-desktop="70" data-mobi="40" data-smobi="40"></div>
+
+                    <div class="wprt-spacer clearfix" data-desktop="50" data-mobi="40" data-smobi="40"></div>
+
+                    <div class="wprt-align-box text-center">
+                      <div class="button-wrap icon-left">
+                        <a href="/shop/parts" class="wprt-button outline light">ALL SPARE PARTS </a>
+                      </div>
+                    </div>
+
+                    <div class="wprt-spacer clearfix" data-desktop="70" data-mobi="50" data-smobi="50"></div>
                   </div>
                   <!-- /.col-md-12 -->
                 </div>
@@ -272,9 +282,45 @@
               </div>
               <!-- /.container -->
             </div>
-            <!-- END TEAM -->
+            <!-- END PARTS -->
 
-            <!-- GALLERY -->
+            <!--CERTIFIED -->
+            <div class="row-certified-1 parallax" style="background-attachment: fixed; background-position: 50% 64px;">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="120" data-mobi="60" data-smobi="60" style="height:120px"></div>
+                  </div>
+                  <!-- /.col-md-12 -->
+                  <div class="col-md-12">
+                    <div class="wprt-animation-block animated fadeInUpSmall" data-animate="fadeInUpSmall" data-duration="1s" data-delay="0s"
+                      data-position="90%" style="animation-delay: 0s; animation-duration: 1s;">
+                      <h2 class="text-center text-white font-size-32 letter-spacing-1px font-weight-300">WE OFFER A VARIETY OF SERVICES
+                        <br>
+                        <span class="font-weight-700">PERFORMED BY NATA CERTIFIED TECHNICIANS</span>
+                      </h2>
+
+                      <div class="wprt-spacer clearfix" data-desktop="10" data-mobi="10" data-smobi="10" style="height:10px"></div>
+
+                      <div class="text-center ">
+                        <a class="wprt-button outline accent margin-bottom-20" href="#">CALL US TODAY</a>
+                      </div>
+                    </div>
+                    <!-- /.wprt-animation-block -->
+                  </div>
+                  <!-- /.col-md-12 -->
+                  <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="100" data-mobi="40" data-smobi="40" style="height:100px"></div>
+                  </div>
+                  <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.container -->
+            </div>
+            <!--CERTIFIED END -->
+
+            <!-- VEHICLES -->
             <div class="row-gallery">
               <div class="container">
                 <div class="row">
@@ -337,7 +383,145 @@
               </div>
               <!-- /.container -->
             </div>
-            <!-- END GALLERY -->
+            <!-- END VEHICLES -->
+
+            <!--OUR COMPANY-->
+            <div class="row-services">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="83" data-mobi="60" data-smobi="60" style="height:83px"></div>
+
+                    <div class="wprt-headings style-1 clearfix text-center">
+                      <h2 class="heading clearfix">ABOUT OUR COMPANY</h2>
+                      <div class="sep clearfix"></div>
+                      <p class="sub-heading clearfix">Our professionals will perform diagnostic tests, fluid flush and fills, engine replacement, oil changes,
+                        and total vehicle overhauls.</p>
+                    </div>
+                    <!-- /.wprt-headings -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="40" data-smobi="40" style="height:45px"></div>
+                  </div>
+                  <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+
+                <div class="row small-gutters">
+                  <div class="col-md-6">
+                    <div class="wprt-accordions style-1">
+                      <div class="accordion-item active no-icon">
+                        <h3 class="accordion-heading">
+                          <span class="inner">Over 25 Years Experience</span>
+                        </h3>
+
+                        <div class="accordion-content" style="display: block;">
+                          <div>At R7Auto specialists we can handle all of your vehicle's maintenance needs and repair problems.
+                            We work on Cars and Light Trucks, American and Foreign, New and Old. We specialize in diagnosing
+                            those hard to find problems. We have been in business since 1992, and are a family owned business.
+                            We try to treat our customers like we would want to be treated, giving them the best service
+                            for the best price available.</div>
+                        </div>
+                      </div>
+                      <!-- /.accordion-item -->
+
+                      <div class="accordion-item no-icon">
+                        <h3 class="accordion-heading">
+                          <span class="inner">Collision Repair Excellence</span>
+                        </h3>
+
+                        <div class="accordion-content">
+                          <div>At R7Auto specialists we can handle all of your vehicle's maintenance needs and repair problems.
+                            We work on Cars and Light Trucks, American and Foreign, New and Old. We specialize in diagnosing
+                            those hard to find problems. We have been in business since 1992, and are a family owned business.
+                            We try to treat our customers like we would want to be treated, giving them the best service
+                            for the best price available.</div>
+                        </div>
+                      </div>
+                      <!-- /.accordion-item -->
+
+                      <div class="accordion-item no-icon">
+                        <h3 class="accordion-heading">
+                          <span class="inner">Accreditation &amp; Certifications</span>
+                        </h3>
+
+                        <div class="accordion-content">
+                          <div>At R7Auto specialists we can handle all of your vehicle's maintenance needs and repair problems.
+                            We work on Cars and Light Trucks, American and Foreign, New and Old. We specialize in diagnosing
+                            those hard to find problems. We have been in business since 1992, and are a family owned business.
+                            We try to treat our customers like we would want to be treated, giving them the best service
+                            for the best price available.</div>
+                        </div>
+                      </div>
+                      <!-- /.accordion-item -->
+                    </div>
+                    <!-- /.wprt-accordions -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="40" data-smobi="40" style="height:0px"></div>
+                  </div>
+                  <!-- /.col-md-6 -->
+
+                  <div class="col-md-6">
+                    <div class="wprt-icon-box style-4 clearfix icon-left w85 grey-outline align-left has-width">
+                      <div class="icon-wrap">
+                        <i class="as-icon-oil2"></i>
+                      </div>
+
+                      <h3 class="heading">
+                        <a href="#">BRAKE FLUID EXCHANGE</a>
+                      </h3>
+
+                      <p class="desc">We provide top-notch service for import and domestic car repairs. Brakes Prepair, Tune Ups, Engine
+                        Repair, Electrical and A.C Systems</p>
+                    </div>
+                    <!-- /.wprt-icon-box -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="35" data-smobi="35" style="height:45px"></div>
+
+                    <div class="wprt-icon-box style-4 clearfix icon-left w85 grey-outline align-left has-width">
+                      <div class="icon-wrap">
+                        <i class="as-icon-wheel-alignment"></i>
+                      </div>
+
+                      <h3 class="heading">
+                        <a href="#">WHEEL ALIGNMENT</a>
+                      </h3>
+
+                      <p class="desc">We provide top-notch service for import and domestic car repairs. Brakes Prepair, Tune Ups, Engine
+                        Repair, Electrical and A.C Systems</p>
+                    </div>
+                    <!-- /.wprt-icon-box -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="35" data-smobi="35" style="height:45px"></div>
+
+                    <div class="wprt-icon-box style-4 clearfix icon-left w85 grey-outline align-left has-width">
+                      <div class="icon-wrap">
+                        <i class="as-icon-maintenance"></i>
+                      </div>
+
+                      <h3 class="heading">
+                        <a href="#">MAINTENANCE PACKAGES</a>
+                      </h3>
+
+                      <p class="desc">We provide top-notch service for import and domestic car repairs. Brakes Prepair, Tune Ups, Engine
+                        Repair, Electrical and A.C Systems</p>
+                    </div>
+                    <!-- /.wprt-icon-box -->
+                  </div>
+                  <!-- /.col-md-6 -->
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="70" data-mobi="60" data-smobi="60" style="height:70px"></div>
+                  </div>
+                  <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.container -->
+            </div>
+            <!--END OUR COMPANY-->
 
             <!-- NEWS -->
             <div class="row-news">
@@ -401,7 +585,7 @@
             </div>
             <!-- END NEWS -->
 
-
+            <!--COUNTER-->
             <div class="row-facts-1 parallax">
               <div class="container">
                 <div class="row">
@@ -428,7 +612,7 @@
                             <span class="number " data-speed="2000" data-to="320" data-inviewport="yes">320</span>
                             <span class="suffix">+</span>
                           </div>
-                          <h3 class="heading">TECHNICIALS</h3>
+                          <h3 class="heading">TECHNICIANS</h3>
                         </div>
                       </div>
                     </div>
@@ -478,7 +662,7 @@
                             <span class="number " data-speed="2000" data-to="890" data-inviewport="yes">890</span>
                             <span class="suffix">+</span>
                           </div>
-                          <h3 class="heading">DONE PROJECTS</h3>
+                          <h3 class="heading">REPAIRS</h3>
                         </div>
                       </div>
                     </div>
@@ -502,7 +686,7 @@
                             <span class="number " data-speed="2000" data-to="640" data-inviewport="yes">640</span>
                             <span class="suffix">+</span>
                           </div>
-                          <h3 class="heading">WON AWARDS</h3>
+                          <h3 class="heading">VEHICLES SERVICED</h3>
                         </div>
                       </div>
                     </div>
@@ -522,8 +706,7 @@
               </div>
               <!-- /.container -->
             </div>
-
-
+            <!--COUNTER END-->
 
             <!-- PROMOTION -->
             <div class="row-promotion bg-accent">
@@ -559,6 +742,7 @@
               <!-- /.container -->
             </div>
             <!-- END PROMOTION -->
+
           </div>
           <!-- /.page-content -->
         </div>
@@ -568,5 +752,4 @@
     </div>
     <!-- /#content-wrap -->
   </div>
-
 </template>
