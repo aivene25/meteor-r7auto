@@ -1,18 +1,15 @@
-Template.shopCarsItem.onCreated( function(){
-  
-})
+Template.shopCarsItem.onCreated(function() {});
 
 Template.shopCarsItem.helpers({
-  relatedProducts:()=>{
+  relatedProducts: () => {
     console.log("testing value of undefined");
     return Cars.find().fetch();
   },
-  formatPrice( price){
+  formatPrice(price) {
     let val = price.toLocaleString("en");
     return val;
   }
-})
-
+});
 
 Template.shopCarsItem.onRendered(function() {
   var tabs = function() {
@@ -232,8 +229,178 @@ Template.shopCarsItem.onRendered(function() {
       });
     }
   };
+  var carouselBoxOwl = function() {
+    if ($().owlCarousel) {
+      $(".wprt-carousel-box").each(function() {
+        var $this = $(this),
+          auto = $this.data("auto"),
+          loop = $this.data("loop"),
+          item = $this.data("column"),
+          item2 = $this.data("column2"),
+          item3 = $this.data("column3"),
+          gap = Number($this.data("gap"));
 
-  $(".owl-carousel").owlCarousel();
+        $this.find(".owl-carousel").owlCarousel({
+          loop: loop,
+          margin: gap,
+          nav: true,
+          navigation: true,
+          pagination: true,
+          autoplay: auto,
+          autoplayTimeout: 5000,
+          responsive: {
+            0: {
+              items: item3
+            },
+            600: {
+              items: item2
+            },
+            1000: {
+              items: item
+            }
+          }
+        });
+      });
+    }
+  };
+
+  var galleryOwl = function() {
+    if ($().owlCarousel) {
+      $(".wprt-gallery").each(function() {
+        var $this = $(this),
+          auto = $this.data("auto"),
+          item = $this.data("column"),
+          item2 = $this.data("column2"),
+          item3 = $this.data("column3"),
+          gap = Number($this.data("gap"));
+
+        $this.find(".owl-carousel").owlCarousel({
+          loop: false,
+          margin: gap,
+          nav: true,
+          navigation: true,
+          pagination: true,
+          autoplay: auto,
+          autoplayTimeout: 5000,
+          responsive: {
+            0: {
+              items: item3
+            },
+            600: {
+              items: item2
+            },
+            1000: {
+              items: item
+            }
+          }
+        });
+      });
+    }
+  };
+
+  var newsOwl = function() {
+    if ($().owlCarousel) {
+      $(".wprt-news").each(function() {
+        var $this = $(this),
+          auto = $this.data("auto"),
+          item = $this.data("column"),
+          item2 = $this.data("column2"),
+          item3 = $this.data("column3"),
+          gap = Number($this.data("gap"));
+
+        $this.find(".owl-carousel").owlCarousel({
+          loop: false,
+          margin: gap,
+          nav: true,
+          navigation: true,
+          pagination: true,
+          autoplay: auto,
+          autoplayTimeout: 5000,
+          responsive: {
+            0: {
+              items: item3
+            },
+            600: {
+              items: item2
+            },
+            1000: {
+              items: item
+            }
+          }
+        });
+      });
+    }
+  };
+
+  var teamOwl = function() {
+    if ($().owlCarousel) {
+      $(".wprt-team").each(function() {
+        var $this = $(this),
+          auto = $this.data("auto"),
+          item = $this.data("column"),
+          item2 = $this.data("column2"),
+          item3 = $this.data("column3"),
+          gap = Number($this.data("gap"));
+
+        $this.find(".owl-carousel").owlCarousel({
+          loop: false,
+          margin: gap,
+          nav: true,
+          navigation: true,
+          pagination: true,
+          autoplay: auto,
+          autoplayTimeout: 5000,
+          responsive: {
+            0: {
+              items: item3
+            },
+            600: {
+              items: item2
+            },
+            1000: {
+              items: item
+            }
+          }
+        });
+      });
+    }
+  };
+
+  var partnerOwl = function() {
+    if ($().owlCarousel) {
+      $(".wprt-partner").each(function() {
+        var $this = $(this),
+          auto = $this.data("auto"),
+          loop = $this.data("loop"),
+          item = $this.data("column"),
+          item2 = $this.data("column2"),
+          item3 = $this.data("column3"),
+          gap = Number($this.data("gap"));
+
+        $this.find(".owl-carousel").owlCarousel({
+          loop: loop,
+          margin: gap,
+          nav: true,
+          navigation: true,
+          pagination: true,
+          autoplay: auto,
+          autoplayTimeout: 5000,
+          responsive: {
+            0: {
+              items: item3
+            },
+            600: {
+              items: item2
+            },
+            1000: {
+              items: item
+            }
+          }
+        });
+      });
+    }
+  };
+
   animation();
   parallax();
   spacer();
@@ -242,4 +409,9 @@ Template.shopCarsItem.onRendered(function() {
   thumbSlider();
   accordions();
   imagePopup();
+  partnerOwl();
+  newsOwl();
+  galleryOwl();
+  teamOwl();
+  carouselBoxOwl();
 });

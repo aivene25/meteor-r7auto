@@ -1,6 +1,8 @@
 Template.home.onCreated(function() {
   let sub = this.subscribe("services.all");
   let blog = this.subscribe("posts.all");
+  let parts = this.subscribe("parts.all");
+  let cars = this.subscribe("cars.all");
   this.autorun(function() {
     if (sub.ready() == true) {
       let res = Services.find({}, {}).fetch();
@@ -10,6 +12,14 @@ Template.home.onCreated(function() {
       let res = Posts.find({}, {}).fetch();
       Session.setPersistent("posts", res);
     }
+    if (parts.ready() == true) {
+      let res = SpareParts.find({}, {}).fetch();
+      Session.setPersistent("parts", res);
+    }
+    if (cars.ready() == true) {
+      let res = Cars.find({}, {}).fetch();
+      Session.setPersistent("cars", res);
+    }
   });
 });
 
@@ -18,8 +28,13 @@ Template.home.helpers({
     return Session.get("services");
   },
   posts: function() {
-    console.log(Session.get("posts"));
     return Session.get("posts");
+  },
+  parts: function() {
+    return Session.get("parts");
+  },
+  cars: function(){
+    return Session.get("cars");
   }
 });
 
@@ -338,15 +353,17 @@ Template.home.onRendered(function() {
       });
     }
   };
-
-  animation();
-  parallax();
-  counter();
-  accordions();
-  spacer();
-  imagePopup();
-  carouselBoxOwl();
-  partnerOwl();
-  newsOwl();
-  teamOwl();
+  Meteor.setTimeout(() => {
+    animation();
+    parallax();
+    counter();
+    accordions();
+    spacer();
+    imagePopup();
+    carouselBoxOwl();
+    partnerOwl();
+    newsOwl();
+    teamOwl();
+    galleryOwl();
+  }, 555);
 });

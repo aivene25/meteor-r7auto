@@ -1,172 +1,173 @@
 <template name="header">
-    <!-- Header Wrap -->
-    <div id="site-header-wrap">
-        <!-- Top Bar -->
-        <div id="top-bar">
-            <div id="top-bar-inner" class="wprt-container">
-                <div class="top-bar-inner-wrap">
-                    <div class="top-bar-content">
-                        <span class="address content">1379 Bordillon Lane, Ikoyi</span>
-                    </div>
-                    <!-- /.top-bar-content -->
+  <!-- Header Wrap -->
+  <div id="site-header-wrap">
+    <!-- Top Bar -->
+    <div id="top-bar">
+      <div id="top-bar-inner" class="wprt-container">
+        <div class="top-bar-inner-wrap">
+          <div class="top-bar-content">
+            <!--
+              <span class="address content">1379 Lorem Ipsum, Ikoyi</span>
+            -->
+          </div>
+          <!-- /.top-bar-content -->
+          <div class="top-bar-socials">
+            <div class="inner">
+              <span class="texts">Follow us</span>
+              <span class="icons">
+                <a href="https://facebook.com/r7autoservices" title="Facebook" target="_blank">
+                  <span class="rt-icon-facebook" aria-hidden="true"></span>
+                </a>
+                <a href="https://twitter.com/r7auto" title="Twitter">
+                  <span class="rt-icon-twitter" aria-hidden="true"></span>
+                </a>
 
-                    <div class="top-bar-socials">
-                        <div class="inner">
-                            <span class="texts">Follow us</span>
-                            <span class="icons">
-                                <a href="https://facebook.com/r7autoservices" title="Facebook" target="_blank">
-                                    <span class="rt-icon-facebook" aria-hidden="true"></span>
-                                </a>
-                                <a href="https://twitter.com/r7auto" title="Twitter">
-                                    <span class="rt-icon-twitter" aria-hidden="true"></span>
-                                </a>
+                <a href="https://instagram.com/r7auto" title="Instagram">
+                  <span class="rt-icon-instagram" aria-hidden="true"></span>
+                </a>
+                <a href="#" title="Vimeo">
+                  <span class="rt-icon-vimeo" aria-hidden="true"></span>
+                </a>
 
-                                <a href="https://instagram.com/r7auto" title="Instagram">
-                                    <span class="rt-icon-instagram" aria-hidden="true"></span>
-                                </a>
-                                <a href="#" title="Vimeo">
-                                    <span class="rt-icon-vimeo" aria-hidden="true"></span>
-                                </a>
-
-                            </span>
-                        </div>
-                    </div>
-                    <!-- /.top-bar-socials -->
-                </div>
+              </span>
             </div>
+          </div>
+          <!-- /.top-bar-socials -->
         </div>
-        <!-- /#top-bar -->
-
-        <!-- Header -->
-        <header id="site-header">
-            <div id="site-header-inner" class="wprt-container">
-                <div class="wrap-inner">
-                    <div id="site-logo" class="clearfix">
-                        <div id="site-logo-inner">
-                            <a href="/" title="R7Auto" rel="home" class="main-logo">
-                                <img src="/assets/img/r7auto-logo.png" width="120" height="52" alt="R7Auto AutoService" data-retina="/assets/img/r7auto-logo.png"
-                                    data-width="120" data-height="52">
-                            </a>
-                        </div>
-                    </div>
-                    <!-- #site-logo -->
-
-                    <div class="mobile-button">
-                        <span></span>
-                    </div>
-                    <!-- //mobile menu button -->
-
-                    <div id="header-aside">
-                        <div class="header-aside-btn">
-                            <a target="_blank" href="/services">
-                                <span>BOOK A SERVICE</span>
-                            </a>
-                        </div>
-
-                        <div class="header-info">
-                            <div class="inner">
-                                <div class="info-one">
-                                    <div class="info-wrap">
-                                        <div class="info-i">
-                                            <span>
-                                                <i class="rt-icon-chat2"></i>
-                                            </span>
-                                        </div>
-                                        <div class="info-c">
-                                            <span class="title">+234-9099-828-744</span>
-                                            <br>
-                                            <span class="subtitle">hello@r7auto.com</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="info-two">
-                                    <div class="info-wrap">
-                                        <div class="info-i">
-                                            <span>
-                                                <i class="rt-icon-alarm-clock"></i>
-                                            </span>
-                                        </div>
-                                        <div class="info-c">
-                                            <span class="title">8:00AM - 8.00PM</span>
-                                            <br>
-                                            <span class="subtitle">Monday to Saturday</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /#header-aside -->
-                </div>
-            </div>
-            <!-- /#site-header-inner -->
-
-            <div class="site-navigation-wrap">
-                <div class="wprt-container inner">
-                    <nav id="main-nav" class="main-nav">
-                        <ul id="menu-primary-menu" class="menu">
-                            <li class="menu-item current-menu-item menu-item-has-children">
-                                <a href="{{pathFor route='home'}}">HOME</a>
-                            </li>
-
-                            <li class="menu-item menu-item-has-children">
-                                <a href="#">PAGES</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item">
-                                        <a href="/about">About Us</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="/register">Register</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="contact">Contact Us</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item menu-item-has-children">
-                                <a href="#">SHOP</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item">
-                                        <a href="/shop/parts">Buy Spare Parts </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="/shop/cars">Buy Cars</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="menu-item">
-                                <a href="/services">SERVICES</a>
-                            </li>
-
-                            <li class="menu-item">
-                                <a href="{{pathFor route='blog'}}">BLOG</a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <div id="header-search">
-                        <a class="header-search-icon" href="#">
-                            <span class="rt-icon-search2"></span>
-                        </a>
-                        <form role="search" method="get" class="header-search-form" action="#">
-                            <label class="screen-reader-text">Search for:</label>
-                            <input type="text" value="" name="s" class="header-search-field" placeholder="Type and hit enter...">
-                            <button type="submit" class="header-search-submit" title="Search">Search</button>
-                        </form>
-                    </div>
-
-                    <div id="header-search">
-                        {{>cart}}
-                    </div>
-                    <!-- /#header-search -->
-                </div>
-            </div>
-            <!-- /.site-navigation-wrap -->
-        </header>
-        <!-- /#site-header -->
+      </div>
     </div>
-    <!-- #site-header-wrap -->
+    <!-- /#top-bar -->
+
+    <!-- Header -->
+    <header id="site-header">
+      <div id="site-header-inner" class="wprt-container">
+        <div class="wrap-inner">
+          <div id="site-logo" class="clearfix">
+            <div id="site-logo-inner">
+              <a href="/" title="R7Auto" rel="home" class="main-logo">
+                <img src="/assets/img/r7auto-logo.png" width="120" height="52" alt="R7Auto AutoService" data-retina="/assets/img/r7auto-logo.png"
+                  data-width="120" data-height="52">
+              </a>
+            </div>
+          </div>
+          <!-- #site-logo -->
+
+          <div class="mobile-button">
+            <span></span>
+          </div>
+          <!-- //mobile menu button -->
+
+          <div id="header-aside">
+            <div class="header-aside-btn">
+              <a target="_blank" href="/services">
+                <span>BOOK A SERVICE</span>
+              </a>
+            </div>
+
+            <div class="header-info">
+              <div class="inner">
+                <div class="info-one">
+                  <div class="info-wrap">
+                    <div class="info-i">
+                      <span>
+                        <i class="rt-icon-chat2"></i>
+                      </span>
+                    </div>
+                    <div class="info-c">
+                      <span class="title">+234-9099-828-744</span>
+                      <br>
+                      <span class="subtitle">hello@r7auto.com</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="info-two">
+                  <div class="info-wrap">
+                    <div class="info-i">
+                      <span>
+                        <i class="rt-icon-alarm-clock"></i>
+                      </span>
+                    </div>
+                    <div class="info-c">
+                      <span class="title">8:00AM - 8.00PM</span>
+                      <br>
+                      <span class="subtitle">Monday to Saturday</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /#header-aside -->
+        </div>
+      </div>
+      <!-- /#site-header-inner -->
+
+      <div class="site-navigation-wrap">
+        <div class="wprt-container inner">
+          <nav id="main-nav" class="main-nav">
+            <ul id="menu-primary-menu" class="menu">
+              <li class="menu-item current-menu-item">
+                <a href="{{pathFor route='home'}}">HOME</a>
+              </li>
+
+              <li class="menu-item menu-item-has-children">
+                <a href="#">PAGES</a>
+                <ul class="sub-menu">
+                  <li class="menu-item">
+                    <a href="/about">About Us</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="/register">Register</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="contact">Contact Us</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item menu-item-has-children">
+                <a href="#">SHOP</a>
+                <ul class="sub-menu">
+                  <li class="menu-item">
+                    <a href="/shop/parts">Buy Spare Parts </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="/shop/cars">Buy Cars</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="menu-item">
+                <a href="/services">SERVICES</a>
+              </li>
+
+              <li class="menu-item">
+                <a href="{{pathFor route='blog'}}">BLOG</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div id="header-search">
+            <a class="header-search-icon" href="#">
+              <span class="rt-icon-search2"></span>
+            </a>
+            <form role="search" method="get" class="header-search-form" action="#">
+              <label class="screen-reader-text">Search for:</label>
+              <input type="text" value="" name="s" class="header-search-field" placeholder="Type and hit enter...">
+              <button type="submit" class="header-search-submit" title="Search">Search</button>
+            </form>
+          </div>
+
+          <div id="header-search">
+            {{>cart}}
+          </div>
+          <!-- /#header-search -->
+        </div>
+      </div>
+      <!-- /.site-navigation-wrap -->
+    </header>
+    <!-- /#site-header -->
+  </div>
+  <!-- #site-header-wrap -->
 
 </template>

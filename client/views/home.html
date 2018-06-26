@@ -48,7 +48,7 @@
                       data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
                       data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];"
                       data-mask_out="x:inherit;y:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                      <a href="#" class="wprt-button accent big">GET FREE QUOTES</a>
+                      <a href="/services" class="wprt-button accent big">GET FREE QUOTES</a>
                     </div>
                   </li>
                   <!-- /End Slide 1 -->
@@ -92,7 +92,7 @@
                       data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
                       data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];"
                       data-mask_out="x:inherit;y:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                      <a href="#" class="wprt-button accent big">GET FREE QUOTES</a>
+                      <a href="/services" class="wprt-button accent big">GET FREE QUOTES</a>
                     </div>
                   </li>
                   <!-- /End Slide 2 -->
@@ -136,7 +136,7 @@
                       data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
                       data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];"
                       data-mask_out="x:inherit;y:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                      <a href="#" class="wprt-button accent big">GET FREE QUOTES</a>
+                      <a href="/services" class="wprt-button accent big">GET FREE QUOTES</a>
                     </div>
                   </li>
                   <!-- /End Slide 3 -->
@@ -207,6 +207,72 @@
             </div>
             <!-- END SERVICES -->
 
+            <div class="row-team">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="83" data-mobi="60" data-smobi="60"></div>
+
+                    <div class="wprt-headings style-1 clearfix text-center">
+                      <h2 class="heading clearfix">CERTIFIED SPARE PARTS</h2>
+                      <div class="sep clearfix"></div>
+                      <p class="sub-heading clearfix">Our professionals will perform diagnostic tests, fluid flush and fills, engine replacement, oil changes,
+                        and total vehicle overhauls.
+                      </p>
+                    </div>
+                    <!-- /.wprt-headings -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="40" data-smobi="40"></div>
+
+                    <div class="wprt-team has-shadow bullet-circle has-bullets" data-auto="false" data-column="4" data-column2="2" data-column3="1"
+                      data-gap="30">
+                      <div class="owl-carousel owl-theme">
+                        {{#each item in parts}}
+                        <div class="team-item clearfix">
+                          <div class="inner">
+                            <div class="thumb">
+                              <img src="{{item.Image}}" alt="Image">
+                              <ul class="socials clearfix">
+                                <li class="twitter">
+                                  <a href="#">
+                                    <i class="rt-icon-cart-2"></i>
+                                  </a>
+                                </li>
+                                <li class="facebook">
+                                  <a href="#">
+                                    <i class="rt-icon-2-comment"></i>
+                                  </a>
+                                </li>
+                                <li class="linkedin">
+                                  <a href="#">
+                                    <i class="rt-icon-zoom-in-2"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- /.thumb -->
+                            <div class="text-wrap">
+                              <a href="/parts/{{item._id}}">
+                                <h4 class="name">{{ item.Title}}</h4>
+                              </a>
+                              <!--<div class="position">MARKETING MANAGER</div>-->
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.team-item -->
+                        {{/each}}
+                      </div>
+                    </div>
+                    <!-- /.wprt-team -->
+                    <div class="wprt-spacer clearfix" data-desktop="70" data-mobi="40" data-smobi="40"></div>
+                  </div>
+                  <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.container -->
+            </div>
+            <!-- END TEAM -->
 
             <!-- GALLERY -->
             <div class="row-gallery">
@@ -214,9 +280,8 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="wprt-spacer clearfix" data-desktop="83" data-mobi="60" data-smobi="60"></div>
-
                     <div class="wprt-headings style-1 clearfix text-center">
-                      <h2 class="heading clearfix">OUR GALLERY</h2>
+                      <h2 class="heading clearfix">VEHICLES</h2>
                       <div class="sep clearfix"></div>
                       <p class="sub-heading clearfix">Our professionals will perform diagnostic tests, fluid flush and fills, engine replacement, oil changes,
                         and total vehicle overhauls.</p>
@@ -228,137 +293,30 @@
                     <div class="wprt-gallery has-arrows arrow-center offsetcenter offset-v0" data-auto="false" data-column="3" data-column2="2"
                       data-column3="1" data-gap="20">
                       <div class="owl-carousel owl-theme">
+                        {{#each item in cars}}
                         <div class="gallery-box">
                           <div class="inner">
                             <div class="hover-effect">
                               <div class="gallery-image">
-                                <img src="/assets/img/works/work-1-640x640.jpg" alt="Image">
+                                <img src="{{item.Image}}" alt="Image">
                               </div>
 
                               <div class="text">
                                 <div class="icon">
-                                  <a class="zoom-popup" href="/assets/img/works/work-1-full.jpg">
+                                  <a class="zoom-popup" href="{{item.Image}}">
                                     <i class="rt-icon-zoom-in-2"></i>
                                   </a>
                                 </div>
                                 <h2>
-                                  <a href="#" title="#">TUNE-UPS SYSTEM</a>
+                                  <a href="/shop/cars/{{item._id}}" title="{{item.Name}}">{{item.Name}}</a>
                                 </h2>
                               </div>
                             </div>
                           </div>
                         </div>
                         <!-- /.gallery-box -->
+                        {{/each}}
 
-                        <div class="gallery-box">
-                          <div class="inner">
-                            <div class="hover-effect">
-                              <div class="gallery-image">
-                                <img src="/assets/img/works/work-2-640x640.jpg" alt="Image">
-                              </div>
-
-                              <div class="text">
-                                <div class="icon">
-                                  <a class="zoom-popup" href="/assets/img/works/work-2-full.jpg">
-                                    <i class="rt-icon-zoom-in-2"></i>
-                                  </a>
-                                </div>
-                                <h2>
-                                  <a href="#" title="#">ENGINE OIL CHANGE</a>
-                                </h2>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.gallery-box -->
-
-                        <div class="gallery-box">
-                          <div class="inner">
-                            <div class="hover-effect">
-                              <div class="gallery-image">
-                                <img src="/assets/img/works/work-3-640x640.jpg" alt="Image">
-                              </div>
-
-                              <div class="text">
-                                <div class="icon">
-                                  <a class="zoom-popup" href="/assets/img/works/work-3-full.jpg">
-                                    <i class="rt-icon-zoom-in-2"></i>
-                                  </a>
-                                </div>
-                                <h2>
-                                  <a href="#" title="#">CHECKING CAR ENGINE</a>
-                                </h2>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.gallery-box -->
-
-                        <div class="gallery-box">
-                          <div class="inner">
-                            <div class="hover-effect">
-                              <div class="gallery-image">
-                                <img src="/assets/img/works/work-4-640x640.jpg" alt="Image">
-                              </div>
-
-                              <div class="text">
-                                <div class="icon">
-                                  <a class="zoom-popup" href="/assets/img/works/work-4-full.jpg">
-                                    <i class="rt-icon-zoom-in-2"></i>
-                                  </a>
-                                </div>
-                                <h2>
-                                  <a href="#" title="#">AIR CONDITIONING</a>
-                                </h2>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.gallery-box -->
-
-                        <div class="gallery-box">
-                          <div class="inner">
-                            <div class="hover-effect">
-                              <div class="gallery-image">
-                                <img src="/assets/img/works/work-5-640x640.jpg" alt="Image">
-                              </div>
-
-                              <div class="text">
-                                <div class="icon">
-                                  <a class="zoom-popup" href="/assets/img/works/work-5-full.jpg">
-                                    <i class="rt-icon-zoom-in-2"></i>
-                                  </a>
-                                </div>
-                                <h2>
-                                  <a href="#" title="#">WHEEL ALIGNMENT</a>
-                                </h2>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.gallery-box -->
-
-                        <div class="gallery-box">
-                          <div class="inner">
-                            <div class="hover-effect">
-                              <div class="gallery-image">
-                                <img src="/assets/img/works/work-6-640x640.jpg" alt="Image">
-                              </div>
-
-                              <div class="text">
-                                <div class="icon">
-                                  <a class="zoom-popup" href="/assets/img/works/work-6-full.jpg">
-                                    <i class="rt-icon-zoom-in-2"></i>
-                                  </a>
-                                </div>
-                                <h2>
-                                  <a href="#" title="#">CAR MAINTENANCE</a>
-                                </h2>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.gallery-box -->
                       </div>
                     </div>
                     <!-- /.wprt-gallery -->
@@ -367,7 +325,7 @@
 
                     <div class="wprt-align-box text-center">
                       <div class="button-wrap icon-left">
-                        <a href="#" class="wprt-button outline light">SEE FULL GALLERY</a>
+                        <a href="/shop/cars" class="wprt-button outline light">SEE ALL VEHICLES </a>
                       </div>
                     </div>
 
@@ -380,104 +338,6 @@
               <!-- /.container -->
             </div>
             <!-- END GALLERY -->
-
-
-            <div class="row-team">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="wprt-spacer clearfix" data-desktop="83" data-mobi="60" data-smobi="60"></div>
-
-                    <div class="wprt-headings style-1 clearfix text-center">
-                      <h2 class="heading clearfix">CERTIFIED SPARE PARTS</h2>
-                      <div class="sep clearfix"></div>
-                      <p class="sub-heading clearfix">Our professionals will perform diagnostic tests, fluid flush and fills, engine replacement, oil changes,
-                        and total vehicle overhauls.</p>
-                    </div>
-                    <!-- /.wprt-headings -->
-
-                    <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="40" data-smobi="40"></div>
-
-                    <div class="wprt-team has-shadow bullet-circle has-bullets" data-auto="false" data-column="4" data-column2="2" data-column3="1"
-                      data-gap="30">
-                      <div class="owl-carousel owl-theme">
-                        <div class="team-item clearfix">
-                          <div class="inner">
-                            <div class="thumb">
-                              <img src="assets/img/team/member-1-303x363.jpg" alt="Image">
-                              <ul class="socials clearfix">
-                                <li class="twitter">
-                                  <a href="#">
-                                    <i class="rt-icon-twitter"></i>
-                                  </a>
-                                </li>
-                                <li class="facebook">
-                                  <a href="#">
-                                    <i class="rt-icon-facebook"></i>
-                                  </a>
-                                </li>
-                                <li class="linkedin">
-                                  <a href="#">
-                                    <i class="rt-icon-linkedin"></i>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <!-- /.thumb -->
-
-                            <div class="text-wrap">
-                              <h4 class="name">BARBARA MCLAREN</h4>
-                              <div class="position">MARKETING MANAGER</div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.team-item -->
-
-                        <div class="team-item clearfix">
-                          <div class="inner">
-                            <div class="thumb">
-                              <img src="assets/img/team/member-2-303x363.jpg" alt="Image">
-                              <ul class="socials clearfix">
-                                <li class="twitter">
-                                  <a href="#">
-                                    <i class="rt-icon-twitter"></i>
-                                  </a>
-                                </li>
-                                <li class="facebook">
-                                  <a href="#">
-                                    <i class="rt-icon-facebook"></i>
-                                  </a>
-                                </li>
-                                <li class="linkedin">
-                                  <a href="#">
-                                    <i class="rt-icon-linkedin"></i>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <!-- /.thumb -->
-
-                            <div class="text-wrap">
-                              <h4 class="name">BARBARA MCLAREN</h4>
-                              <div class="position">MARKETING MANAGER</div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /.team-item -->
-
-                      </div>
-                    </div>
-                    <!-- /.wprt-team -->
-
-                    <div class="wprt-spacer clearfix" data-desktop="70" data-mobi="40" data-smobi="40"></div>
-                  </div>
-                  <!-- /.col-md-12 -->
-                </div>
-                <!-- /.row -->
-              </div>
-              <!-- /.container -->
-            </div>
-            <!-- END TEAM -->
 
             <!-- NEWS -->
             <div class="row-news">
