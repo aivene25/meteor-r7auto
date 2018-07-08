@@ -25,6 +25,7 @@ Template.home.onCreated(function() {
 
 Template.home.helpers({
   data: function() {
+    console.log("Services are", Session.get("services") );
     return Session.get("services");
   },
   posts: function() {
@@ -67,6 +68,7 @@ Template.home.events({
     //Session.setPersistent("cartItems", cartItems);
   }
 });
+
 
 Template.home.onRendered(function() {
   // taken from --rev-slider.js to initialize slider
@@ -384,17 +386,20 @@ Template.home.onRendered(function() {
     }
   };
   
+  animation();
+  parallax();
+  counter();
+  accordions();
+  spacer();
+  imagePopup();
+  carouselBoxOwl();
+  partnerOwl();
+  newsOwl();
+  teamOwl();
+  galleryOwl();
+
   Meteor.setTimeout(() => {
-    animation();
-    parallax();
-    counter();
-    accordions();
-    spacer();
-    imagePopup();
-    carouselBoxOwl();
-    partnerOwl();
-    newsOwl();
-    teamOwl();
-    galleryOwl();
-  }, 555);
+    alert("I have rendered");
+  }, 7000);
+
 });
