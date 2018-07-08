@@ -70,7 +70,6 @@ Template.services.onRendered(function() {
       );
     });
   };
-
   animation();
   parallax();
   spacer();
@@ -81,3 +80,7 @@ Template.services.helpers({
     return Services.find({}, {}).fetch();
   }
 });
+
+Template.services.onDestroyed( function(){
+  
+})
