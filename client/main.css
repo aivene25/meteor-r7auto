@@ -30,3 +30,9 @@
 .uppercase{
   text-transform: uppercase
 }
+.products li h2{
+  font-size:17px;
+}
+.products li .product-info{
+  background-color: transparent
+}

@@ -826,20 +826,22 @@
   };
 
   // Dom Ready
+  
   $(function() {
-    //spacer();
+    /*
+    spacer();
     scrollTarget();
     hereSection();
     galleriesCube();
     imagesCube();
     thumbSlider();
-    //accordions();
+    accordions();
     imagePopup();
     contentBox();
-    //counter();
-    //animation();
+    counter();
+    animation();
     videoPopup();
-    //tabs();
+    tabs();
     newsOwl();
     galleryOwl();
     teamOwl();
@@ -847,11 +849,12 @@
     progressBar();
     equalizeHeight();
     ajaxContactForm();
-    //googleMap();
+    googleMap();
     $(window).load(function() {
-      //spacer();
+      spacer();
       carouselBoxOwl();
       inViewport();
     });
+    */
   });
 })(jQuery);

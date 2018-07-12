@@ -3,6 +3,3 @@ Meteor.startup(() => {
     cloud_name: "divk5nutg";
   });
   
-  Template.withSidebar.onRendered(function() {
- });
-  
