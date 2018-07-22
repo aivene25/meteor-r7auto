@@ -1,106 +1,144 @@
 <template name="cartView">
-  <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
-    <thead>
-      <tr>
-        <th class="product-remove">&nbsp;</th>
-        <th class="product-thumbnail">Preview</th>
-        <th class="product-name">Product</th>
-        <th class="product-price">Price</th>
-        <th class="product-quantity">Quantity</th>
-        <th class="product-subtotal">Total</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="woocommerce-cart-form__cart-item cart_item">
-        <td class="product-remove">
-          <a href="http://quanticalabs.com/wp_themes/carservice/cart/?remove_item=7cbbc409ec990f19c78c75bd1e06f215&amp;_wpnonce=1ba2825096"
-            class="remove" aria-label="Remove this item" data-product_id="70" data-product_sku="">×</a>
-        </td>
+  <div id="main-content" class="site-main clearfix">
+    <div id="content-wrap">
+      <div id="site-content" class="site-content clearfix">
+        <div id="inner-content" class="inner-content-wrap">
+          <div class="page-content">
+            <div class="container">
+              <div class="row">
+                <div class="wprt-spacer clearfix" data-desktop="94" data-mobi="60" data-smobi="60"></div>
+                <div class="col-md-12">
 
-        <td class="product-thumbnail">
-          <a href="http://quanticalabs.com/wp_themes/carservice/product/flying-ninja/">
-            <img width="300" height="300" src="http://quanticalabs.com/wp_themes/carservice/files/2013/06/poster_2_up.jpg"
-              class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt="">
-          </a>
-        </td>
+                  <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th class="product-remove">&nbsp;</th>
+                        <th class="product-thumbnail">Preview</th>
+                        <th class="product-name">Product</th>
+                        <th class="product-price">Price</th>
+                        <th class="product-quantity">Quantity</th>
+                        <th class="product-subtotal">Total</th>
+                      </tr>
+                    </thead>
 
-        <td class="product-name" data-title="Product">
-          <a href="http://quanticalabs.com/wp_themes/carservice/product/flying-ninja/">Flying Ninja</a>
-        </td>
+                    <tbody>
+                      {{#each data}}
+                      <tr class="woocommerce-cart-form__cart-item cart_item">
+                        <td class="product-remove" style="text-align: center">
+                          <a href="#" class="remove" aria-label="Remove this item">×</a>
+                        </td>
 
-        <td class="product-price" data-title="Price">
-          <span class="woocommerce-Price-amount amount">
-            <span class="woocommerce-Price-currencySymbol">$</span>12.00</span>
-        </td>
+                        <td class="product-thumbnail">
+                          <a href="#">
+                            <img width="300" height="300" src="http://quanticalabs.com/wp_themes/carservice/files/2013/06/poster_2_up.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+                              alt="">
+                          </a>
+                        </td>
 
-        <td class="product-quantity" data-title="Quantity">
-          <div class="quantity">
-            <label class="screen-reader-text" for="quantity_5b547890ad6dc">Quantity</label>
-            <input type="button" class="minus" value="-">
-            <input type="number" id="quantity_5b547890ad6dc" class="input-text qty text" step="1" min="0" max="" name="cart[7cbbc409ec990f19c78c75bd1e06f215][qty]"
-              value="1" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" aria-labelledby="Flying Ninja quantity">
-            <input type="button" class="plus" value="+">
+                        <td class="product-name" data-title="Product">
+                          <a href="#">Flying Ninja</a>
+                        </td>
+
+                        <td class="product-price" data-title="Price">
+                          <span class="woocommerce-Price-amount amount">
+                            <span class="woocommerce-Price-currencySymbol">$</span>12.00</span>
+                        </td>
+
+                        <td class="product-quantity" data-title="Quantity">
+                          <div class="quantity">
+                            <input type="button" class="minus" id="qty-shift" value="-">
+                            <input type="number" class="input-text qty text" step="1" min="1" value="1" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric"
+                              style="width: 50px">
+                            <input type="button" class="plus" value="+" id="qty-shift">
+                          </div>
+                        </td>
+
+                        <td class="product-subtotal" data-title="Total">
+                          <span class="woocommerce-Price-amount amount">
+                            <span class="woocommerce-Price-currencySymbol">$</span>12.00</span>
+                        </td>
+                      </tr>
+                      {{/each}}
+
+                      <tr>
+                        <td colspan="6" class="actions">
+                          <div class="coupon">
+                            <label for="coupon_code">Coupon:</label>
+                            <span class="wpcf7-form-control-wrap your-name">
+                              <input type="text" tabindex="1" id="coupon-code" class="wpcf7-form-control" placeholder="Coupon code" required style="width: 30vw"> 
+                            </span>
+                            <div class="button-wrap margin-right-10 margin-bottom-10 margin-left-10">
+                              <a href="#" class="wprt-button solid outline outline ol-accent">
+                                <span>APPLY COUPON </span>
+                              </a>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <!-- /.wprt-accordions -->
+                  <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="40" data-smobi="40"></div>
+                </div>
+
+                <!-- /.col-md-6 -->
+                <div class="col-md-12">
+                  <div class="wprt-spacer clearfix" data-desktop="65" data-mobi="40" data-smobi="40"></div>
+                  <div class="wprt-divider divider-center divider-solid"></div>
+                  <div class="clearfix"></div>
+                  <div class="wprt-spacer clearfix" data-desktop="75" data-mobi="40" data-smobi="40"></div>
+                </div>
+                <!-- /.col-md-12 -->
+
+                <div class="col-md-12">
+                  <div class="wprt-spacer clearfix" data-desktop="94" data-mobi="60" data-smobi="60"></div>
+                </div>
+                <!-- /.col-md-12 -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.container -->
+
+            <!-- PROMOTION -->
+            <div class="row-promotion bg-accent">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="25" data-mobi="25" data-smobi="35"></div>
+
+                    <div class="wprt-action-box style-1 has-icon">
+                      <div class="inner">
+                        <div class="heading-wrap">
+                          <div class="text-wrap">
+                            <h3 class="heading">Fixed Price MOT Test includes a Comprehensive Safety Check</h3>
+                            <span class="icon">
+                              <i class="as-icon-speedometer2"></i>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="button-wrap">
+                          <a href="#" class="wprt-button white">BOOK YOUR MOT</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="wprt-spacer clearfix" data-desktop="25" data-mobi="25" data-smobi="35"></div>
+                  </div>
+                  <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.container -->
+            </div>
+            <!-- END PROMOTION -->
           </div>
-        </td>
-
-        <td class="product-subtotal" data-title="Total">
-          <span class="woocommerce-Price-amount amount">
-            <span class="woocommerce-Price-currencySymbol">$</span>12.00</span>
-        </td>
-      </tr>
-      <tr class="woocommerce-cart-form__cart-item cart_item">
-
-        <td class="product-remove">
-          <a href="http://quanticalabs.com/wp_themes/carservice/cart/?remove_item=a5bfc9e07964f8dddeb95fc584cd965d&amp;_wpnonce=1ba2825096"
-            class="remove" aria-label="Remove this item" data-product_id="37" data-product_sku="">×</a>
-        </td>
-
-        <td class="product-thumbnail">
-          <a href="http://quanticalabs.com/wp_themes/carservice/product/happy-ninja/">
-            <img width="300" height="300" src="http://quanticalabs.com/wp_themes/carservice/files/2013/06/T_7_front.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
-              alt="">
-          </a>
-        </td>
-
-        <td class="product-name" data-title="Product">
-          <a href="http://quanticalabs.com/wp_themes/carservice/product/happy-ninja/">Happy Ninja</a>
-        </td>
-
-        <td class="product-price" data-title="Price">
-          <span class="woocommerce-Price-amount amount">
-            <span class="woocommerce-Price-currencySymbol">$</span>18.00</span>
-        </td>
-
-        <td class="product-quantity" data-title="Quantity">
-          <div class="quantity">
-            <label class="screen-reader-text" for="quantity_5b547890ae09c">Quantity</label>
-            <input type="button" class="minus" value="-">
-            <input type="number" id="quantity_5b547890ae09c" class="input-text qty text" step="1" min="0" max="" name="cart[a5bfc9e07964f8dddeb95fc584cd965d][qty]"
-              value="1" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" aria-labelledby="Happy Ninja quantity">
-            <input type="button" class="plus" value="+">
-          </div>
-        </td>
-
-        <td class="product-subtotal" data-title="Total">
-          <span class="woocommerce-Price-amount amount">
-            <span class="woocommerce-Price-currencySymbol">$</span>18.00</span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="6" class="actions">
-
-          <div class="coupon">
-            <label for="coupon_code">Coupon:</label>
-            <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Coupon code">
-            <input type="submit" class="button" name="apply_coupon" value="Apply coupon">
-          </div>
-
-          <input type="submit" class="button" name="update_cart" value="Update cart" disabled="">
-
-          <input type="hidden" id="_wpnonce" name="_wpnonce" value="1ba2825096">
-          <input type="hidden" name="_wp_http_referer" value="/wp_themes/carservice/cart/"> </td>
-      </tr>
-
-    </tbody>
-  </table>
+          <!-- /.page-content -->
+        </div>
+        <!-- /#inner-content -->
+      </div>
+      <!-- /#site-content -->
+    </div>
+    <!-- /#content-wrap -->
+  </div>
 </template>
