@@ -59,7 +59,7 @@
                   <div class="cart">
                     <div class="quantity">
                       <label class="screen-reader-text">Quantity</label>
-                      <input type="number" class="input-text qty text" name="quantity" value="1">
+                      <input type="number" class="input-text qty text" name="quantity" value="1" min="1">
                     </div>
 
                     <button name="add-to-cart" id="add-to-cart" class="single_add_to_cart_button button">Add to cart</button>
@@ -124,13 +124,6 @@
                 <!-- /.tab-content-wrap -->
               </div>
               <!-- /.wprt-tabs -->
-
-
-
-
-
-
-
 
               <div class="related products">
                 <h2>Related products</h2>
@@ -246,10 +239,10 @@
                     <span class="woocommerce-Price-currencySymbol">&#8358; </span>{{item.Price}}</span>
                 </ins>
                 <div class="star-rating">
-                    <span class="four">Rated
-                      <strong class="rating">5.00</strong> out of 5</span>
-                  </div>
-                  
+                  <span class="four">Rated
+                    <strong class="rating">5.00</strong> out of 5</span>
+                </div>
+
               </li>
               {{/each}} {{/with}}
             </ul>
