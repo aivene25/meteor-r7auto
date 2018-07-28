@@ -73,74 +73,71 @@
                     <h3 class="heading clearfix">BILLING DETAILS</h3>
                     <div class="sep clearfix"></div>
                   </div>
-                  
-                  <div class="accordion-item no-icon">
-                    <div class="wprt-spacer clearfix" data-desktop="20" data-mobi="20" data-smobi="10"></div>
+                  <div class="wprt-accordions style-1">
+
                     <div class="accordion-item no-icon">
-                      <h3 class="accordion-heading">
-                        <span class="inner">Ship to a different address ?</span>
-                      </h3>
-                      <div class="accordion-content">
-                        <div class="wprt-contact-form style-1">
-                          <form class="contact-form wpcf7-form" novalidate="novalidate">
-                            <span class="wpcf7-form-control-wrap your-name">
-                              <input type="email" tabindex="1" id="email" name="email" value="" class="wpcf7-form-control" placeholder="First Name *" required>
-                            </span>
-                            <span class="wpcf7-form-control-wrap your-email">
-                              <input type="password" tabindex="2" id="subject" name="password" value="" class="wpcf7-form-control" placeholder="Last Name *"
-                                required>
-                            </span>
+                      <div class="wprt-spacer clearfix" data-desktop="20" data-mobi="20" data-smobi="10"></div>
+                      <div class="accordion-item no-icon">
+                        <h3 class="accordion-heading">
+                          <span class="inner">Ship to a different address ?</span>
+                        </h3>
+                        <div class="accordion-content">
+                          <div class="wprt-contact-form style-1">
+                            <form class="contact-form wpcf7-form" novalidate="novalidate">
+                              <span class="wpcf7-form-control-wrap your-name">
+                                <input type="email" tabindex="1" id="email" name="email" value="" class="wpcf7-form-control" placeholder="First Name *" required>
+                              </span>
+                              <span class="wpcf7-form-control-wrap your-email">
+                                <input type="password" tabindex="2" id="subject" name="password" value="" class="wpcf7-form-control" placeholder="Last Name *"
+                                  required>
+                              </span>
 
-                            <span class="wpcf7-form-control-wrap your-subject">
-                              <input type="text" tabindex="2" id="subject" name="password" value="" class="wpcf7-form-control" placeholder="Company" required>
-                            </span>
+                              <span class="wpcf7-form-control-wrap your-subject">
+                                <input type="text" tabindex="2" id="subject" name="password" value="" class="wpcf7-form-control" placeholder="Company" required>
+                              </span>
 
-                            <span class="wpcf7-form-control-wrap your-subject">
-                              <select type="password" tabindex="2" id="subject" name="password" class="wpcf7-form-control">
-                                <option>
-                                  Nigeria
-                                </option>
-                                <option>
-                                  Ghana
-                                </option>
-                                <option>
-                                  Egypt
-                                </option>
-                              </select>
-                            </span>
+                              <span class="wpcf7-form-control-wrap your-subject">
+                                <select tabindex="2" id="country" name="password" class="wpcf7-form-control">
+                                  <option value="Nigeria">
+                                    Nigeria
+                                  </option>
+                                  {{#each country}}
+                                  <option>
+                                    {{this.country}}
+                                  </option>
+                                  {{/each}}
+                                </select>
+                              </span>
 
-                            <span class="wpcf7-form-control-wrap your-subject">
-                              <select type="password" tabindex="2" id="subject" name="password" class="wpcf7-form-control">
-                                <option>
-                                  Lagos
-                                </option>
-                                <option>
-                                  Ibadan
-                                </option>
-                                <option>
-                                  Kwara
-                                </option>
-                              </select>
-                            </span>
-                            <span class="wpcf7-form-control-wrap your-subject">
-                              <input type="text" tabindex="2" id="subject" name="password" value="" class="wpcf7-form-control" placeholder="Company" required>
-                            </span>
+                              <span class="wpcf7-form-control-wrap your-subject">
+                                <select tabindex="2" id="subject" name="password" class="wpcf7-form-control">
+                                  {{#each state}}
+                                  <option>
+                                    {{this}}
+                                  </option>
+                                  {{/each}}
+                                </select>
+                              </span>
+                              <span class="wpcf7-form-control-wrap your-subject">
+                                <input type="text" tabindex="2" id="subject" name="password" value="" class="wpcf7-form-control" placeholder="Company" required>
+                              </span>
 
-                            <span class="wpcf7-form-control-wrap your-subject">
-                              <input type="text" tabindex="2" id="subject" name="password" value="" class="wpcf7-form-control" placeholder="Company" required>
-                            </span>
+                              <span class="wpcf7-form-control-wrap your-subject">
+                                <input type="text" tabindex="2" id="subject" name="password" value="" class="wpcf7-form-control" placeholder="Company" required>
+                              </span>
 
-                            <span class="wpcf7-form-control-wrap your-name">
-                              <input type="email" tabindex="1" id="email" name="email" value="" class="wpcf7-form-control" placeholder="First Name *" required>
-                            </span>
-                            <span class="wpcf7-form-control-wrap your-email">
-                              <input type="password" tabindex="2" id="subject" name="password" value="" class="wpcf7-form-control" placeholder="Last Name *"
-                                required>
-                            </span>
-                            <div class="wrap-submit">
-                              <input type="submit" value="LOGIN" class="submit wpcf7-form-control wpcf7-submit" id="submit" name="submit">
-                            </div>
-                          </form>
+                              <span class="wpcf7-form-control-wrap your-name">
+                                <input type="email" tabindex="1" id="email" name="email" value="" class="wpcf7-form-control" placeholder="First Name *" required>
+                              </span>
+                              <span class="wpcf7-form-control-wrap your-email">
+                                <input type="password" tabindex="2" id="subject" name="password" value="" class="wpcf7-form-control" placeholder="Last Name *"
+                                  required>
+                              </span>
+                              <div class="wrap-submit">
+                                <input type="submit" value="LOGIN" class="submit wpcf7-form-control wpcf7-submit" id="submit" name="submit">
+                              </div>
+                            </form>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -199,10 +196,6 @@
                 </div>
 
                 <!-- /.col-md-6 -->
-
-                <div class="col-md-12">
-                  <div class="wprt-spacer clearfix" data-desktop="94" data-mobi="60" data-smobi="60"></div>
-                </div>
 
                 <div class="col-md-12">
                   <div class="wprt-spacer clearfix" data-desktop="94" data-mobi="60" data-smobi="60"></div>
