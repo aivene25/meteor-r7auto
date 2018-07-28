@@ -176,7 +176,7 @@
 .wprt-headings.left-sep .sep { position: absolute; left: 0; top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
 /* Style 1 */
 .wprt-headings.style-1 .heading { margin-bottom: 8px; }
-.wprt-headings.style-1 .sep { width: 54px; height: 2px; background-color: #dbdbdb; }
+.wprt-headings.style-1 .sep { width: 54px; height: 2px; background-color: #1c63b8; }
 .wprt-headings.style-1 .sub-heading { font-size: 15px; line-height: 30px; margin-top: 17px; }
 
 /* Counter

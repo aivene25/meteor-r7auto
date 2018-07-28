@@ -1,4 +1,8 @@
 /* CSS declarations go here */
+
+.float-left{
+  float: left;
+}
 #main-content {
   padding: 0 0;
 }

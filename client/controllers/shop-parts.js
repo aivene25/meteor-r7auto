@@ -1,3 +1,6 @@
+//#1c63b8
+
+
 import plugins from '../plugins';
 
 Template.shopParts.onCreated(function() {
