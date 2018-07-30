@@ -1,5 +1,4 @@
 import plugins from '../plugins';
-import country from './../countries.json'
 import states from './../states.json'
 
 Template.checkout.onCreated( function(){
@@ -21,14 +20,12 @@ Template.checkout.helpers({
         return val;
       }
     });
-    console.log(res)
     return res[0].states;
   }
 })
 
 Template.checkout.events({
   "change #country":function(event, template){
-    console.log("changed");
     let country = event.currentTarget.value;
     template.country.set(country);
   }
