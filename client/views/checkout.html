@@ -11,6 +11,9 @@
 
                 <div class="col-md-12">
                   <div class="wprt-accordions style-1">
+                    {{#if currentUser}}
+                    <p>Hi, Logged In users name</p>
+                    {{else}}
                     <div class="accordion-item active no-icon">
                       <h3 class="accordion-heading">
                         <span class="inner">Returning customer ? Click here to login</span>
@@ -33,6 +36,8 @@
                         </div>
                       </div>
                     </div>
+
+                    {{/if}}
                     <!-- /.accordion-item -->
 
                     <div class="accordion-item no-icon">
@@ -158,27 +163,29 @@
                         <th>Quantity</th>
                         <th>Price</th>
                       </tr>
+                      {{#each cartItems}}
                       <tr>
-                        <td>Engine</td>
-                        <td>2</td>
-                        <td>#2444</td>
+                        <td>{{product.Title}}</td>
+                        <td>{{quantity}}</td>
+                        <td>{{formatPrice product.Price}}</td>
                       </tr>
-                      <tr>
-                        <td>Engine</td>
-                        <td>2</td>
-                        <td>#2444</td>
-                      </tr>
-                      <tr>
-                        <td>Engine</td>
-                        <td>2</td>
-                        <td>#2444</td>
-                      </tr>
-                      <tr>
-                        <td>Engine</td>
-                        <td>2</td>
-                        <td>#2444</td>
-                      </tr>
+                      {{/each}}
+
                     </table>
+                    <div>
+                      <span>Total
+                        <strong>{{formatPrice totalPrice}}</strong>
+                      </span>
+                    </div>
+                    <div class="button-wrap icon-left separate has-icon">
+                      <a href="#" id="paystack" target="_blank" class="wprt-button small solid accent">
+                        <span>PAY
+                          <span class="icon font-size-18">
+                            <i class="fa fa-download"></i>
+                          </span>
+                        </span>
+                      </a>
+                    </div>
                   </div>
 
                   <div>
@@ -248,5 +255,6 @@
     <!-- /#content-wrap -->
   </div>
   <!-- /#main-content -->
+  <script src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
 
 </template>

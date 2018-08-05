@@ -65,12 +65,11 @@ Template.home.events({
       cartItems.push(data);
     }
     alert("Item added to cart");
-    //Session.setPersistent("cartItems", cartItems);
+    Session.setPersistent("cartItems", cartItems);
   }
 });
 
 Template.home.onRendered( function(){
-  RevSlider.init();
   Meteor.setTimeout( ()=>{
     plugins()
   }, 500);

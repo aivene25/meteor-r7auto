@@ -1,5 +1,4 @@
-
-import plugins from '../plugins';
+import plugins from "../plugins";
 
 Template.serviceItem.onCreated(function() {
   let sub = this.subscribe("services.all");
@@ -19,6 +18,24 @@ Template.serviceItem.helpers({
     let services = Session.get("services");
     console.log(services, "are");
     return services;
+  }
+});
+
+Template.serviceItem.events({
+  "click #request_service": function(event) {
+    event.preventDefault();
+    if (Meteor.userId() == null) {
+      let email = prompt("Please Enter your email address");
+      if (email) {
+        console.log("Email is", email);
+        //send email to this user
+      } else {
+        alert("Invalid email address");
+      }
+    }else{
+      alert("An email has been sent to you");
+      // send emial to user like that
+    }
   }
 });
 

@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.42",
+    "cross-env": "^5.2.0",
     "ev-emitter": "^1.1.1",
     "meteor-node-stubs": "^0.3.2",
     "ravepay": "0.0.4",

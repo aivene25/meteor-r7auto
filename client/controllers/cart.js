@@ -35,19 +35,15 @@ Template.cart.helpers({
 });
 
 Template.cart.events({
-  "click #remove-cart-item span": function(event, template) {
+  "click #remove-cart-item": function(event) {
     event.preventDefault();
-    console.log("data rempved");
+    console.log("fee");
     let cartItems = Session.get("cartItems");
-    let arr = [];
-    console.log(cartItems);
-    cartItems.forEach(item => {
-      if (item.productId != event.currentTarget.id) {
-        arr.push(item);
+    let res = cartItems.filter(item => {
+      if (item.productId != this.productId) {
+        return item;
       }
     });
-    Session.setPersistent("cartItems", arr);
+    Session.update("cartItems", res);
   }
 });
-
-Template.cart.events({});
