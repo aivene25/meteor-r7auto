@@ -45,28 +45,28 @@
             <!-- /.woocommerce-ordering -->
 
             <ul class="products">
-              {{#with data}} {{#each item in data}}
+             {{#each data}}
               <li class="product">
                 <div class="inner">
                   <a href="#" class="woocommerce-LoopProduct-link">
                     <div class="product-thumbnail">
-                      <img src="{{item.image}}" alt="{{item.image}}">
+                      <img height="250" style="height: 270px" src="{{image}}" alt="{{title}}">
                     </div>
                   </a>
 
                   <div class="product-info">
-                    <a href="/shop/parts/{{item._id}}" class="woocommerce-LoopProduct-link">
-                      <h2 class="woocommerce-loop-product__title font-weight-600">{{item.title}}</h2>
+                    <a href="/shop/parts/{{_id}}" class="woocommerce-LoopProduct-link">
+                      <h2 class="woocommerce-loop-product__title font-weight-600">{{title}}</h2>
                       <span class="price">
                         <span class="woocommerce-Price-amount amount" style="font-size: 15px">
-                          <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice item.price}}</span>
+                          <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice price}}</span>
                       </span>
                     </a>
-                    <a href="/shop/parts/{{item._id}}" class="button add_to_cart_button">View</a>
+                    <a href="/shop/parts/{{_id}}" class="button add_to_cart_button">View</a>
                   </div>
                 </div>
               </li>
-              {{/each}} {{/with}}
+              {{/each}}
             </ul>
             <!-- /.products -->
 
@@ -75,9 +75,12 @@
                 <li>
                   <span class="page-numbers current">1</span>
                 </li>
+               <!--
                 <li>
                   <a class="page-numbers" href="#">2</a>
                 </li>
+                -->
+                
                 <li>
                   <a class="next page-numbers" href="#">→</a>
                 </li>
@@ -138,11 +141,11 @@
             </h2>
 
             <ul class="product_list_widget">
-              {{#each item in data}}
+              {{#each data}}
               <li>
                 <a href="#">
-                  <img width="150" height="150" src="{{item.Image}}" alt="Image">
-                  <span class="product-title font-weight-600">{{item.title}}</span>
+                  <img width="150" height="150" src="{{image}}" alt="Image">
+                  <span class="product-title font-weight-600">{{title}}</span>
                 </a>
                 <div class="star-rating">
                   <span class="six">Rated
@@ -150,7 +153,7 @@
                 </div>
                 <ins>
                   <span class="woocommerce-Price-amount amount">
-                    <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice item.price}}</span>
+                    <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice price}}</span>
                 </ins>
               </li>
               {{/each}}

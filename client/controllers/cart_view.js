@@ -21,7 +21,7 @@ Template.cartView.helpers({
     var totalPrice = 0;
     if (item) {
       item.forEach(item => {
-        let price = parseInt(item.product.Price);
+        let price = parseInt(item.price);
         let quant = item.quantity;
         totalPrice += parseInt(price * quant);
       });
@@ -33,7 +33,7 @@ Template.cartView.helpers({
     return val;
   },
   subtotal: function(item){
-    let price =  item.product.Price * item.quantity;
+    let price =  item.price * item.quantity;
     return price.toLocaleString("en");
   }
 
@@ -45,7 +45,7 @@ Template.cartView.events({
     let quantity = event.currentTarget.value;
     let cartItems = Session.get("cartItems");
     let res = cartItems.filter( (item)=>{
-      if(item.productId === this.productId){
+      if(item.product_id === this.product_id){
         item.quantity = quantity;
         return item;
       }
@@ -59,7 +59,7 @@ Template.cartView.events({
     event.preventDefault();
     let cartItems = Session.get("cartItems");
     let res = cartItems.filter( item => {
-      if (item.productId != this.productId) {
+      if (item.product_id != this.product_id) {
         return item
       }
     });

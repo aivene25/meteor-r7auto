@@ -34,7 +34,7 @@ Template.checkout.helpers({
     var totalPrice = 0;
     if (item) {
       item.forEach(item => {
-        let price = parseInt(item.product.Price);
+        let price = parseInt(item.price);
         let quant = item.quantity;
         totalPrice += parseInt(price * quant);
       });
@@ -51,9 +51,7 @@ Template.checkout.events({
 
   "click #paystack": function(event) {
     event.preventDefault();
-
-    //carter for guest visitor
-
+    
     if (!Meteor.userId()) {
       console.log("Please login to continue");
       alert("Please login to continue");
@@ -67,7 +65,7 @@ Template.checkout.events({
 
     let totalPrice = 0;
     cart.forEach(item => {
-      let price = parseInt(item.product.Price);
+      let price = parseInt(item.price);
       let quant = item.quantity;
       totalPrice += parseInt(price * quant);
     });
@@ -85,38 +83,21 @@ Template.checkout.events({
       return;
     }
 
-    data = {};
-    data.status = "STATUS_PAYMENT_RECEIVED";
-    data.order_number = 12345;
-    data.delivery_method = "Courier";
-    data.delivery_charge = 1000;
-    data.delivery_date = new Date();
-    data.pickup_location = "Null";
-    data.payment_method = "Online";
-    data.gateway_status = "APPROVED";
-    data.gateway_transaction_ref = "PM32323232";
-    data.date_added = new Date();
-    data.products = Session.get("cartItems");
+    let subject = "Order received successfuly";
+    let delivery_date = new Date();
+    delivery_date.setDate(delivery_date.getDate() + 3);
 
-    Meteor.call("Orders.insert", data, (err, res) => {
-      if (err) {
-        console.log(err.reason);
-      } else {
-        // send email here and insert the order id
-        console.log(res);
-      }
-    });
-
-    return;
-
+    //key- Replace with your public key
+    //ref - generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+    //label - "Optional string that replaces customer email"
+    
     var config = {
-      key: "pk_test_076e4ef6af3de972b07418b5de432224369c29d3", // Replace with your public key
+      key: "pk_test_076e4ef6af3de972b07418b5de432224369c29d3",
       email: email,
       amount: totalPrice * 100,
       firstname: Meteor.user().profile.first_name,
       lastname: Meteor.user().profile.last_name,
-      ref: "PM" + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-      // label: "Optional string that replaces customer email"
+      ref: "PM" + Math.floor(Math.random() * 1000000000 + 1),
       onClose: function() {
         alert("Window closed.");
       },
@@ -126,15 +107,48 @@ Template.checkout.events({
         console.log(response);
         if (response.status === "success") {
           console.log("transcation successful");
-          Meteor.call("Orders.insert", (err, res) => {
+
+          data = {};
+          data.status = "STATUS_PAYMENT_RECEIVED";
+          data.delivery_method = "Courier";
+          data.delivery_charge = 1000;
+          data.delivery_date = delivery_date;
+          data.pickup_location = "Null";
+          data.payment_method = "Online";
+          data.gateway_status = "APPROVED";
+          data.gateway_transaction_ref = response.ref;
+          data.date_added = new Date();
+          data.products = Session.get("cartItems");
+
+          Meteor.call("Orders.insert", data, (err, res) => {
             if (err) {
               console.log(err.reason);
+              alert(err.reason);
             } else {
-              console.log("Tranccion log from method");
+              let text = `Dear ${
+                Meteor.user().profile.first_name
+              }, Your order was received successfully, Order number is - ${res} . Transaction reference - ${
+                data.gateway_transaction_ref
+              }. Expected delivery date is- ${data.delivery_date}`;
+
+              alert("Order received succsesfully  " + res);
+              Session.clear("cartItems");
+
+              Meteor.call("sendMail", email, subject, text, (err, res) => {
+                if (err) {
+                  console.log("Error in sending email ", err.reason);
+                } else {
+                  console.log("Mail sent successfully");
+                  alert("Mail sent successfully");
+                }
+              });
+              // send user to the account page let him see his order
+              Router.go("/");
             }
           });
         } else {
           console.log("transcation error");
+          alert("Transcation error");
         }
       }
     };

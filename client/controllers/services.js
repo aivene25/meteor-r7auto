@@ -11,6 +11,8 @@ Template.services.onRendered(function() {
 
 Template.services.helpers({
   service: () => {
+    console.log( Services.find({}, {}).fetch() );
+    
     return Services.find({}, {}).fetch();
   }
 });

@@ -21,7 +21,7 @@ Template.cart.helpers({
     var totalPrice = 0;
     if (item) {
       item.forEach(item => {
-        let price = parseInt(item.product.Price);
+        let price = parseInt(item.price);
         let quant = item.quantity;
         totalPrice += parseInt(price * quant);
       });

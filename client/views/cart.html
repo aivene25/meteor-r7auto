@@ -26,11 +26,11 @@
                 <span class="fa fa-close"></span>
               </a>
               <a href="#">
-                <img width="150" height="150" src="{{product.image}}" alt="{{product.title}}">{{product.title}}
+                <img width="150" height="150" src="{{image}}" alt="{{product.title}}">{{title}}
               </a>
               <span class="quantity">{{quantity}} ×
                 <span class="woocommerce-Price-amount amount">
-                  <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice product.price}}</span>
+                  <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice price}}</span>
               </span>
             </li>
             {{/each}}

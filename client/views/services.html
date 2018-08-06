@@ -67,15 +67,15 @@
 
           <div class=" has-bullets bullet-circle bullet40" data-auto="false" data-loop="false" data-gap="30" data-column="3" data-column2="2"
             data-column3="1">
-            {{#with service}} {{#each service}}
+            {{#each service}}
             <div class="wprt-content-box style-2 col-md-3 " style="margin:10px; height: 300px">
               <div class="wprt-icon-box style-6 clearfix icon-top w85 grey-bg align-left has-width text-center">
                 <div class="icon-wrap">
-                  <i class="{{Icon}}"></i>
+                  <i class="{{icon}}"></i>
                 </div>
 
                 <h3 class="heading">
-                  <a target="_blank" href="/service/{{_id}}">{{service}}</a>
+                  <a target="_blank" href="/service/{{_id}}">{{this.service}}</a>
                 </h3>
                 <!--
                                 <p class="desc">{{ShortDescription}}</p>
@@ -86,7 +86,7 @@
               </div>
               <!-- /.wprt-icon-box -->
             </div>
-            {{/each}} {{/with}}
+            {{/each}}
             <!-- /.wprt-content-box -->
           </div>
           <!-- /.wprt-carousel-box -->

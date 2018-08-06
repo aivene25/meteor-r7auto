@@ -1,4 +1,4 @@
-import plugins from '../plugins';
+import plugins from "../plugins";
 
 Template.home.onCreated(function() {
   let sub = this.subscribe("services.all");
@@ -41,27 +41,41 @@ Template.home.helpers({
 });
 
 Template.home.events({
-  "click .add-to-cart": function(event, template) {
+  "click #add-to-cart": function(event) {
     event.preventDefault();
-    let id = event.currentTarget.id;
-    let product = SpareParts.findOne({ _id: id }, {});
-    console.log(product);
+    let product = this;
     let cartItems = Session.get("cartItems") || [];
     let contains = false;
 
     if (cartItems.length > 0) {
-      cartItems.forEach((item, index) => {
-        if (id == item.productId) {
+      cartItems.forEach(item => {
+        if (product._id == item.product_id) {
           item.quantity = item.quantity + 1;
           contains = true;
         }
       });
       if (contains == false) {
-        let data = { productId: id, product: product, quantity: 1 };
+        let data = { 
+          product_id: product._id,
+          title: product.title,
+          price: product.price,
+          category: product.category,
+          description: product.description,
+          image: product.image,
+          quantity: 1 
+        };
         cartItems.push(data);
       }
     } else {
-      let data = { productId: id, product: product, quantity: 1 };
+      let data = { 
+        product_id: product._id,
+        title: product.title,
+        price: product.price,
+        category: product.category,
+        description: product.description,
+        image: product.image,
+        quantity: 1  
+      };
       cartItems.push(data);
     }
     alert("Item added to cart");
@@ -69,8 +83,8 @@ Template.home.events({
   }
 });
 
-Template.home.onRendered( function(){
-  Meteor.setTimeout( ()=>{
-    plugins()
+Template.home.onRendered(function() {
+  Meteor.setTimeout(() => {
+    plugins();
   }, 500);
-})
+});

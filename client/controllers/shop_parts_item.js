@@ -16,11 +16,11 @@ Template.shopPartsItem.events({
   "click #add-to-cart": (event, template) => {
     event.preventDefault();
     let quan = $("#quantity").val();
-
     let cartItems = Session.get("cartItems") || [];
     let contains = false;
+
     if (cartItems.length > 0) {
-      cartItems.forEach((item, index) => {
+      cartItems.forEach(item => {
         if (template.data._id == item.productId) {
           item.quantity = parseInt(item.quantity) + parseInt(quan);
           contains = true;
@@ -28,8 +28,12 @@ Template.shopPartsItem.events({
       });
       if (contains == false) {
         let data = {
-          productId: template.data._id,
-          product: template.data,
+          product_id: template.data._id,
+          title: template.data.title,
+          price: template.data.price,
+          category: template.data.category,
+          description: template.data.description,
+          image: template.data.image,
           quantity: quan
         };
         cartItems.push(data);
@@ -37,8 +41,11 @@ Template.shopPartsItem.events({
     } else {
       let data = {
         product_id: template.data._id,
-        title: template.date.title,
-        product: template.data,
+        title: template.data.title,
+        price: template.data.price,
+        category: template.data.category,
+        description: template.data.description,
+        image: template.data.image,
         quantity: quan
       };
       cartItems.push(data);

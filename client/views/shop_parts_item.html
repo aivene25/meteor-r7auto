@@ -124,48 +124,6 @@
                 <!-- /.tab-content-wrap -->
               </div>
               <!-- /.wprt-tabs -->
-
-              <div class="related products">
-                <h2>Related products</h2>
-                <div class="wprt-carousel-box has-arrows arrow-center offset20 offset-v-120 has-bullets bullet-circle bullet30" data-auto="false"
-                  data-loop="false" data-gap="25" data-column="3" data-column2="2" data-column3="1">
-                  <div class="owl-carousel owl-theme">
-                    {{#each item in relatedProducts}}
-                    <div class="wprt-image-box style-1 clearfix text-center has-shadow">
-                      <div class="item">
-                        <div class="inner">
-                          <div class="thumb">
-                            <img src="{{item.image}}" alt="Image">
-                          </div>
-
-                          <div class="text-wrap">
-                            <h1 class="uppercase title font-weight-600">
-                              {{item.title}}
-                            </h1>
-
-                            <p class="price">
-                              <ins>
-                                <span class="woocommerce-Price-amount amount">
-                                  <span class="woocommerce-Price-currencySymbol">&#8358; </span>{{formatPrice item.price}}</span>
-                              </ins>
-                            </p>
-
-                            <div class="elm-btn">
-                              <a class="small wprt-button outline ol-accent" href="/shop/parts/{{item._id}}">View</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {{/each}}
-                    <!-- /.wprt-image-box -->
-                  </div>
-                </div>
-                <!-- /.wprt-carousel-box -->
-
-                <div class="wprt-spacer clearfix" data-desktop="94" data-mobi="60" data-smobi="60"></div>
-
-              </div>
             </div>
             <!-- /.woo-single-post-class -->
           </div>
@@ -266,8 +224,52 @@
       <!-- /#sidebar -->
     </div>
     <!-- /#content-wrap -->
+
+    <div class="wprt-spacer clearfix" data-desktop="80" data-mobi="30" data-smobi="30"></div>
+
+    <div class="related products" style="margin-left: 50px; margin-right:50px">
+      <h2>Related products</h2>
+      <div class="wprt-carousel-box has-arrows arrow-center offset20 offset-v-120 has-bullets bullet-circle bullet30" data-auto="false"
+        data-loop="false" data-gap="25" data-column="3" data-column2="2" data-column3="1">
+        <div class="owl-carousel owl-theme">
+          {{#each item in relatedProducts}}
+          <div class="wprt-image-box style-1 clearfix text-center has-shadow">
+            <div class="item">
+              <div class="inner">
+                <div class="thumb">
+                  <img height="250" style="height: 350px" src="{{item.image}}" alt="Image">
+                </div>
+
+                <div class="text-wrap">
+                  <h1 class="uppercase title font-weight-600">
+                    {{item.title}}
+                  </h1>
+                  <p class="price">
+                    <ins>
+                      <span class="woocommerce-Price-amount amount">
+                        <span class="woocommerce-Price-currencySymbol">&#8358; </span>{{formatPrice item.price}}</span>
+                    </ins>
+                  </p>
+                  <div class="elm-btn">
+                    <a class="small wprt-button outline ol-accent" href="/shop/parts/{{item._id}}">View</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+          <!-- /.wprt-image-box -->
+        </div>
+      </div>
+      <!-- /.wprt-carousel-box -->
+
+      <div class="wprt-spacer clearfix" data-desktop="94" data-mobi="60" data-smobi="60"></div>
+
+    </div>
+
   </div>
   <!-- /#main-content -->
+
 
   <!-- PROMOTION -->
   <div class="row-promotion bg-accent">
