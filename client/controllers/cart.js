@@ -37,10 +37,9 @@ Template.cart.helpers({
 Template.cart.events({
   "click #remove-cart-item": function(event) {
     event.preventDefault();
-    console.log("fee");
     let cartItems = Session.get("cartItems");
     let res = cartItems.filter(item => {
-      if (item.productId != this.productId) {
+      if (item.product_id != this.product_id) {
         return item;
       }
     });

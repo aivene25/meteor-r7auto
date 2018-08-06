@@ -129,15 +129,15 @@
                       <div class="col-md-12">
                         {{#each item in symptoms}}
                         <div class="wprt-list clearfix icon-left icon-top style-2">
-                            <div class="inner">
-                              <span class="icon-wrap">
-                                <span class="icon">
-                                  <i class="fa fa-check-square-o text-accent-color"></i>
-                                </span>
-                                <span class="text font-size-15">{{item}}</span>
+                          <div class="inner">
+                            <span class="icon-wrap">
+                              <span class="icon">
+                                <i class="fa fa-check-square-o text-accent-color"></i>
                               </span>
-                            </div>
+                              <span class="text font-size-15">{{item}}</span>
+                            </span>
                           </div>
+                        </div>
                         {{/each}}
                       </div>
                     </div>
@@ -190,7 +190,7 @@
                       <p class="desc">A Completely Safe and Advanced Cleaning Solution for both Petrol and Diesel Engines</p>
 
                       <div class="elm-btn">
-                        <a id="request_service" class="small wprt-button accent" href="#">Request This Service</a>
+                        <a id="request-service" class="small wprt-button accent" href="#">Request Service</a>
                       </div>
                     </div>
                     <!-- /.wprt-icon-box -->
@@ -288,4 +288,97 @@
     <!-- /#content-wrap -->
   </div>
   <!-- /#main-content -->
+
+
+
+  <div id="request-service-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Service Request Form</h4>
+        </div>
+        <div class="modal-body">
+          <div class="wprt-contact-form style-1 margin-top-10">
+            <span>Please provide your vehicle details</span>
+            <form class="wpcf7-form" id="service-request-form">
+              <span class="wpcf7-form-control-wrap your-name">
+                <select id="vehicle_make">
+                  <option value="Any">
+                    Select Vehicle Make
+                  </option>
+                  <option value="Toyota">
+                    Toyota
+                  </option>
+                  <option value="Honda">
+                    Honda
+                  </option>
+                  <option value="Nissan">
+                    Nissan
+                  </option>
+                  <option value="Ford">
+                    Ford
+                  </option>
+                  <option value="Mercedes Benz">
+                    Mercedes Benz
+                  </option>
+                  <option value="Hyundai">
+                    Hyundai
+                  </option>
+                  <option value="KIA">
+                    KIA
+                  </option>
+                  <option value="Mazda">
+                    Mazda
+                  </option>
+                </select>
+              </span>
+              <span class="wpcf7-form-control-wrap your-email">
+                <input type="text" tabindex="2" id="vehicle_model" class="wpcf7-form-control" placeholder="Vehicle Model *" required>
+              </span>
+              <span class="wpcf7-form-control-wrap your-subject">
+                <select id="vehicle_year">
+                  <option value="2018">Year</option>
+                  <option value="2000">2000</option>
+                  <option value="2001">2001</option>
+                  <option value="2002">2002</option>
+                  <option value="2003">2003</option>
+                  <option value="2004">2004</option>
+                  <option value="2005">2005</option>
+                  <option value="2006">2006</option>
+                  <option value="2007">2007</option>
+                  <option value="2008">2008</option>
+                  <option value="2009">2009</option>
+                  <option value="2010">2010</option>
+                  <option value="2011">2011</option>
+                  <option value="2012">2012</option>
+                  <option value="2013">2013</option>
+                  <option value="2014">2014</option>
+                  <option value="2015">2015</option>
+                  <option value="2016">2016</option>
+                  <option value="2017">2017</option>
+                  <option value="2018">2018</option>
+                </select>
+              </span>
+              <span class="wpcf7-form-control-wrap your-message">
+                <textarea tabindex="4" id="notes" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" placeholder="Extra notes "></textarea>
+              </span>
+
+              <div class="wrap-submit">
+                <input type="submit" value="MAKE REQUEST" class="submit wpcf7-form-control wpcf7-submit">
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </template>
