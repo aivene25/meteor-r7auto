@@ -50,7 +50,7 @@ Template.home.events({
     if (cartItems.length > 0) {
       cartItems.forEach(item => {
         if (product._id == item.product_id) {
-          item.quantity = item.quantity + 1;
+          item.quantity = parseInt(item.quantity) + 1;
           contains = true;
         }
       });

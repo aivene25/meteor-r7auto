@@ -21,11 +21,12 @@ Template.shopPartsItem.events({
 
     if (cartItems.length > 0) {
       cartItems.forEach(item => {
-        if (template.data._id == item.productId) {
+        if (template.data._id == item.product_id) {
           item.quantity = parseInt(item.quantity) + parseInt(quan);
           contains = true;
         }
       });
+
       if (contains == false) {
         let data = {
           product_id: template.data._id,
