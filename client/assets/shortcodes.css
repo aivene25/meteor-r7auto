@@ -7,7 +7,7 @@
 	.row.separator > [class*="col-"] { border: 0 !important; }
 }
 
-.row-certified-1 { background: url(/assets/img/bg-section-1.jpg) center center; }
+.row-certified-1 { background: url(/assets/img/r7-banner.jpg) center center; }
 .row-trusted-1 { background: url(/assets/img/bg-section-2.jpg) center center; }
 .row-facts-1 { background: url(/assets/img/bg-section-3.jpg) center center; }
 .row-gallery-1 { background: url(/assets/img/bg-section-4.jpg) center center; background-attachment: fixed; }

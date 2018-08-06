@@ -18,28 +18,26 @@ Template.shopCarsItem.events({
       alert("Please login to make enquiry");
       Router.go("/account");
     }
-    console.log("In enquiry", template);
-    
-    console.log(this);
-    return;
     let data = {
       first_name: Meteor.user().profile.first_name,
       last_name: Meteor.user().profile.last_name,
       email: Meteor.user().emails[0].address,
       phone: Meteor.user().profile.phone,
-      vehicle_id: Router.current().params.id,
-      vehicle_make: make,
-      vehicle_model: model
+      vehicle_id: Router.current().params._id,
+      vehicle_make: this.make,
+      vehicle_model: this.model
     };
+    let subject ="Vehicle Inspection Enquiry";
 
     Meteor.call("InspectionRequests.insert", data, (err, res) => {
       if (err) {
         console.log(err.reason);
       } else {
-        alert("Your request was received succesfully");
+        alert("Your enquiry was received succesfully");
         let text = `Dear ${
           Meteor.user().profile.first_name
-        }, your enquiry has been received and is being processesd, </br> Your request number is ${res}. </br> Vehicle requested is ${vehicle_make},  ${vehicle_model}. `;
+        }, your enquiry has been received and is being processesd, </br> Your request number is ${res}. </br> Vehicle requested is ${this.make},  ${this.model}. `;
+        Router.go("/shop/cars");
 
         Meteor.call(
           "sendMail",
@@ -50,9 +48,6 @@ Template.shopCarsItem.events({
             if (err) {
               console.log(err.reason);
             } else {
-              $("#request-service-modal").modal("hide");
-              event.target.vehicle_model.value = "";
-              event.target.notes.value = "";
               alert("Email sent !");
             }
           }

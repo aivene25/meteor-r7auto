@@ -38,7 +38,7 @@ Template.serviceItem.events({
     let year = event.target.vehicle_year.value;
     let notes = event.target.notes.value;
     let title =
-      Services.findOne({ _id: Router.current().params.id }).title || "Any";
+      Services.findOne({ _id: Router.current().params._id }).title || "Any";
     
     let subject = "Service Request Received Successfully";
 
