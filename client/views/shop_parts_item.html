@@ -1,10 +1,11 @@
-<template name='shopCarsItem'>
+<template name="shopPartsItem">
+
   <!-- Featured Title -->
   <div id="featured-title" class="clearfix featured-title-left">
     <div id="featured-title-inner" class="wprt-container clearfix">
       <div class="featured-title-inner-wrap">
         <div class="featured-title-heading-wrap">
-          <h1 class="featured-title-heading font-weight-600">{{Name}}</h1>
+          <h1 class="featured-title-heading font-weight-600">{{title}}</h1>
         </div>
 
         <div id="breadcrumbs">
@@ -14,11 +15,11 @@
               <span class="sep">
                 <i class="rt-icon-right-arrow12"></i>
               </span>
-              <a href="/shop/cars" title="Shop" rel="home" class="trail-begin">Shop</a>
-              <span>
+              <a href="/shop/parts" title="parts" rel="parts" class="trail-begin">Shop</a>
+              <span class="sep">
                 <i class="rt-icon-right-arrow12"></i>
               </span>
-              <span class="trail-end">Cars</span>
+              <span class="trail-end">Parts</span>
             </div>
           </div>
         </div>
@@ -30,80 +31,46 @@
   <div class="wprt-spacer clearfix" data-desktop="80" data-mobi="30" data-smobi="30"></div>
 
   <!-- Main Content -->
-  <div id="main-content" class="site-main clearfix margin-bottom-50">
+  <div id="main-content" class="site-main clearfix margin-bottom-30">
     <div id="content-wrap" class="wprt-container">
       <div id="site-content" class="site-content clearfix">
-
         <div id="inner-content" class="inner-content-wrap">
           <div class="content-woocommerce">
             <div class="woo-single-post-class">
-
-              <div class="wprt-content-box style-1" style="padding-left:0px">
-                <div class="wprt-thumb-slider" data-width="129.667" data-margin="14">
-                  <div id="wprt-slider" class="flexslider">
-                    <ul class="slides">
-                      {{#each item in Gallery}}
-                      <li class="flex-active-slide">
-                        <a class="zoom-popup" href="{{item}}">
-                          <i class="rt-icon-zoom-in-2"></i>
-                        </a>
-                        <img src="{{item}}" alt="image" />
-                      </li>
-                      {{/each}}
-
-                    </ul>
-                  </div>
-
-                  <div id="wprt-carousel" class="flexslider">
-                    <ul class="slides">
-                      {{#each item in Gallery}}
-                      <li>
-                        <img src="{{item}}" alt="image">
-                      </li>
-                      {{/each}}
-                     
-                    </ul>
-                  </div>
-                </div>
-                <!-- /.wprt-thumb-slider -->
-
-                <div class="wprt-spacer clearfix" data-desktop="40" data-mobi="30" data-smobi="30"></div>
-              </div>
-
               <div class="inner clearfix">
-                <!--
                 <div class="images">
-                  <img src="{{Image}}" alt="image" />
+                  <img src="{{image}}" alt="image" />
                 </div>
-          -->
-                <div class="summary entry-summary" style="float: left;">
-                  <h1 class="product_title entry-title font-weight-600">{{Name}}</h1>
+                <!-- /.images -->
+
+                <div class="summary entry-summary">
+                  <h1 class="product_title entry-title font-weight-600">{{title}}</h1>
                   <p class="price">
                     <ins>
                       <span class="woocommerce-Price-amount amount">
-                        <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice Price}}</span>
+                        <span class="woocommerce-Price-currencySymbol">&#8358; </span>{{formatPrice price}}</span>
                     </ins>
                   </p>
 
                   <div class="woocommerce-product-details__short-description">
-                    <p>{{{Description}}}</p>
+                    <p>{{{description}}}.</p>
                   </div>
 
                   <div class="cart">
                     <div class="quantity">
-                      <!--
                       <label class="screen-reader-text">Quantity</label>
-                      <input type="number" class="input-text qty text" name="quantity" value="1">
-                      -->
+                      <input type="number" class="input-text qty text" id="quantity" value="1" min="1">
                     </div>
-                    <button class="single_add_to_cart_button button">Make Enquiry</button>
+
+                    <button name="add-to-cart" id="add-to-cart" class="single_add_to_cart_button button">Add to cart</button>
                   </div>
 
                   <div class="product_meta">
                     <span class="posted_in">
                       Categories:
-                      <a href="#" rel="tag">{{Category}}</a>,
-
+                      <a href="#" rel="tag">Tools</a>,
+                      <a href="#" rel="tag">Fluid</a>,
+                      <a href="#" rel="tag">Oil</a>
                     </span>
                   </div>
                 </div>
@@ -128,7 +95,7 @@
                   <div class="tab-content">
                     <div class="item-content">
                       <h4>Product Description</h4>
-                      <p>{{{Description}}}.</p>
+                      <p>{{{description}}}</p>
                     </div>
                   </div>
                   <!-- /.tab-content -->
@@ -159,46 +126,46 @@
               <!-- /.wprt-tabs -->
 
               <div class="related products">
-                  <h2>Related products</h2>
-                  <div class="wprt-carousel-box has-arrows arrow-center offset20 offset-v-120 has-bullets bullet-circle bullet30" data-auto="false"
-                    data-loop="false" data-gap="25" data-column="3" data-column2="2" data-column3="1">
-                    <div class="owl-carousel owl-theme">
-                      {{#each item in relatedProducts}}
-                      <div class="wprt-image-box style-1 clearfix text-center has-shadow">
-                        <div class="item">
-                          <div class="inner">
-                            <div class="thumb">
-                              <img src="{{item.Image}}" alt="Image">
-                            </div>
-  
-                            <div class="text-wrap">
-                              <h1 class="uppercase title font-weight-600">
-                                {{item.Name}}
-                              </h1>
-  
-                              <p class="price">
-                                <ins>
-                                  <span class="woocommerce-Price-amount amount">
-                                    <span class="woocommerce-Price-currencySymbol">&#8358; </span>{{formatPrice item.Price}}</span>
-                                </ins>
-                              </p>
-  
-                              <div class="elm-btn">
-                                <a class="small wprt-button outline ol-accent" href="/shop/parts/{{item._id}}">View</a>
-                              </div>
+                <h2>Related products</h2>
+                <div class="wprt-carousel-box has-arrows arrow-center offset20 offset-v-120 has-bullets bullet-circle bullet30" data-auto="false"
+                  data-loop="false" data-gap="25" data-column="3" data-column2="2" data-column3="1">
+                  <div class="owl-carousel owl-theme">
+                    {{#each item in relatedProducts}}
+                    <div class="wprt-image-box style-1 clearfix text-center has-shadow">
+                      <div class="item">
+                        <div class="inner">
+                          <div class="thumb">
+                            <img src="{{item.image}}" alt="Image">
+                          </div>
+
+                          <div class="text-wrap">
+                            <h1 class="uppercase title font-weight-600">
+                              {{item.title}}
+                            </h1>
+
+                            <p class="price">
+                              <ins>
+                                <span class="woocommerce-Price-amount amount">
+                                  <span class="woocommerce-Price-currencySymbol">&#8358; </span>{{formatPrice item.price}}</span>
+                              </ins>
+                            </p>
+
+                            <div class="elm-btn">
+                              <a class="small wprt-button outline ol-accent" href="/shop/parts/{{item._id}}">View</a>
                             </div>
                           </div>
                         </div>
                       </div>
-                      {{/each}}
-                      <!-- /.wprt-image-box -->
                     </div>
+                    {{/each}}
+                    <!-- /.wprt-image-box -->
                   </div>
-                  <!-- /.wprt-carousel-box -->
-  
-                  <div class="wprt-spacer clearfix" data-desktop="94" data-mobi="60" data-smobi="60"></div>
-  
                 </div>
+                <!-- /.wprt-carousel-box -->
+
+                <div class="wprt-spacer clearfix" data-desktop="94" data-mobi="60" data-smobi="60"></div>
+
+              </div>
             </div>
             <!-- /.woo-single-post-class -->
           </div>
@@ -222,7 +189,7 @@
             </form>
           </div>
           <!-- /.widget_product_search -->
-          <!--
+
           <div class="widget woocommerce widget_price_filter">
             <h2 class="widget-title">
               <span>Price Filter</span>
@@ -239,15 +206,14 @@
                 <div class="price_slider_amount">
                   <button type="submit" class="button">Filter</button>
                   <div class="price_label">Price:
-                    <span class="from">$9</span> —
-                    <span class="to">$126</span>
+                    <span class="from">&#8358; 900</span> —
+                    <span class="to">&#8358; 12600</span>
                   </div>
                   <div class="clearfix"></div>
                 </div>
               </div>
             </form>
           </div>
-        -->
           <!-- /.widget_price_filter -->
 
           <div class="widget woocommerce widget_top_rated_products">
@@ -259,23 +225,24 @@
               {{#with relatedProducts}} {{#each item in relatedProducts}}
               <li>
                 <a href="#">
-                  <img width="150" height="150" src="{{item.Image}}" alt="Image">
-                  <span class="product-title">{{item.Name}}</span>
+                  <img width="150" height="150" src="{{item.image}}" alt="Image">
+                  <span class="product-title font-weight-600">{{item.title}}</span>
                 </a>
-                <div class="star-rating">
-                  <span class="six">Rated
-                    <strong class="rating">5.00</strong> out of 5</span>
-                </div>
                 <!--
-                <del>
+                  <del>
                   <span class="woocommerce-Price-amount amount">
                     <span class="woocommerce-Price-currencySymbol">$</span>140.00</span>
                 </del>
-                -->
+              -->
                 <ins>
                   <span class="woocommerce-Price-amount amount">
-                    <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice item.Price}}</span>
+                    <span class="woocommerce-Price-currencySymbol">&#8358; </span>{{item.price}}</span>
                 </ins>
+                <div class="star-rating">
+                  <span class="four">Rated
+                    <strong class="rating">5.00</strong> out of 5</span>
+                </div>
+
               </li>
               {{/each}} {{/with}}
             </ul>
@@ -288,12 +255,8 @@
             </h2>
 
             <div class="tagcloud">
-              <a href="#" class="tag-cloud-link">Business</a>
-              <a href="#" class="tag-cloud-link">Design</a>
-              <a href="#" class="tag-cloud-link">Development</a>
-              <a href="#" class="tag-cloud-link">Entertanment</a>
-              <a href="#" class="tag-cloud-link">Fashion</a>
-              <a href="#" class="tag-cloud-link">Logo</a>
+              <a href="#" class="tag-cloud-link">Tyres</a>
+              <a href="#" class="tag-cloud-link">Bumper</a>
             </div>
           </div>
           <!-- /.widget_product_tag_cloud -->

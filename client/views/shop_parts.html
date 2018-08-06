@@ -50,16 +50,16 @@
                 <div class="inner">
                   <a href="#" class="woocommerce-LoopProduct-link">
                     <div class="product-thumbnail">
-                      <img src="{{item.Image}}" alt="{{item.Image}}">
+                      <img src="{{item.image}}" alt="{{item.image}}">
                     </div>
                   </a>
 
                   <div class="product-info">
                     <a href="/shop/parts/{{item._id}}" class="woocommerce-LoopProduct-link">
-                      <h2 class="woocommerce-loop-product__title font-weight-600">{{item.Title}}</h2>
+                      <h2 class="woocommerce-loop-product__title font-weight-600">{{item.title}}</h2>
                       <span class="price">
                         <span class="woocommerce-Price-amount amount" style="font-size: 15px">
-                          <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice item.Price}}</span>
+                          <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice item.price}}</span>
                       </span>
                     </a>
                     <a href="/shop/parts/{{item._id}}" class="button add_to_cart_button">View</a>
@@ -142,7 +142,7 @@
               <li>
                 <a href="#">
                   <img width="150" height="150" src="{{item.Image}}" alt="Image">
-                  <span class="product-title font-weight-600">{{item.Title}}</span>
+                  <span class="product-title font-weight-600">{{item.title}}</span>
                 </a>
                 <div class="star-rating">
                   <span class="six">Rated
@@ -150,7 +150,7 @@
                 </div>
                 <ins>
                   <span class="woocommerce-Price-amount amount">
-                    <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice item.Price}}</span>
+                    <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice item.price}}</span>
                 </ins>
               </li>
               {{/each}}

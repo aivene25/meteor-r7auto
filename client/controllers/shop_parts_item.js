@@ -1,4 +1,4 @@
-import plugins from '../plugins';
+import plugins from "../plugins";
 
 Template.shopCarsItem.onCreated(function() {});
 
@@ -6,7 +6,7 @@ Template.shopPartsItem.helpers({
   relatedProducts: () => {
     return SpareParts.find().fetch();
   },
-  formatPrice( price){
+  formatPrice(price) {
     let val = price.toLocaleString("en");
     return val;
   }
@@ -16,31 +16,38 @@ Template.shopPartsItem.events({
   "click #add-to-cart": (event, template) => {
     event.preventDefault();
     let quan = $("#quantity").val();
-  //parse quan ot int
+
     let cartItems = Session.get("cartItems") || [];
     let contains = false;
-    if ( cartItems.length > 0 ) {
+    if (cartItems.length > 0) {
       cartItems.forEach((item, index) => {
-        if( template.data._id == item.productId){
+        if (template.data._id == item.productId) {
           item.quantity = parseInt(item.quantity) + parseInt(quan);
-          contains =true;
+          contains = true;
         }
       });
-      if( contains == false){
-        let data = { productId: template.data._id, product: template.data, quantity: quan };
-        cartItems.push(data);  
+      if (contains == false) {
+        let data = {
+          productId: template.data._id,
+          product: template.data,
+          quantity: quan
+        };
+        cartItems.push(data);
       }
     } else {
-      let data = { productId: template.data._id, product: template.data, quantity: quan };
+      let data = {
+        product_id: template.data._id,
+        title: template.date.title,
+        product: template.data,
+        quantity: quan
+      };
       cartItems.push(data);
-    } 
-    alert('Item added to cart');
+    }
+    alert("Item added to cart");
     Session.setPersistent("cartItems", cartItems);
-   }   
-
+  }
 });
 
 Template.shopPartsItem.onRendered(function() {
   plugins();
 });
-

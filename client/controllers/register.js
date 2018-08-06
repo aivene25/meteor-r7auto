@@ -49,6 +49,7 @@ Template.register.events({
     let pass = event.target.pass.value;
 
     if( !email || ! pass){
+      alert("Please fill in all fields");
       console.log("Please fill in the proper forms");
       return; 
     }

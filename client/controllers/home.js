@@ -26,7 +26,7 @@ Template.home.onCreated(function() {
 });
 
 Template.home.helpers({
-  data: function() {
+  services: function() {
     return Session.get("services");
   },
   posts: function() {

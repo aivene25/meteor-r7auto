@@ -32,5 +32,11 @@ Template.footer.events({
         x.close(); // use this to close the modal immediately after payment.
       }
     });
+  },
+  'click #open-modal': function(event){
+    event.preventDefault();
+    console.log("Open Modal here");
+    $("#inspectionRequestForm").modal("show");
+    
   }
 });

@@ -5,7 +5,7 @@
     <div id="featured-title-inner" class="wprt-container clearfix">
       <div class="featured-title-inner-wrap">
         <div class="featured-title-heading-wrap">
-          <h1 class="featured-title-heading font-weight-600">{{Service}} Service</h1>
+          <h1 class="featured-title-heading font-weight-600">{{service}} Service</h1>
         </div>
         <div id="breadcrumbs">
           <div class="breadcrumbs-inner">
@@ -82,8 +82,8 @@
 
                     <div class="wprt-spacer clearfix" data-desktop="40" data-mobi="30" data-smobi="30"></div>
                     {{#with data}}
-                    <h4 class="font-weight-600">What is {{Service}} about ? </h4>
-                    <p>{{{Description}}}</p>
+                    <h4 class="font-weight-600">What is {{service}} about ? </h4>
+                    <p>{{{description}}}</p>
                     {{/with}}
                     <div class="wprt-spacer clearfix" data-desktop="10" data-mobi="10" data-smobi="10"></div>
 
@@ -95,7 +95,7 @@
                     {{#with data}}
                     <div class="row">
                       <div class="col-md-12">
-                        {{#each step in Steps}}
+                        {{#each step in steps}}
                         <div class="wprt-list clearfix icon-left icon-top style-2">
                           <div class="inner">
                             <span class="icon-wrap">
@@ -116,7 +116,7 @@
 
                     {{#with data}}
                     <h4 class="font-weight-600">How important is this service? </h4>
-                    <p>{{{Importance}}}</p>
+                    <p>{{{importance}}}</p>
                     {{/with}}
 
                     <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="35" data-smobi="35"></div>
@@ -127,7 +127,7 @@
                     {{#with data}}
                     <div class="row">
                       <div class="col-md-12">
-                        {{#each item in Symptoms}}
+                        {{#each item in symptoms}}
                         <div class="wprt-list clearfix icon-left icon-top style-2">
                             <div class="inner">
                               <span class="icon-wrap">
@@ -147,7 +147,7 @@
 
                     {{#with data}}
                     <h4 class="font-weight-600">Our recommendation </h4>
-                    <p>{{{Recommendation}}}</p>
+                    <p>{{{recommendation}}}</p>
                     {{/with}}
 
                     <div class="wprt-divider divider-center divider-solid"></div>
@@ -222,7 +222,7 @@
                           </div>
 
                           <h3 class="heading">
-                            <a href="/service/{{item._id}}">{{item.Service}}</a>
+                            <a href="/service/{{item._id}}">{{item.service}}</a>
                           </h3>
                         </div>
                         <!-- /.wprt-icon-box -->

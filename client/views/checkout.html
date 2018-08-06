@@ -12,21 +12,20 @@
                 <div class="col-md-12">
                   <div class="wprt-accordions style-1">
                     {{#if currentUser}}
-                    <p>Hi, Logged In users name</p>
+                    <p>Hi, {{currentUser.profile.first_name}}</p>
                     {{else}}
                     <div class="accordion-item active no-icon">
                       <h3 class="accordion-heading">
                         <span class="inner">Returning customer ? Click here to login</span>
                       </h3>
-
                       <div class="accordion-content">
                         <div class="wprt-contact-form style-1">
-                          <form class="contact-form wpcf7-form" novalidate="novalidate">
+                          <form class="wpcf7-form" id="login">
                             <span class="wpcf7-form-control-wrap your-name">
-                              <input type="email" tabindex="1" id="email" name="email" value="" class="wpcf7-form-control" placeholder="E-mail *" required>
+                              <input type="email" tabindex="1" id="email" class="wpcf7-form-control" placeholder="E-mail *" required>
                             </span>
                             <span class="wpcf7-form-control-wrap your-email">
-                              <input type="password" tabindex="2" id="subject" name="password" value="" class="wpcf7-form-control" placeholder="Password *"
+                              <input type="password" tabindex="2" id="pass" class="wpcf7-form-control" placeholder="Password *"
                                 required>
                             </span>
                             <div class="wrap-submit">
@@ -52,7 +51,7 @@
                               <input type="email" tabindex="1" id="email" name="email" value="" class="wpcf7-form-control" placeholder="Code *" required>
                             </span>
                             <div class="wrap-submit">
-                              <input type="submit" value="APPLY COUPON" class="submit wpcf7-form-control wpcf7-submit" id="submit" name="submit">
+                              <input type="submit" value="APPLY COUPON" class="submit wpcf7-form-control wpcf7-submit">
                             </div>
                           </form>
                         </div>
@@ -139,7 +138,7 @@
                                   required>
                               </span>
                               <div class="wrap-submit">
-                                <input type="submit" value="LOGIN" class="submit wpcf7-form-control wpcf7-submit" id="submit" name="submit">
+                                <input type="submit" value="LOGIN" class="submit wpcf7-form-control wpcf7-submit">
                               </div>
                             </form>
                           </div>
@@ -165,9 +164,9 @@
                       </tr>
                       {{#each cartItems}}
                       <tr>
-                        <td>{{product.Title}}</td>
+                        <td>{{product.title}}</td>
                         <td>{{quantity}}</td>
-                        <td>{{formatPrice product.Price}}</td>
+                        <td>{{formatPrice product.price}}</td>
                       </tr>
                       {{/each}}
 
@@ -255,6 +254,5 @@
     <!-- /#content-wrap -->
   </div>
   <!-- /#main-content -->
-  <script src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
 
 </template>
