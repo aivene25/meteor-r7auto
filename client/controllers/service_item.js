@@ -12,7 +12,7 @@ Template.serviceItem.onCreated(function() {
 
 Template.serviceItem.helpers({
   data: () => {
-    return Services.findOne({ _id: Router.current().params.id });
+    return Services.findOne({ _id: Router.current().params._id });
   },
   services: function() {
     return Session.get("services");
