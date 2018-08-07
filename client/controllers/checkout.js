@@ -83,7 +83,7 @@ Template.checkout.events({
       return;
     }
 
-    let subject = "Order received successfuly";
+    let subject = "Order received successfully";
     let delivery_date = new Date();
     delivery_date.setDate(delivery_date.getDate() + 3);
 
@@ -93,11 +93,12 @@ Template.checkout.events({
     
     var config = {
       key: "pk_test_076e4ef6af3de972b07418b5de432224369c29d3",
-      email: email,
       amount: totalPrice * 100,
       firstname: Meteor.user().profile.first_name,
       lastname: Meteor.user().profile.last_name,
       ref: "PM" + Math.floor(Math.random() * 1000000000 + 1),
+      email: "eneroakere@gmail.com",
+      
       onClose: function() {
         alert("Window closed.");
       },
