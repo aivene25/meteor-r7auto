@@ -1,3 +1,5 @@
-Template.slider.onRendered( function(){
-  RevSlider.init();
-})
+Template.slider.onRendered(function() {
+  Meteor.setTimeout(() => {
+    RevSlider.init();
+  }, 900);
+});
