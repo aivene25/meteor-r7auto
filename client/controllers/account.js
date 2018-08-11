@@ -1,10 +1,10 @@
 import plugins from "../plugins";
 
-Template.register.onRendered(function() {
+Template.account.onRendered(function() {
   plugins();
 });
 
-Template.register.events({
+Template.account.events({
   "submit #register": function(event) {
     event.preventDefault();
     let fname = event.target.fname.value;
@@ -32,9 +32,11 @@ Template.register.events({
 
     Accounts.createUser( options, (err, res) => {
         if(err){
-          console.log(err.reason)
+          console.log(err.reason);
+          alert(err.reason);
         }else{
-          console.log(res)
+          console.log(res);
+          alert("Registration Successful");
         }
       }
     );
@@ -57,8 +59,10 @@ Template.register.events({
     Meteor.loginWithPassword(email, pass, (err,res)=>{
       if(err){
         console.log(err.reason);
+        alert(err.reason)
       }else{
         console.log(res);
+        alert("Registration Successful")
       }
     })
     // give appriporate fedback
