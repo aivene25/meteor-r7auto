@@ -62,7 +62,7 @@ Template.account.events({
         alert(err.reason)
       }else{
         console.log(res);
-        alert("Registration Successful")
+        alert("Login Successful")
       }
     })
     // give appriporate fedback
