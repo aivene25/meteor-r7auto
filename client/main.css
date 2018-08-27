@@ -1,1 +1,50 @@
 /* CSS declarations go here */
+
+.float-left{
+  float: left;
+}
+#main-content {
+  padding: 0 0;
+}
+.font-weight-600 {
+  font-weight: 600;
+}
+.price {
+  font-size: 18px !important;
+}
+
+.products li .product-info {
+  background-color: #eee;
+}
+.add_to_cart_button {
+  background-color: #eee;
+}
+
+.flexslider .slides img {
+  max-height: 500px;
+}
+
+#wprt-carousel .slides > li {
+  /*height: 100px;*/
+}
+
+.owl-carousel .owl-item img {
+  /* height: 250px; */
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.products li h2 {
+  font-size: 17px;
+}
+.products li .product-info {
+  background-color: transparent;
+}
+#qty-shift {
+  display: inline;
+  background-color: transparent;
+  border: 1px solid #777;
+  border-radius: 0px;
+  padding: 15px 18px;
+  color: black;
+}

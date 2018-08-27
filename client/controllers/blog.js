@@ -1,9 +1,17 @@
-Template.blog.onCreated(function(){
-    this.subscribe('posts.all');
-})
+
+import plugins from '../plugins';
+
+
+Template.blog.onCreated(function() {
+  this.subscribe("posts.all");
+});
 
 Template.blog.helpers({
-  post: () => {
+  posts: () => {
     return Posts.find({}, {});
   }
+});
+
+Template.blog.onRendered(function() {
+  plugins();
 });

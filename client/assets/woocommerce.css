@@ -83,7 +83,7 @@
 .woo-single-post-class .images .woocommerce-product-gallery__trigger img { display: none !important; }
 .woo-single-post-class .images .flex-control-thumbs { margin: 10px -5px 0; width: auto; }
 .woo-single-post-class .images .flex-control-thumbs li { padding: 0 5px 10px; width: 16.667%; }
-.woo-single-post-class .summary { width: 48.1%;	float: right; }
+.woo-single-post-class .summary { width: 50.1%;	float: right; }
 .woo-single-post-class .summary h1 { font-size: 28px; text-transform: uppercase; margin: -2px 0 10px 0; }
 .woo-single-post-class .summary .woocommerce-product-rating { position: relative; margin-bottom: 14px; }
 .woo-single-post-class .summary .woocommerce-review-link { display: none; color: #999; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; position: absolute; left: 107px; top: 0; line-height: 20px; }

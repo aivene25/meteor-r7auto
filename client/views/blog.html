@@ -1,273 +1,319 @@
 <template name="blog">
-    <!-- Featured Title -->
-    <!--
-    <div id="featured-title" class="clearfix featured-title-left">
-        <div id="featured-title-inner" class="wprt-container clearfix">
-            <div class="featured-title-inner-wrap">
-                <div class="featured-title-heading-wrap">
-                    <h1 class="featured-title-heading">Blog</h1>
-                </div>
+  <!-- Featured Title -->
 
-                <div id="breadcrumbs">
-                    <div class="breadcrumbs-inner">
-                        <div class="breadcrumb-trail">
-                            <a href="#" title="Home" rel="home" class="trail-begin">Home</a>
-                            <span class="sep">
-                                <i class="rt-icon-right-arrow12"></i>
-                            </span>
-                            <span class="trail-end">Blog</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!--
+  <div id="featured-title" class="clearfix featured-title-left">
+    <div id="featured-title-inner" class="wprt-container clearfix">
+      <div class="featured-title-inner-wrap">
+        <div class="featured-title-heading-wrap">
+          <h1 class="featured-title-heading">Blog</h1>
         </div>
-    </div>
-    -->
-    <!-- #featured-title -->
-    <div class="row-certified-1 parallax">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="wprt-spacer clearfix" data-desktop="120" data-mobi="60" data-smobi="60"></div>
-                </div><!-- /.col-md-12 -->
 
-                <div class="col-md-2">
-                </div><!-- /.col-md-2 -->
-
-                <div class="col-md-9">
-                    <div class="wprt-animation-block" data-animate="fadeInUpSmall" data-duration="1s" data-delay="0s" data-position="90%">
-                        <div class="wprt-icon-box style-2 clearfix icon-left">
-                            <div class="image-wrap">
-                                <img src="/assets/img/ase.png" alt="Image">
-                            </div>
-
-                            <h3 class="heading">OUR BLOG</h3>
-
-                            <p class="desc">Get in touch with our quality AutoService Shop, let our team of highly trained technicians provide you with the best car garage services, including MOT testing, car servicing and car repairs and diagnostics.</p>
-
-                            <div class="elm-btn">
-                                <a class=" wprt-button small outline white" href="#">SCHEDULE AN APPOINTMENT</a>
-                            </div>
-                        </div><!-- /.wprt-icon-box -->
-                    </div><!-- /.wprt-animation-block -->
-                </div><!-- /.col-md-9 -->
-
-                <div class="col-md-1">
-                </div><!-- /.col-md-1 -->
-
-                <div class="col-md-12">
-                    <div class="wprt-spacer clearfix" data-desktop="120" data-mobi="60" data-smobi="60"></div>
-                </div><!-- /.col-md-12 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </div>
-    <!-- END CERTIFIED 1 -->
-    
-    <!-- Main Content -->
-    <div id="main-content" class="site-main clearfix">
-        <div id="content-wrap" class="wprt-container">
-            <div id="site-content" class="site-content clearfix">
-                <div id="inner-content" class="inner-content-wrap">
-                    {{#with post}} {{#each post}}
-                    <article class="hentry">
-                        <div class="post-media clearfix">
-                            <a href="#">
-                                <img src="{{Image}}" alt="Image">
-                            </a>
-                        </div>
-                        <!-- /.post-media -->
-
-                        <div class="post-content-wrap">
-                            <h2 class="post-title">
-                                <span class="post-title-inner">
-                                    <a href="#">{{Title}}</a>
-                                </span>
-                            </h2>
-                            <!-- /.post-title -->
-
-                            <div class="post-meta style-2">
-                                <div class="post-meta-content">
-                                    <div class="post-meta-content-inner">
-                                        <span class="post-by-author item">
-                                            <span class="inner">By
-                                                <a href="#" title="" rel="author">Admin</a>
-                                            </span>
-                                        </span>
-
-                                        <span class="post-date item">
-                                            <span class="inner">
-                                                <span class="entry-date">{{createdAt}}</span>
-                                            </span>
-                                        </span>
-
-                                        <span class="post-comment item">
-                                            <span class="inner">
-                                                <a href="#"> Comments</a>
-                                            </span>
-                                        </span>
-
-                                        <span class="post-meta-categories item">
-                                            <span class="inner">
-                                                <a href="#" rel="category">Fluids</a>,
-                                                <a href="#" rel="category">Diagnostic</a>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.post-meta -->
-
-                            <div class="post-content post-excerpt">
-                                <p>{{{Content}}}</p>
-                            </div>
-                            <!-- /.post-excerpt -->
-
-                            <div class="post-read-more">
-                                <div class="post-link">
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
-                            <!-- /.post-read-more -->
-                        </div>
-                        <!-- /.post-content-wrap -->
-                    </article>
-                    {{/each}} {{/with}}
-
-                    <div class="wprt-pagination clearfix">
-                        <ul class="page-numbers">
-                            <li>
-                                <a class="prev page-numbers" href="#">
-                                    <span class="rt-icon-left-arrow12"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <span class="page-numbers current">1</span>
-                            </li>
-                            <li>
-                                <a class="page-numbers " href="#">2</a>
-                            </li>
-
-                            <li>
-                                <a class="next page-numbers" href="#">
-                                    <span class="rt-icon-right-arrow12"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-                <!-- /#inner-content -->
+        <div id="breadcrumbs">
+          <div class="breadcrumbs-inner">
+            <div class="breadcrumb-trail">
+              <a href="#" title="Home" rel="home" class="trail-begin">Home</a>
+              <span class="sep">
+                <i class="rt-icon-right-arrow12"></i>
+              </span>
+              <span class="trail-end">Blog</span>
             </div>
-            <!-- /#site-content -->
-
-            <div id="sidebar">
-                <div id="inner-sidebar" class="inner-content-wrap">
-                    <div class="widget widget_search">
-                        <form role="search" method="get" action="#" class="search-form style-1">
-                            <input type="search" class="search-field" placeholder="Search" value="" name="s" title="Search for:">
-                            <button type="submit" class="search-submit" title="Search">Search</button>
-                        </form>
-                    </div>
-                    <!-- /.widget_search -->
-
-                    <div class="widget widget_categories">
-                        <h2 class="widget-title">
-                            <span>CATEGORIES</span>
-                        </h2>
-                        <ul>
-                            <li class="cat-item cat-item-3">
-                                <a href="#">Fluids</a> (2)</li>
-                            <li class="cat-item cat-item-6">
-                                <a href="#">Diagnostic</a> (4)</li>
-                            <li class="cat-item cat-item-4">
-                                <a href="#">Filters</a> (4)</li>
-                            <li class="cat-item cat-item-5">
-                                <a href="#">Electrical</a> (1)</li>
-                            <li class="cat-item cat-item-10">
-                                <a href="#">Certified</a> (3)</li>
-                        </ul>
-                    </div>
-                    <!-- /.widget_categories -->
-                    <!--
-                    <div class="widget widget_recent_news">
-                        <h2 class="widget-title">
-                            <span>RECENT NEWS</span>
-                        </h2>
-                        <ul class="recent-news clearfix">
-                            <li class="clearfix">
-                                <div class="thumb">
-                                    <img width="150" height="150" src="assets/img/news/post-1-150x150.jpg" alt="Image">
-                                </div>
-
-                                <div class="texts">
-                                    <h3>
-                                        <a href="#">Your car’s fluids should be checked</a>
-                                    </h3>
-                                    <span class="post-date">
-                                        <span class="entry-date">December 30, 2016</span>
-                                    </span>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </div>
-                    -->
-                    <!-- /.widget_recent_news -->
-
-                    <div class="widget widget_tag_cloud">
-                        <h2 class="widget-title">
-                            <span>TAGS CLOUD</span>
-                        </h2>
-                        <div class="tagcloud">
-                            <a href="#">Warranties</a>
-                            <a href="#">Diagnostic</a>
-                            <a href="#">Filters</a>
-                            <a href="#">Certified</a>
-                            <a href="#">Electrical</a>
-                            <a href="#">Brakes</a>
-                        </div>
-                    </div>
-                    <!-- /.widget_tag_cloud -->
-                </div>
-                <!-- /#inner-sidebar -->
-            </div>
-            <!-- /#sidebar -->
+          </div>
         </div>
-        <!-- /#content-wrap -->
+      </div>
     </div>
-    <!-- /#main-content -->
+  </div>
+-->
+  <!-- #featured-title -->
+  <div class="row-certified-1 parallax">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="wprt-spacer clearfix" data-desktop="120" data-mobi="60" data-smobi="60"></div>
+        </div>
+        <!-- /.col-md-12 -->
 
-    <!-- PROMOTION -->
-    <div class="row-promotion bg-accent">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="wprt-spacer clearfix" data-desktop="25" data-mobi="25" data-smobi="35"></div>
+        <div class="col-md-2">
+        </div>
+        <!-- /.col-md-2 -->
+
+        <div class="col-md-9">
+          <div class="wprt-animation-block" data-animate="fadeInUpSmall" data-duration="1s" data-delay="0s" data-position="90%">
+            <div class="wprt-icon-box style-2 clearfix icon-left">
+              <!--
+              <div class="image-wrap">
+                <img src="/assets/img/ase.png" alt="Image">
+              </div>
+-->
+              <h3 class="heading">OUR BLOG</h3>
+
+              <p class="desc">Get in touch with our quality AutoService Shop, let our team of highly trained technicians provide you with
+                the best car garage services, including MOT testing, car servicing and car repairs and diagnostics.</p>
+
+              <div class="elm-btn">
+                <a class=" wprt-button small outline white" href="#">SCHEDULE AN APPOINTMENT</a>
+              </div>
+            </div>
+            <!-- /.wprt-icon-box -->
+          </div>
+          <!-- /.wprt-animation-block -->
+        </div>
+        <!-- /.col-md-9 -->
+
+        <div class="col-md-1">
+        </div>
+        <!-- /.col-md-1 -->
+
+        <div class="col-md-12">
+          <div class="wprt-spacer clearfix" data-desktop="120" data-mobi="60" data-smobi="60"></div>
+        </div>
+        <!-- /.col-md-12 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- END CERTIFIED 1 -->
+
+  <!-- Main Content -->
+
+  <div id="main-content" class="site-main clearfix">
+    <div id="content-wrap">
+      <div id="site-content" class="site-content clearfix">
+        <div id="inner-content" class="inner-content-wrap">
+          <div class="page-content">
+            <!-- NEWS -->
+            <div class="row-news">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="83" data-mobi="60" data-smobi="60"></div>
+
+                    <div class="wprt-headings style-1 clearfix text-center">
+                      <h2 class="heading clearfix">NEWS</h2>
+                      <div class="sep clearfix"></div>
+                      <!--
+                      <p class="sub-heading clearfix">Our professionals will perform diagnostic tests, fluid flush and fills, engine replacement, oil changes,
+                        and total vehicle overhauls.</p>
+                        -->
+                    </div>
+                    <!-- /.wprt-headings -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="40" data-smobi="40"></div>
+
+                    <div class="wprt-news has-shadow bullet-circle has-bullets bullet40" data-auto="false" data-column="3" data-column2="2" data-column3="1"
+                      data-gap="30">
+                      <div class="owl-theme">
+
+                        {{#each item in posts}}
+                        <div class="col-md-4" style="margin-bottom: 50px">
+                          <div class="news-item clearfix">
+                            <div class="inner">
+                              <div class="thumb">
+                                <img src="{{item.image}}" alt="Image" style="width:100%">
+                                <div class="meta">
+                                  <span class="post-date">October 3, 2017</span>
+                                </div>
+                              </div>
+                              <div class="text-wrap">
+                                <h3 class="title font-weight-600">
+                                  <a href="/blog">{{item.title}}</a>
+                                </h3>
+                                <p class="excerpt-text">{{{item.content}}}</p>
+
+                                <div class="post-btn">
+                                  <a href="#" class="small wprt-button outline ol-accent">READ MORE</a>
+                                </div>
+                              </div>
+                              <!-- /.text-wrap -->
+                            </div>
+                          </div>
+                          <!-- /.news-item -->
+                        </div>
+                        {{/each}}
+                      </div>
+                    </div>
+                    <!-- /.wprt-news -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="80" data-mobi="50" data-smobi="50"></div>
+                  </div>
+                  <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+              </div>
+
+              <!-- /.container -->
+            </div>
+            <!-- END NEWS -->
+
+            <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="35" data-smobi="35"></div>
+
+            <div class="row-facts-1 parallax">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="90" data-mobi="60" data-smobi="60"></div>
+                  </div>
+                  <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+
+                <div class="row separator dark">
+                  <div class="col-md-3">
+                    <div class="wprt-counter style-2 clearfix icon-left text-center">
+                      <div class="inner">
+                        <div class="icon-wrap">
+                          <div class="icon">
+                            <i class="as-icon-mechanic"></i>
+                          </div>
+                        </div>
+
+                        <div class="text-wrap">
+                          <div class="number-wrap font-heading">
+                            <span class="prefix"></span>
+                            <span class="number " data-speed="2000" data-to="320" data-inviewport="yes">320</span>
+                            <span class="suffix">+</span>
+                          </div>
+                          <h3 class="heading">TECHNICIALS</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.wprt-counter -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="35" data-smobi="35"></div>
+                  </div>
+                  <!-- /.col-md-3 -->
+
+                  <div class="col-md-3">
+                    <div class="wprt-counter style-2 clearfix icon-left text-center">
+                      <div class="inner">
+                        <div class="icon-wrap">
+                          <div class="icon">
+                            <i class="as-icon-key2"></i>
+                          </div>
+                        </div>
+
+                        <div class="text-wrap">
+                          <div class="number-wrap font-heading">
+                            <span class="prefix"></span>
+                            <span class="number " data-speed="2000" data-to="100" data-inviewport="yes">100</span>
+                            <span class="suffix">%</span>
+                          </div>
+                          <h3 class="heading">TRANSPARENCY</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.wprt-counter -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="35" data-smobi="35"></div>
+                  </div>
+                  <!-- /.col-md-3 -->
+
+                  <div class="col-md-3">
+                    <div class="wprt-counter style-2 clearfix icon-left text-center">
+                      <div class="inner">
+                        <div class="icon-wrap">
+                          <div class="icon">
+                            <i class="as-icon-inspection"></i>
+                          </div>
+                        </div>
+
+                        <div class="text-wrap">
+                          <div class="number-wrap font-heading">
+                            <span class="prefix"></span>
+                            <span class="number " data-speed="2000" data-to="890" data-inviewport="yes">890</span>
+                            <span class="suffix">+</span>
+                          </div>
+                          <h3 class="heading">DONE PROJECTS</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.wprt-counter -->
+
+                    <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="35" data-smobi="35"></div>
+                  </div>
+                  <!-- /.col-md-3 -->
+
+                  <div class="col-md-3">
+                    <div class="wprt-counter style-2 clearfix icon-left text-center">
+                      <div class="inner">
+                        <div class="icon-wrap">
+                          <div class="icon">
+                            <i class="as-icon-diagnostic"></i>
+                          </div>
+                        </div>
+                        <div class="text-wrap">
+                          <div class="number-wrap font-heading">
+                            <span class="prefix"></span>
+                            <span class="number " data-speed="2000" data-to="640" data-inviewport="yes">640</span>
+                            <span class="suffix">+</span>
+                          </div>
+                          <h3 class="heading">WON AWARDS</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.wprt-counter -->
+                  </div>
+                  <!-- /.col-md-3 -->
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="90" data-mobi="60" data-smobi="60"></div>
+                  </div>
+                  <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.container -->
+            </div>
+
+
+
+            <!-- PROMOTION -->
+            <div class="row-promotion bg-accent">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="25" data-mobi="35" data-smobi="37"></div>
 
                     <div class="wprt-action-box style-1 has-icon">
-                        <div class="inner">
-                            <div class="heading-wrap">
-                                <div class="text-wrap">
-                                    <h3 class="heading">Fixed Price MOT Test includes a Comprehensive Safety Check</h3>
-                                    <span class="icon">
-                                        <i class="as-icon-speedometer2"></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="button-wrap">
-                                <a href="#" class="wprt-button white">BOOK A SERVICCE</a>
-                            </div>
+                      <div class="inner">
+                        <div class="heading-wrap">
+                          <div class="text-wrap">
+                            <h3 class="heading">
+                              We Are Here To Help With Your Transportation All Repair Needs
+                            </h3>
+                            <span class="icon">
+                              <i class="as-icon-speedometer2"></i>
+                            </span>
+                          </div>
                         </div>
+                        <div class="button-wrap">
+                          <a href="#" class="wprt-button white">BOOK YOUR MOD</a>
+                        </div>
+                      </div>
                     </div>
 
-                    <div class="wprt-spacer clearfix" data-desktop="25" data-mobi="25" data-smobi="35"></div>
+                    <div class="wprt-spacer clearfix" data-desktop="25" data-mobi="35" data-smobi="37"></div>
+                  </div>
+                  <!-- /.col-md-12 -->
                 </div>
-                <!-- /.col-md-12 -->
+                <!-- /.row -->
+              </div>
+              <!-- /.container -->
             </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </div>
-    <!-- END PROMOTION-->
+            <!-- END PROMOTION -->
 
+
+          </div>
+          <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </div>
+
+  </div>
 </template>

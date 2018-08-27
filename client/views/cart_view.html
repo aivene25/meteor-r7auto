@@ -1,0 +1,195 @@
+<template name="cartView">
+  <div id="main-content" class="site-main clearfix">
+    <div id="content-wrap">
+      <div id="site-content" class="site-content clearfix">
+        <div id="inner-content" class="inner-content-wrap">
+          <div class="page-content">
+            <div class="container">
+              <div class="row">
+                <div class="wprt-spacer clearfix" data-desktop="94" data-mobi="60" data-smobi="60"></div>
+                <div class="col-md-12">
+                  <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th class="product-remove">&nbsp;</th>
+                        <th class="product-thumbnail">Preview</th>
+                        <th class="product-name">Product</th>
+                        <th class="product-price">Price</th>
+                        <th class="product-quantity">Quantity</th>
+                        <th class="product-subtotal">Total</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      {{#each cartItems}}
+                      <tr class="woocommerce-cart-form__cart-item cart_item">
+                        <td class="product-remove" style="text-align: center">
+                          <a href="#" class="remove" id="remove-cart-item" aria-label="Remove this item">×</a>
+                        </td>
+
+                        <td class="product-thumbnail">
+                          <a href="#">
+                            <img width="300" height="300" src="{{image}}" alt="{{title}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image">
+                          </a>
+                        </td>
+
+                        <td class="product-name" data-title="Product">
+                          <a href="#">{{title}}</a>
+                        </td>
+
+                        <td class="product-price" data-title="Price">
+                          <span class="woocommerce-Price-amount amount">
+                            <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice price}}</span>
+                        </td>
+
+                        <td class="product-quantity" data-title="Quantity">
+                          <div>
+                            <input type="number" class="input-text qty text quantity" min="1" value="{{quantity}}">
+                          </div>
+                        </td>
+
+                        <td class="product-subtotal" data-title="Total">
+                          <span class="woocommerce-Price-amount amount">
+                            <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{subtotal this}}</span>
+                        </td>
+                      </tr>
+                      {{/each}}
+
+                      <tr>
+                        <td colspan="6" class="actions">
+                          <div class="coupon">
+                            <label for="coupon_code">Coupon:</label>
+                            <span class="wpcf7-form-control-wrap your-name">
+                              <input type="text" tabindex="1" id="coupon-code" class="wpcf7-form-control" placeholder="Coupon code" required style="width: 30vw">
+                            </span>
+                            <div class="button-wrap">
+                              <a href="#" class="wprt-button solid outline outline ol-accent">
+                                <span>APPLY COUPON </span>
+                              </a>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- /.wprt-accordions -->
+                  <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="40" data-smobi="40"></div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="wprt-spacer clearfix" data-desktop="65" data-mobi="40" data-smobi="40"></div>
+                  <div class="wprt-divider divider-center divider-solid"></div>
+                  <div class="clearfix"></div>
+                </div>
+                <!-- /.col-md-12 -->
+
+                <div class="col-md-6">
+                  <div class="wprt-spacer clearfix" data-desktop="83" data-mobi="60" data-smobi="60"></div>
+                  <div class="wprt-headings style-1 clearfix">
+                    <h3 class="heading clearfix">CALCULATE SHIPPING</h3>
+                    <div class="sep clearfix"></div>
+                  </div>
+                  <div>
+                    <div class="wprt-spacer clearfix" data-desktop="20" data-mobi="20" data-smobi="10"></div>
+                    <div>
+                      <input type="radio">
+                      <span>Free Shipping :
+                        <strong>&#8358;0.00</strong>
+                      </span>
+                    </div>
+                    <div>
+                      <input type="radio">
+                      <span>
+                        Flat Rate :
+                        <strong>&#8358;1000.00</strong>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="wprt-spacer clearfix" data-desktop="83" data-mobi="60" data-smobi="60"></div>
+                  <div class="wprt-headings style-1 clearfix">
+                    <h3 class="heading clearfix">CART TOTALS</h3>
+                    <div class="sep clearfix"></div>
+                  </div>
+                  <div>
+                    <div class="wprt-spacer clearfix" data-desktop="20" data-mobi="20" data-smobi="10"></div>
+                    <div>
+                      Subtotal
+                      <span>
+                        <strong>&#8358;{{formatPrice totalPrice}}</strong>
+                      </span>
+                    </div>
+                    <div>
+                      Total
+                      <span>
+                        <strong>&#8358;{{formatPrice totalPrice}}</strong>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div style="float: right;">
+                    <div class="wprt-spacer clearfix" data-desktop="83" data-mobi="60" data-smobi="60"></div>
+                    <div class="button-wrap">
+                      <a href="/checkout" class="wprt-button solid outline outline ol-accent">
+                        <span>PROCEED TO CHECKOUT</span>
+                      </a>
+                    </div>
+                    <div class="wprt-spacer clearfix" data-desktop="83" data-mobi="60" data-smobi="60"></div>
+                  </div>
+                </div>
+
+                <!-- /.col-md-6 -->
+
+                <div class="col-md-12">
+                  <div class="wprt-spacer clearfix" data-desktop="94" data-mobi="60" data-smobi="60"></div>
+                </div>
+                <!-- /.col-md-12 -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.container -->
+
+            <!-- PROMOTION -->
+            <div class="row-promotion bg-accent">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="wprt-spacer clearfix" data-desktop="25" data-mobi="25" data-smobi="35"></div>
+
+                    <div class="wprt-action-box style-1 has-icon">
+                      <div class="inner">
+                        <div class="heading-wrap">
+                          <div class="text-wrap">
+                            <h3 class="heading">Fixed Price MOT Test includes a Comprehensive Safety Check</h3>
+                            <span class="icon">
+                              <i class="as-icon-speedometer2"></i>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="button-wrap">
+                          <a href="#" class="wprt-button white">BOOK YOUR MOT</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="wprt-spacer clearfix" data-desktop="25" data-mobi="25" data-smobi="35"></div>
+                  </div>
+                  <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.container -->
+            </div>
+            <!-- END PROMOTION -->
+          </div>
+          <!-- /.page-content -->
+        </div>
+        <!-- /#inner-content -->
+      </div>
+      <!-- /#site-content -->
+    </div>
+    <!-- /#content-wrap -->
+  </div>
+</template>
