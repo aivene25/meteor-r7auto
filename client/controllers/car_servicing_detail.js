@@ -4,7 +4,7 @@ Template.car_servicing_detail.onCreated(function() {
   let sub = this.subscribe("car-services.all");
   this.service = new ReactiveVar();
   this.autorun(() => {
-    if (sub.ready() == true) {
+    if (sub.ready() === true) {
       let query =Router.current().params._id;
       let new_query = query.charAt(0).toUpperCase() + query.slice(1);
       let res = CarServicing.findOne(
@@ -18,7 +18,12 @@ Template.car_servicing_detail.onCreated(function() {
 
 Template.car_servicing_detail.helpers({
   data: () => {
-    return Template.instance().service.get();
+    let data = Template.instance().service.get();
+    if (data){
+      return data;
+    }else{
+      return false;
+    }
   }
 });
 
