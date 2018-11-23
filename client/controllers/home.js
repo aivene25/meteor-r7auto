@@ -2,17 +2,12 @@ import plugins from "../plugins";
 
 Template.home.onCreated(function() {
   let sub = this.subscribe("services.all");
-  let blog = this.subscribe("posts.all");
   let parts = this.subscribe("parts.all");
   let cars = this.subscribe("cars.all");
   this.autorun(function() {
     if (sub.ready() == true) {
       let res = Services.find({}, {}).fetch();
       Session.setPersistent("services", res);
-    }
-    if (blog.ready() == true) {
-      let res = Posts.find({}, {}).fetch();
-      Session.setPersistent("posts", res);
     }
     if (parts.ready() == true) {
       let res = SpareParts.find({}, {}).fetch();
@@ -28,9 +23,6 @@ Template.home.onCreated(function() {
 Template.home.helpers({
   services: function() {
     return Session.get("services");
-  },
-  posts: function() {
-    return Session.get("posts");
   },
   parts: function() {
     return Session.get("parts");
