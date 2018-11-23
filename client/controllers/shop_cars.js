@@ -1,17 +1,13 @@
-import plugins from '../plugins';
+import plugins from "../plugins";
 
-Template.shopCars.onCreated( function(){
-    this.subscribe('cars.all');
+Template.shopCars.onCreated(function() {
+  this.subscribe("cars.all");
 });
 
 Template.shopCars.helpers({
-    data:()=>{
-        return Cars.find({},{}).fetch();
-    },
-    formatPrice( price){
-      let val = price.toLocaleString("en");
-      return val;
-    }
+  data: () => {
+    return Cars.find({}, {}).fetch();
+  }
 });
 
 Template.shopCars.onRendered(function() {

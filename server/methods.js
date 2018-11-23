@@ -4,9 +4,7 @@ Meteor.methods({
     // Let other method calls from the same client start running, without
     // waiting for the email sending to complete.
     //this.unblock();
-    let from = "eneroakerele@gmail.com";
-    let cc = "aivene25@gmail.com";
-    console.log("sending mail");
-    Email.send({ to,cc,from,subject, text });
+    const from = "R7Auto <info.r7auto@gmail.com>";
+    Email.send({ to,from,subject, text });
   }
 });

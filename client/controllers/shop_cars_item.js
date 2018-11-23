@@ -1,13 +1,8 @@
 import plugins from "../plugins";
 
-
 Template.shopCarsItem.helpers({
   relatedProducts: function() {
     return Cars.find().fetch();
-  },
-  formatPrice(price) {
-    let val = price.toLocaleString("en");
-    return val;
   }
 });
 
@@ -27,7 +22,7 @@ Template.shopCarsItem.events({
       vehicle_make: this.make,
       vehicle_model: this.model
     };
-    let subject ="Vehicle Inspection Enquiry";
+    let subject = "Vehicle Inspection Enquiry";
 
     Meteor.call("InspectionRequests.insert", data, (err, res) => {
       if (err) {
@@ -36,7 +31,9 @@ Template.shopCarsItem.events({
         alert("Your enquiry was received succesfully");
         let text = `Dear ${
           Meteor.user().profile.first_name
-        }, your enquiry has been received and is being processesd, </br> Your request number is ${res}. </br> Vehicle requested is ${this.make},  ${this.model}. `;
+        }, your enquiry has been received and is being processesd, </br> Your request number is ${res}. </br> Vehicle requested is ${
+          this.make
+        },  ${this.model}. `;
         Router.go("/shop/cars");
 
         Meteor.call(

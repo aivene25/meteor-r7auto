@@ -1,11 +1,11 @@
-import plugins from '../plugins';
+import plugins from "../plugins";
 
-Template.cartView.onCreated( function(){
+Template.cartView.onCreated(function() {
   this.data = Session.get("cartItems");
-})
+});
 
 Template.cartView.helpers({
-  cartItems: function(){
+  cartItems: function() {
     return Session.get("cartItems");
   },
   cartLength: function() {
@@ -28,28 +28,22 @@ Template.cartView.helpers({
     }
     return totalPrice;
   },
-  formatPrice: function(price) {
-    let val = price.toLocaleString("en");
-    return val;
-  },
-  subtotal: function(item){
-    let price =  item.price * item.quantity;
+  subtotal: function(item) {
+    let price = item.price * item.quantity;
     return price.toLocaleString("en");
   }
-
-})
+});
 
 Template.cartView.events({
-  "change .quantity":function(event){
+  "change .quantity": function(event) {
     event.preventDefault();
     let quantity = event.currentTarget.value;
     let cartItems = Session.get("cartItems");
-    let res = cartItems.filter( (item)=>{
-      if(item.product_id === this.product_id){
+    let res = cartItems.filter(item => {
+      if (item.product_id === this.product_id) {
         item.quantity = quantity;
         return item;
-      }
-      else{
+      } else {
         return item;
       }
     });
@@ -58,15 +52,15 @@ Template.cartView.events({
   "click #remove-cart-item": function(event, template) {
     event.preventDefault();
     let cartItems = Session.get("cartItems");
-    let res = cartItems.filter( item => {
+    let res = cartItems.filter(item => {
       if (item.product_id != this.product_id) {
-        return item
+        return item;
       }
     });
     Session.update("cartItems", res);
   }
-})
+});
 
-Template.cartView.onRendered( function(){
-  plugins()
-})
+Template.cartView.onRendered(function() {
+  plugins();
+});

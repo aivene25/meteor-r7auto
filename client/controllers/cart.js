@@ -27,10 +27,6 @@ Template.cart.helpers({
       });
     }
     return totalPrice;
-  },
-  formatPrice(price) {
-    let val = price.toLocaleString("en");
-    return val;
   }
 });
 

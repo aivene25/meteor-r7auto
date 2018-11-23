@@ -25,10 +25,6 @@ Template.checkout.helpers({
   cartItems: function() {
     return Session.get("cartItems");
   },
-  formatPrice: function(price) {
-    let val = price.toLocaleString("en");
-    return val;
-  },
   totalPrice: () => {
     var item = Session.get("cartItems");
     var totalPrice = 0;
@@ -51,7 +47,7 @@ Template.checkout.events({
 
   "click #paystack": function(event) {
     event.preventDefault();
-    
+
     if (!Meteor.userId()) {
       console.log("Please login to continue");
       alert("Please login to continue");
@@ -90,7 +86,7 @@ Template.checkout.events({
     //key- Replace with your public key
     //ref - generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
     //label - "Optional string that replaces customer email"
-    
+
     var config = {
       key: "pk_test_076e4ef6af3de972b07418b5de432224369c29d3",
       amount: totalPrice * 100,
@@ -98,7 +94,7 @@ Template.checkout.events({
       lastname: Meteor.user().profile.last_name,
       ref: "PM" + Math.floor(Math.random() * 1000000000 + 1),
       email: "eneroakere@gmail.com",
-      
+
       onClose: function() {
         alert("Window closed.");
       },

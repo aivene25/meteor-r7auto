@@ -5,10 +5,6 @@ Template.shopCarsItem.onCreated(function() {});
 Template.shopPartsItem.helpers({
   relatedProducts: () => {
     return SpareParts.find().fetch();
-  },
-  formatPrice(price) {
-    let val = price.toLocaleString("en");
-    return val;
   }
 });
 

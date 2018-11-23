@@ -1,7 +1,6 @@
 //#1c63b8
 
-
-import plugins from '../plugins';
+import plugins from "../plugins";
 
 Template.shopParts.onCreated(function() {
   this.subscribe("parts.all");
@@ -10,10 +9,6 @@ Template.shopParts.onCreated(function() {
 Template.shopParts.helpers({
   data: () => {
     return SpareParts.find({}, {}).fetch();
-  },
-  formatPrice( price){
-    let val = price.toLocaleString("en");
-    return val;
   }
 });
 
@@ -46,8 +41,8 @@ Template.shopParts.events({
         quantity: 1
       };
       cartItems.push(data);
-    } 
-    alert('Item added to cart');
+    }
+    alert("Item added to cart");
     Session.setPersistent("cartItems", cartItems);
   }
 });
