@@ -11,9 +11,14 @@
         </div>
         <div class="modal-body">
           {{#if success}}
-          <p class="success">Login successful !</p>
+          <div class="isa_success">
+            <i class="fa fa-check"></i> Login successful !.
+          </div>
           {{/if}} {{#if validation_error}} {{#each validation_error_messages}}
-          <p class="error">{{this}}</p>
+          <div class="isa_error">
+            <i class="fa fa-times-circle"></i>
+            {{this}}
+         </div>
           {{/each}} {{/if}}
           <div class="wprt-contact-form style-1 margin-top-10">
             <span>Kindly login to continue</span>

@@ -104,12 +104,20 @@ Template.register_modal.events({
           errors.push(err.reason);
           template.validation_error_messages.set(errors);
         } else {
-          console.log(res);
-          template.loading.set(false);
           template.success.set(true);
+          template.loading.set(false);
           Meteor.setTimeout(() => {
             $("#register_modal").modal("hide");
+            template.validation_error.set(false);
+            template.validation_error_messages.set([]);
+            template.success.set(false);
           }, 2000);
+          const currentUrl = Router.current().url;
+          if (currentUrl.includes("servic")) {
+            Meteor.setTimeout(() => {
+              $("#service_modal").modal("show");
+            }, 2600);
+          }
         }
       });
     }

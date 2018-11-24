@@ -25,7 +25,6 @@ Template.car_servicing_detail.helpers({
   service_data: function() {
     const instance = Template.instance();
     const data = instance.service.get();
-    console.log("Car servicing template data", data);
     return instance.service.get();
   }
 });

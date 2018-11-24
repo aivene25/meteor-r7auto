@@ -22,7 +22,6 @@ Template.serviceItem.helpers({
   },
   service_data: function() {
     const instance = Template.instance();
-    console.log("Car repair item template data", instance.service.get());
     return instance.service.get();
   }
 });
