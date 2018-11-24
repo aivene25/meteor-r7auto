@@ -61,7 +61,7 @@ Template.login_modal.events({
       template.loading.set(false);
       return;
     } else {
-      Meteor.loginWithPassword(email, password, (err, res) => {
+      Meteor.loginWithPassword(email, password, err => {
         if (err) {
           console.log(err.reason);
           template.loading.set(false);

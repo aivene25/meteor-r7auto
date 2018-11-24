@@ -95,7 +95,7 @@ Template.register_modal.events({
       data = { email, password };
       data.profile = { first_name, last_name, phone };
 
-      Accounts.createUser(data, (err, res) => {
+      Accounts.createUser(data, err => {
         if (err) {
           console.log(err.reason);
           template.loading.set(false);

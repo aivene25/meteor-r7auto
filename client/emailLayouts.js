@@ -8,7 +8,7 @@ export function userEmailLayout(data) {
     '<div style="border-top:3px solid #000;padding:2% 0;"> <p>CUSTOMER SERVICE</p><p> We would love to hear from you! Please email us at <a href="mailto:info.r7auto@gmail.com">info.r7auto@gmail.com</a> with any other questions or call us at <a href="tel:+2349099828744">+234 909 982 8744</a></p></p></div></div>';
 
   const emailTextBody =
-    "<p >Service Type:<strong>" +
+    "<p >Service Type: <strong>" +
     data.service_title +
     "</strong></p><p>Vehicle Make : <strong>" +
     data.vehicle_make +

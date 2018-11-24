@@ -1,10 +1,12 @@
 import { adminEmailLayout, userEmailLayout } from "../../emailLayouts";
-
+import { ArrayGenerator } from "../../utils";
 Template.service_modal.onCreated(function() {
+  this.subscribe("carMakes.all");
   this.loading = new ReactiveVar(false);
   this.validation_error = new ReactiveVar(false);
   this.validation_error_messages = new ReactiveVar([]);
   this.success = new ReactiveVar(false);
+  this.carModels = new ReactiveVar([]);
 });
 
 Template.service_modal.helpers({
@@ -23,16 +25,37 @@ Template.service_modal.helpers({
   success: function() {
     const instance = Template.instance();
     return instance.success.get();
+  },
+  carMakes: function() {
+    const carMakes = CarMakes.find().fetch();
+    return carMakes;
+  },
+  carModels: function() {
+    const instance = Template.instance();
+    return instance.carModels.get();
+  },
+  vehicleYears: function() {
+    // returns an array of years from 1990 to present year
+    const presentYear = new Date().getFullYear();
+    const minimumYear = 1990;
+    return ArrayGenerator(minimumYear, presentYear);
   }
 });
 
 Template.service_modal.events({
+  "change select[name=vehicle_make]": function(event, template) {
+    const carName = event.currentTarget.value;
+    const carMake = CarMakes.findOne({ name: carName });
+    if (carMake) {
+      template.carModels.set(carMake.models);
+    }
+  },
   "submit #service-request-form": function(event, template) {
     event.preventDefault();
     template.loading.set(true);
     const vehicle_make = $("select[name=vehicle_make]").val();
-    const vehicle_model = $("input[name=vehicle_model]").val();
-    const vehicle_year = $("select[name=vehicle_year]").val() || "Unknown";
+    const vehicle_model = $("select[name=vehicle_model]").val();
+    const vehicle_year = $("select[name=vehicle_year]").val() || "Any";
     const vehicle_notes = $("textarea[name=vehicle_notes]").val() || "None";
     const service_data = template.data.service;
     template.validation_error.set(false);
@@ -68,14 +91,15 @@ Template.service_modal.events({
         email: Meteor.user().emails[0].address,
         phone: Meteor.user().profile.phone,
         service_id: service_data._id,
-        service_title: service_data.title+"Car Service" || service_data.service,
-        // service type too
+        service_title:
+          service_data.title + " " + "Car Service" || service_data.service,
+        // add service type here
         vehicle_make,
         vehicle_model,
         vehicle_year,
         vehicle_notes
       };
-
+    
       const res = ServiceRequests.insert(data);
       console.log(res);
 
@@ -86,7 +110,7 @@ Template.service_modal.events({
         Meteor.user().emails[0].address,
         subject,
         userEmailLayout(data),
-        (err, res) => {
+        err => {
           if (err) {
             console.log(err.reason);
             template.loading.set(false);
@@ -96,7 +120,7 @@ Template.service_modal.events({
             template.validation_error_messages.set(errors);
           } else {
             $("select[name=vehicle_make]").val("");
-            $("input[name=vehicle_model]").val("");
+            $("select[name=vehicle_model]").val("");
             $("select[name=vehicle_year]").val("");
             $("textarea[name=vehicle_notes]").val("");
 
@@ -104,6 +128,9 @@ Template.service_modal.events({
             template.success.set(true);
             Meteor.setTimeout(() => {
               $("#service_modal").modal("hide");
+              template.validation_error.set(false);
+              template.validation_error_messages.set([]);
+              template.success.set(false);
             }, 3000);
             console.log("Email sent !");
           }

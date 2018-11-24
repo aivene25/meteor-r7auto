@@ -14,3 +14,11 @@ Meteor.publish("cars.all", function() {
 Meteor.publish("parts.all", function() {
   return SpareParts.find();
 });
+Meteor.publish("carMakes.all", function() {
+  return CarMakes.find();
+});
+
+Meteor.publish("carCategories.all", function() {
+    return CarCategories.find();
+  });
+  
