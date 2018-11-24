@@ -81,7 +81,19 @@
       {{#if currentUser}}
       <div class="col-md-8">
         <div class="wprt-contact-form style-1 margin-top-10">
-          <p>You are logged in</p>
+          <p>
+            Hi
+            <strong style="text-transform:capitalize">{{
+              currentUser.profile.first_name
+            }}</strong>
+          </p>
+          <p>
+            Email :
+            <strong style="text-transform:capitalize">{{
+              currentUser.emails.[0].address
+            }}</strong>
+          </p>
+          <p>User details and activities come here</p>
         </div>
         <!-- /.wprt-contact-form -->
       </div>
@@ -99,13 +111,23 @@
 
             <div class="accordion-content">
               <div class="wprt-contact-form style-1">
+                {{#if success}}
+                <div class="isa_success">
+                  <i class="fa fa-check"></i> Login successful !
+                </div>
+                {{/if}} {{#if validation_error}}
+                {{#each validation_error_messages}}
+                <div class="isa_error">
+                  <i class="fa fa-times-circle"></i> {{this}}
+                </div>
+                {{/each}} {{/if}}
                 <form class="wpcf7-form" id="login">
                   <span class="wpcf7-form-control-wrap your-name">
                     <input
                       type="email"
                       id="email"
                       class="wpcf7-form-control"
-                      placeholder="E-mail *"
+                      placeholder="Email *"
                       required
                     />
                   </span>
@@ -118,6 +140,8 @@
                       required
                     />
                   </span>
+                  {{#if isLoading}} {{>spinner}} {{else}}
+
                   <div class="wrap-submit">
                     <input
                       type="submit"
@@ -127,6 +151,7 @@
                       name="submit"
                     />
                   </div>
+                  {{/if}}
                 </form>
               </div>
             </div>
@@ -140,72 +165,82 @@
 
             <div class="accordion-content">
               <div class="wprt-contact-form style-1">
-                <div class="wprt-contact-form style-1">
-                  <form class="wpcf7-form" id="register">
-                    <span class="wpcf7-form-control-wrap your-name">
-                      <input
-                        type="text"
-                        class="wpcf7-form-control"
-                        id="fname"
-                        placeholder="First Name *"
-                        required
-                      />
-                    </span>
-                    <span class="wpcf7-form-control-wrap your-email">
-                      <input
-                        type="text"
-                        class="wpcf7-form-control"
-                        id="lname"
-                        placeholder="Last Name *"
-                        required
-                      />
-                    </span>
-                    <span class="wpcf7-form-control-wrap your-name">
-                      <input
-                        type="email"
-                        class="wpcf7-form-control"
-                        id="email"
-                        placeholder="E-mail *"
-                        required
-                      />
-                    </span>
-                    <span class="wpcf7-form-control-wrap your-email">
-                      <input
-                        type="number"
-                        class="wpcf7-form-control"
-                        placeholder="Phone Number *"
-                        id="phone"
-                        required
-                      />
-                    </span>
-                    <span class="wpcf7-form-control-wrap your-name">
-                      <input
-                        type="password"
-                        class="wpcf7-form-control"
-                        id="pass"
-                        placeholder="Password *"
-                        required
-                      />
-                    </span>
-                    <span class="wpcf7-form-control-wrap your-email">
-                      <input
-                        type="password"
-                        class="wpcf7-form-control"
-                        id="con_pass"
-                        placeholder="Confirm Password *"
-                        required
-                      />
-                    </span>
-
-                    <div class="wrap-submit">
-                      <input
-                        type="submit"
-                        value="REGISTER"
-                        class="submit wpcf7-form-control wpcf7-submit"
-                      />
-                    </div>
-                  </form>
+                {{#if success}}
+                <div class="isa_success">
+                  <i class="fa fa-check"></i> Login successful !
                 </div>
+                {{/if}} {{#if validation_error}}
+                {{#each validation_error_messages}}
+                <div class="isa_error">
+                  <i class="fa fa-times-circle"></i> {{this}}
+                </div>
+                {{/each}} {{/if}}
+                <form class="wpcf7-form" id="register">
+                  <span class="wpcf7-form-control-wrap your-name">
+                    <input
+                      type="text"
+                      class="wpcf7-form-control"
+                      id="fname"
+                      placeholder="First Name *"
+                      required
+                    />
+                  </span>
+                  <span class="wpcf7-form-control-wrap your-email">
+                    <input
+                      type="text"
+                      class="wpcf7-form-control"
+                      id="lname"
+                      placeholder="Last Name *"
+                      required
+                    />
+                  </span>
+                  <span class="wpcf7-form-control-wrap your-name">
+                    <input
+                      type="email"
+                      class="wpcf7-form-control"
+                      id="email"
+                      placeholder="E-mail *"
+                      required
+                    />
+                  </span>
+                  <span class="wpcf7-form-control-wrap your-email">
+                    <input
+                      type="number"
+                      class="wpcf7-form-control"
+                      placeholder="Phone Number *"
+                      id="phone"
+                      required
+                    />
+                  </span>
+                  <span class="wpcf7-form-control-wrap your-name">
+                    <input
+                      type="password"
+                      class="wpcf7-form-control"
+                      id="pass"
+                      placeholder="Password *"
+                      required
+                    />
+                  </span>
+                  <span class="wpcf7-form-control-wrap your-email">
+                    <input
+                      type="password"
+                      class="wpcf7-form-control"
+                      id="con_pass"
+                      placeholder="Confirm Password *"
+                      required
+                    />
+                  </span>
+                  {{#if isLoading}} {{>spinner}} {{else}}
+
+                  <div class="wrap-submit">
+                    <input
+                      type="submit"
+                      value="REGISTER"
+                      class="submit wpcf7-form-control wpcf7-submit"
+                    />
+                  </div>
+                  {{/if}}
+                </form>
               </div>
             </div>
           </div>

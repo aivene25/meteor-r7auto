@@ -66,6 +66,7 @@
 .isa_warning,
 .isa_error {
   padding: 3px;
+  margin-bottom: 10px;
 }
 .isa_info {
   color: #00529b;
