@@ -1,144 +1,74 @@
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91379802-1"></script>
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=UA-91379802-1"
+  ></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
     function gtag() {
       dataLayer.push(arguments);
     }
-    gtag('js', new Date());
+    gtag("js", new Date());
 
-    gtag('config', 'UA-97559695-1');
+    gtag("config", "UA-97559695-1");
   </script>
-  <meta name="google-site-verification" content="7RyXw0zljJ7iSB2HhQP75WGyMMeC0AAyZ857dxoG9nM" />
+  <meta
+    name="google-site-verification"
+    content="7RyXw0zljJ7iSB2HhQP75WGyMMeC0AAyZ857dxoG9nM"
+  />
   <!-- Basic Page Needs -->
-  <meta charset="utf-8">
-  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+  <meta charset="utf-8" />
+  <!--[if IE
+    ]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
+  /><![endif]-->
   <title>R7Auto Services - Car Repair and Car Service</title>
-  <meta name="description" content="R7Auto is an online mechanic auto shop.">
-  <meta name="keywords" content="car repair, auto service, car service, automotive, mechanic auto shop, automotive, mechanic workshop ">
-  <meta name="author" content="Victor Akerele">
+  <meta name="description" content="R7Auto is an online mechanic auto shop." />
+  <meta
+    name="keywords"
+    content="car repair, auto service, car service, automotive, mechanic auto shop, automotive, mechanic workshop "
+  />
+  <meta name="author" content="Victor Akerele" />
 
   <!-- Mobile Specific Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- Favicon and Touch Icons  -->
-  <link rel="shortcut icon" href="/assets/img/r7auto-favicon.jpg">
-  <link rel="apple-touch-icon-precomposed" href="/assets/img/r7auto-favicon.jpg">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
+  <!-- Favicon and Touch Icons -->
+  <link rel="shortcut icon" href="/assets/img/r7auto-favicon.jpg" />
+  <link
+    rel="apple-touch-icon-precomposed"
+    href="/assets/img/r7auto-favicon.jpg"
+  />
 
   <script src="https://js.paystack.co/v2/popup.js"></script>
 
   <!--
-  <script src="https://js.paystack.co/v1/inline.js"></script>
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
   -->
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-  <!-- Javascript -->
-  <!--
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/plugins.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/animsition.js"></script>
-    <script src="/assets/js/countto.js"></script>
-    <script src="/assets/js/cubeportfolio.js"></script>
-    <script src="/assets/js/owl.carousel.min.js"></script>
-    <script src="/assets/js/magnific.popup.min.js"></script>
-    <script src="/assets/js/equalize.min.js"></script>
-    <script src="/assets/js/shortcodes.js"></script>
-    <script src="/assets/js/main.js"></script>
--->
-  <!-- Revolution Slider -->
-  <!--
-    <script src="/includes/rev-slider/js/jquery.themepunch.tools.min.js"></script>
-    <script src="/includes/rev-slider/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="/assets/js/rev-slider.js"></script>
-    <script src="/includes/rev-slider/js/extensions/revolution.extension.actions.min.js"></script>
-    <script src="/includes/rev-slider/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script src="/includes/rev-slider/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script src="/includes/rev-slider/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="/includes/rev-slider/js/extensions/revolution.extension.migration.min.js"></script>
-    <script src="/includes/rev-slider/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script src="/includes/rev-slider/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script src="/includes/rev-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="/includes/rev-slider/js/extensions/revolution.extension.video.min.js"></script>
--->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 
 <template name="main">
   <div id="#overlay-container" class="overlay">
-    <div id="overlay-spinner"> </div>
+    <div id="overlay-spinner"></div>
   </div>
 
-  <div class="page header-fixed no-sidebar site-layout-full-width header-style-3 menu-has-search menu-has-cart">
+  <div
+    class="page header-fixed no-sidebar site-layout-full-width header-style-3 menu-has-search menu-has-cart"
+  >
     <div id="" class="">
-      <div id="" class="clearfix">
-        {{>header}} {{>yield}}
-      </div>
+      <div id="" class="clearfix">{{>header}} {{>yield}}</div>
     </div>
-    {{>footer}}
-    <a id="scroll-top"></a>
+    {{>footer}} <a id="scroll-top"></a>
   </div>
 
-  <!-- Modal -->
-
-  <div id="inspectionRequestForm" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Inspection</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal -->
-  <div id="successModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div id="errorModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <!-- Modals -->
+   {{>login_modal}} {{>register_modal}} {{>error_modal}}
+  {{>success_modal}}
 </template>
