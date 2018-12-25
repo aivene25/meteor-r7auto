@@ -1,4 +1,4 @@
-import plugins from "../plugins";
+import plugins from "../../plugins";
 
 Template.car_servicing_detail.onCreated(function() {
   const sub = this.subscribe("car-services.all");

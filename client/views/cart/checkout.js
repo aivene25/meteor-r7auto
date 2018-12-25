@@ -1,5 +1,5 @@
-import plugins from "../plugins";
-import states from "./../states.json";
+import plugins from "../../plugins";
+import states from "../../states.json";
 
 Template.checkout.onCreated(function() {
   this.country = new ReactiveVar("Nigeria");

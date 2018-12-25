@@ -3,3 +3,9 @@ Template.registerHelper("formatPrice", price => {
     return price.toLocaleString("en");
   }
 });
+
+Template.registerHelper("dataCount", data => {
+  if (data) {
+    return data.length;
+  }
+});

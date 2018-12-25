@@ -1,4 +1,4 @@
-import plugins from "../plugins";
+import plugins from "../../plugins";
 
 Template.services.onCreated(function() {
   this.subscribe("services.all");

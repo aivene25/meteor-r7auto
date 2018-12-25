@@ -1,23 +1,26 @@
-<template name='cart'>
+<template name="cart">
   <ul class="nav-extend active">
     <li class="ext c">
-      <a class="cart-info" href="#" title="View your shopping cart">{{cartLength}} Items
+      <a class="cart-info" href="#" title="View your shopping cart"
+        >{{ cartLength }} Items
         <span class="woocommerce-Price-amount amount">
-          <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{ formatPrice totalPrice}}</span>
+          <span class="woocommerce-Price-currencySymbol">&#8358;</span
+          >{{ formatPrice totalPrice}}</span
+        >
       </a>
     </li>
   </ul>
-  <!-- /.nav-extend -->
 
   <div class="nav-top-cart-wrapper">
     <a class="nav-cart-trigger" href="#">
       <span class="cart-icon rt-icon-bag">
-        <span class="shopping-cart-items-count">{{cartLength}}</span>
+        <span class="shopping-cart-items-count">{{ cartLength }}</span>
       </span>
     </a>
 
     <div class="nav-shop-cart">
       <div class="widget_shopping_cart_content">
+        {{#if data}}
         <div class="woocommerce-min-cart-wrap">
           <ul class="woocommerce-mini-cart cart_list product_list_widget ">
             {{#each data}}
@@ -26,11 +29,19 @@
                 <span class="fa fa-close"></span>
               </a>
               <a href="#">
-                <img width="150" height="150" src="{{image}}" alt="{{product.title}}">{{title}}
+                <img
+                  width="150"
+                  height="150"
+                  src="{{ image }}"
+                  alt="{{ title }}"
+                />{{ title }}
               </a>
-              <span class="quantity">{{quantity}} ×
+              <span class="quantity"
+                >{{ quantity }} ×
                 <span class="woocommerce-Price-amount amount">
-                  <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice price}}</span>
+                  <span class="woocommerce-Price-currencySymbol">&#8358;</span
+                  >{{formatPrice price}}</span
+                >
               </span>
             </li>
             {{/each}}
@@ -38,7 +49,9 @@
           <p class="woocommerce-mini-cart__total total">
             <strong>Subtotal:</strong>
             <span class="woocommerce-Price-amount amount">
-              <span class="woocommerce-Price-currencySymbol">&#8358;</span>{{formatPrice totalPrice}}</span>
+              <span class="woocommerce-Price-currencySymbol">&#8358;</span
+              >{{formatPrice totalPrice}}</span
+            >
           </p>
 
           <p class="woocommerce-mini-cart__buttons buttons">
@@ -46,10 +59,11 @@
             <a href="/checkout" class="button checkout wc-forward">Checkout</a>
           </p>
         </div>
-        <!-- /.widget_shopping_cart_content -->
+        {{else}}
+        <div class="text-center"><p>No item in your cart</p></div>
+
+        {{/if}}
       </div>
     </div>
-    <!-- /.nav-shop-cart -->
   </div>
-  <!-- /.nav-top-cart-wrapper -->
 </template>

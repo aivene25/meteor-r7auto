@@ -1,4 +1,4 @@
-import plugins from "../plugins";
+import plugins from "../../plugins";
 
 Template.cartView.onCreated(function() {
   this.data = Session.get("cartItems");

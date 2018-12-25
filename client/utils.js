@@ -23,3 +23,34 @@ export function ArrayGenerator(min, max, step) {
   }
   return A;
 }
+
+const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+export function validateEmail(email) {
+  return emailRegex.test(email);
+}
+
+export function Success(template, message) {
+  template.loading.set(false);
+  template.success.set(message);
+  window.scrollTo(0, 0);
+  setTimeout(() => {
+    template.success.set(false);
+  }, 8000);
+}
+
+export function Failure(template, message) {
+  template.loading.set(false);
+  template.error.set(message);
+  window.scrollTo(0, 0);
+  setTimeout(() => {
+    template.error.set(false);
+  }, 8000);
+  throw message;
+}
+
+export function Loading(template) {
+  template.success.set(false);
+  template.error.set(false);
+  template.loading.set(true);
+}

@@ -1,5 +1,5 @@
 
-import plugins from '../plugins';
+import plugins from '../../plugins';
 
 
 Template.blog.onCreated(function() {

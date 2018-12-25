@@ -19,6 +19,5 @@ Meteor.publish("carMakes.all", function() {
 });
 
 Meteor.publish("carCategories.all", function() {
-    return CarCategories.find();
-  });
-  
+  return CarCategories.find();
+});
