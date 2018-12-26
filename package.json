@@ -3,12 +3,13 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "serve":"meteor --port=3030 --settings=settings.json"
+    "serve": "meteor --port=3030 --settings=settings.json"
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
     "ev-emitter": "^1.1.1",
     "meteor-node-stubs": "^0.3.2",
+    "paystack": "^2.0.1",
     "simpl-schema": "^1.5.0"
   }
 }

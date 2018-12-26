@@ -1,110 +1,92 @@
 import plugins from "../../plugins";
 import states from "../../states.json";
+import Cart from "../shop/Cart";
+import { Failure, Loading, Success } from "../../utils";
 
 Template.checkout.onCreated(function() {
   this.country = new ReactiveVar("Nigeria");
-});
-
-Template.checkout.onRendered(function() {
-  plugins();
+  this.loading = new ReactiveVar(false);
+  this.error = new ReactiveVar(false);
+  this.success = new ReactiveVar(false);
 });
 
 Template.checkout.helpers({
-  country: function() {
-    return states;
-  },
+  loading: () => Template.instance().loading.get(),
+  error: () => Template.instance().error.get(),
+  success: () => Template.instance().success.get(),
   state: function() {
-    args = Template.instance().country.get();
-    let res = states.filter(function(val) {
-      if (val.country === args) {
+    const res = states.filter(val => {
+      if (val.country === "Nigeria") {
         return val;
       }
     });
     return res[0].states;
   },
-  cartItems: function() {
-    return Session.get("cartItems");
-  },
-  totalPrice: () => {
-    var item = Session.get("cartItems");
-    var totalPrice = 0;
-    if (item) {
-      item.forEach(item => {
-        let price = parseInt(item.price);
-        let quant = item.quantity;
-        totalPrice += parseInt(price * quant);
-      });
-    }
-    return totalPrice;
-  }
+  cartItems: () => Cart.cartItems(),
+  totalPrice: () => Cart.cartTotal()
 });
 
 Template.checkout.events({
-  "change #country": function(event, template) {
-    let country = event.currentTarget.value;
-    template.country.set(country);
-  },
-
-  "click #paystack": function(event) {
+  "click #paystack": function(event, template) {
     event.preventDefault();
+    Loading(template);
 
     if (!Meteor.userId()) {
-      console.log("Please login to continue");
-      alert("Please login to continue");
-      window.scrollTo(0, 0);
-      return;
+      Failure(template, "Please Login to continue");
     }
 
-    let email = Meteor.user().emails[0].address;
-    let phone = Meteor.user().profile.phone;
-    let cart = Session.get("cartItems");
-
-    let totalPrice = 0;
-    cart.forEach(item => {
-      let price = parseInt(item.price);
-      let quant = item.quantity;
-      totalPrice += parseInt(price * quant);
-    });
-
-    if (!email) {
-      console.log("error in email");
-      return;
-    }
-    if (!phone) {
-      console.log("error in phone");
-      return;
-    }
-    if (!totalPrice) {
-      console.log("error in total price");
-      return;
-    }
-
-    let subject = "Order received successfully";
+    const email = Meteor.user().emails[0].address;
+    const { phone, first_name, last_name } = Meteor.user().profile;
+    const cartItems = Cart.cartItems();
+    const totalPrice = Cart.cartTotal();
+    const subject = "Order received successfully";
     let delivery_date = new Date();
     delivery_date.setDate(delivery_date.getDate() + 3);
+
+    if (!email) Failure(template, "No email provided");
+
+    if (!phone) Failure(template, "No phone provided");
+
+    if (!totalPrice) Failure(template, "No price provided");
 
     //key- Replace with your public key
     //ref - generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
     //label - "Optional string that replaces customer email"
 
-    var config = {
+    const config = {
       key: "pk_test_076e4ef6af3de972b07418b5de432224369c29d3",
       amount: totalPrice * 100,
-      firstname: Meteor.user().profile.first_name,
-      lastname: Meteor.user().profile.last_name,
+      first_name,
+      last_name,
+      email,
       ref: "PM" + Math.floor(Math.random() * 1000000000 + 1),
-      email: "eneroakere@gmail.com",
-
+      metadata: {
+        custom_fields: [
+          {
+            display_name: "Mobile Number",
+            variable_name: "mobile_number",
+            value: phone
+          },
+          {
+            display_name: "First Name",
+            variable_name: "first_name",
+            value: first_name
+          },
+          {
+            display_name: "Last Name",
+            variable_name: "last_name",
+            value: last_name
+          }
+        ]
+      },
       onClose: function() {
         alert("Window closed.");
       },
       callback: function(response) {
-        var message = "Payment complete! Reference: " + response.reference;
+        const message = "Payment complete! Reference: " + response.reference;
         alert(message);
         console.log(response);
         if (response.status === "success") {
-          console.log("transcation successful");
-
           data = {};
           data.status = "STATUS_PAYMENT_RECEIVED";
           data.delivery_method = "Courier";
@@ -115,7 +97,7 @@ Template.checkout.events({
           data.gateway_status = "APPROVED";
           data.gateway_transaction_ref = response.ref;
           data.date_added = new Date();
-          data.products = Session.get("cartItems");
+          data.products = cartItems;
 
           Meteor.call("Orders.insert", data, (err, res) => {
             if (err) {
@@ -145,34 +127,33 @@ Template.checkout.events({
           });
         } else {
           console.log("transcation error");
-          alert("Transcation error");
         }
       }
     };
 
-    var paystackPopup = new Popup(config);
-    paystackPopup.open();
+    const paystackPopup = PaystackPop.setup(config);
+    paystackPopup.openIframe();
   },
 
-  "submit #login": function(event) {
+  "submit #login": function(event, template) {
     event.preventDefault();
-    let email = event.target.email.value;
-    let pass = event.target.pass.value;
+    Loading(template);
+    const email = event.target.email.value;
+    const password = event.target.pass.value;
 
-    if (!email || !pass) {
-      alert("Please fill in all fields");
-      console.log("Please fill in the proper forms");
-      return;
-    }
+    if (!email) Failure(template, "Email required");
+    if (!password) Failure(template, "Password required");
 
-    Meteor.loginWithPassword(email, pass, (err, res) => {
+    Meteor.loginWithPassword(email, password, err => {
       if (err) {
-        console.log(err.reason);
+        Failure(template, err.reason);
       } else {
-        console.log(res);
-        // scroll to bottom here, where the checkout button is
+        Success(template, "Login successful");
       }
     });
-    // give appriporate fedback
   }
+});
+
+Template.checkout.onRendered(function() {
+  plugins();
 });

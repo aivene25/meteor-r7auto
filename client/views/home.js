@@ -1,4 +1,5 @@
 import plugins from "../plugins";
+import Cart from "./shop/Cart";
 
 Template.home.onCreated(function() {
   let sub = this.subscribe("services.all");
@@ -21,57 +22,20 @@ Template.home.onCreated(function() {
 });
 
 Template.home.helpers({
-  services: function() {
-    return Session.get("services");
-  },
-  parts: function() {
-    return Session.get("parts");
-  },
-  cars: function() {
-    return Session.get("cars");
-  }
+  services: () => Session.get("services"),
+  parts: () => Session.get("parts"),
+  cars: () => Session.get("cars")
 });
 
 Template.home.events({
   "click #add-to-cart": function(event) {
     event.preventDefault();
-    let product = this;
-    let cartItems = Session.get("cartItems") || [];
-    let contains = false;
-
-    if (cartItems.length > 0) {
-      cartItems.forEach(item => {
-        if (product._id == item.product_id) {
-          item.quantity = parseInt(item.quantity) + 1;
-          contains = true;
-        }
-      });
-      if (contains == false) {
-        let data = { 
-          product_id: product._id,
-          title: product.title,
-          price: product.price,
-          category: product.category,
-          description: product.description,
-          image: product.image,
-          quantity: 1 
-        };
-        cartItems.push(data);
-      }
-    } else {
-      let data = { 
-        product_id: product._id,
-        title: product.title,
-        price: product.price,
-        category: product.category,
-        description: product.description,
-        image: product.image,
-        quantity: 1  
-      };
-      cartItems.push(data);
+    const product = this;
+    try {
+      const newCart = new Cart(product).addToCart(1);
+    } catch (ex) {
+      console.log(ex);
     }
-    alert("Item added to cart");
-    Session.setPersistent("cartItems", cartItems);
   }
 });
 

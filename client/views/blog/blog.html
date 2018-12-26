@@ -1,44 +1,29 @@
 <template name="blog">
-  <!-- Featured Title -->
-
-  <!--
-  <div id="featured-title" class="clearfix featured-title-left">
-    <div id="featured-title-inner" class="wprt-container clearfix">
-      <div class="featured-title-inner-wrap">
-        <div class="featured-title-heading-wrap">
-          <h1 class="featured-title-heading">Blog</h1>
-        </div>
-
-        <div id="breadcrumbs">
-          <div class="breadcrumbs-inner">
-            <div class="breadcrumb-trail">
-              <a href="#" title="Home" rel="home" class="trail-begin">Home</a>
-              <span class="sep">
-                <i class="rt-icon-right-arrow12"></i>
-              </span>
-              <span class="trail-end">Blog</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
--->
   <!-- #featured-title -->
   <div class="row-certified-1 parallax">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="wprt-spacer clearfix" data-desktop="120" data-mobi="60" data-smobi="60"></div>
+          <div
+            class="wprt-spacer clearfix"
+            data-desktop="120"
+            data-mobi="60"
+            data-smobi="60"
+          ></div>
         </div>
         <!-- /.col-md-12 -->
 
-        <div class="col-md-2">
-        </div>
+        <div class="col-md-2"></div>
         <!-- /.col-md-2 -->
 
         <div class="col-md-9">
-          <div class="wprt-animation-block" data-animate="fadeInUpSmall" data-duration="1s" data-delay="0s" data-position="90%">
+          <div
+            class="wprt-animation-block"
+            data-animate="fadeInUpSmall"
+            data-duration="1s"
+            data-delay="0s"
+            data-position="90%"
+          >
             <div class="wprt-icon-box style-2 clearfix icon-left">
               <!--
               <div class="image-wrap">
@@ -47,33 +32,36 @@
 -->
               <h3 class="heading">OUR BLOG</h3>
 
-              <p class="desc">Get in touch with our quality AutoService Shop, let our team of highly trained technicians provide you with
-                the best car garage services, including MOT testing, car servicing and car repairs and diagnostics.</p>
+              <p class="desc">
+                Get in touch with our quality AutoService Shop, let our team of
+                highly trained technicians provide you with the best car garage
+                services, including MOT testing, car servicing and car repairs
+                and diagnostics.
+              </p>
 
               <div class="elm-btn">
-                <a class=" wprt-button small outline white" href="#">SCHEDULE AN APPOINTMENT</a>
+                <a class=" wprt-button small outline white" href="#"
+                  >SCHEDULE AN APPOINTMENT</a
+                >
               </div>
             </div>
-            <!-- /.wprt-icon-box -->
           </div>
-          <!-- /.wprt-animation-block -->
         </div>
-        <!-- /.col-md-9 -->
 
-        <div class="col-md-1">
-        </div>
+        <div class="col-md-1"></div>
         <!-- /.col-md-1 -->
 
         <div class="col-md-12">
-          <div class="wprt-spacer clearfix" data-desktop="120" data-mobi="60" data-smobi="60"></div>
+          <div
+            class="wprt-spacer clearfix"
+            data-desktop="120"
+            data-mobi="60"
+            data-smobi="60"
+          ></div>
         </div>
-        <!-- /.col-md-12 -->
       </div>
-      <!-- /.row -->
     </div>
-    <!-- /.container -->
   </div>
-  <!-- END CERTIFIED 1 -->
 
   <!-- Main Content -->
 
@@ -87,7 +75,12 @@
               <div class="container">
                 <div class="row">
                   <div class="col-md-12">
-                    <div class="wprt-spacer clearfix" data-desktop="83" data-mobi="60" data-smobi="60"></div>
+                    <div
+                      class="wprt-spacer clearfix"
+                      data-desktop="83"
+                      data-mobi="60"
+                      data-smobi="60"
+                    ></div>
 
                     <div class="wprt-headings style-1 clearfix text-center">
                       <h2 class="heading clearfix">NEWS</h2>
@@ -99,60 +92,91 @@
                     </div>
                     <!-- /.wprt-headings -->
 
-                    <div class="wprt-spacer clearfix" data-desktop="45" data-mobi="40" data-smobi="40"></div>
+                    <div
+                      class="wprt-spacer clearfix"
+                      data-desktop="45"
+                      data-mobi="40"
+                      data-smobi="40"
+                    ></div>
 
-                    <div class="wprt-news has-shadow bullet-circle has-bullets bullet40" data-auto="false" data-column="3" data-column2="2" data-column3="1"
-                      data-gap="30">
+                    <div
+                      class="wprt-news has-shadow bullet-circle has-bullets bullet40"
+                      data-auto="false"
+                      data-column="3"
+                      data-column2="2"
+                      data-column3="1"
+                      data-gap="30"
+                    >
                       <div class="owl-theme">
-
-                        {{#each item in posts}}
+                        {{#each posts}}
                         <div class="col-md-4" style="margin-bottom: 50px">
                           <div class="news-item clearfix">
                             <div class="inner">
                               <div class="thumb">
-                                <img src="{{item.image}}" alt="Image" style="width:100%">
+                                <img
+                                  src="{{ this.image }}"
+                                  alt="Image"
+                                  style="width:100%"
+                                />
                                 <div class="meta">
-                                  <span class="post-date">October 3, 2017</span>
+                                  <span class="post-date">{{ formatDate
+                                    this.created_at
+                                  }}</span>
                                 </div>
                               </div>
                               <div class="text-wrap">
                                 <h3 class="title font-weight-600">
-                                  <a href="/blog">{{item.title}}</a>
+                                  <a href="/blog/{{ this._id }}">{{
+                                    this.title
+                                  }}</a>
                                 </h3>
-                                <p class="excerpt-text">{{{item.content}}}</p>
+                                <p class="excerpt-text">
+                                  {{{ reduceText this.content}}}
+                                </p>
 
                                 <div class="post-btn">
-                                  <a href="#" class="small wprt-button outline ol-accent">READ MORE</a>
+                                  <a
+                                    href="blog/{{ this._id }}"
+                                    class="small wprt-button outline ol-accent"
+                                    >READ MORE</a
+                                  >
                                 </div>
                               </div>
-                              <!-- /.text-wrap -->
                             </div>
                           </div>
-                          <!-- /.news-item -->
                         </div>
                         {{/each}}
                       </div>
                     </div>
-                    <!-- /.wprt-news -->
 
-                    <div class="wprt-spacer clearfix" data-desktop="80" data-mobi="50" data-smobi="50"></div>
+                    <div
+                      class="wprt-spacer clearfix"
+                      data-desktop="80"
+                      data-mobi="50"
+                      data-smobi="50"
+                    ></div>
                   </div>
-                  <!-- /.col-md-12 -->
                 </div>
-                <!-- /.row -->
               </div>
-
-              <!-- /.container -->
             </div>
-            <!-- END NEWS -->
 
-            <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="35" data-smobi="35"></div>
+            <div
+              class="wprt-spacer clearfix"
+              data-desktop="0"
+              data-mobi="35"
+              data-smobi="35"
+            ></div>
 
             <div class="row-facts-1 parallax">
               <div class="container">
                 <div class="row">
                   <div class="col-md-12">
-                    <div class="wprt-spacer clearfix" data-desktop="90" data-mobi="60" data-smobi="60"></div>
+                    <div
+                      class="wprt-spacer clearfix"
+                      data-desktop="90"
+                      data-mobi="60"
+                      data-smobi="60"
+                    ></div>
                   </div>
                   <!-- /.col-md-12 -->
                 </div>
@@ -160,7 +184,9 @@
 
                 <div class="row separator dark">
                   <div class="col-md-3">
-                    <div class="wprt-counter style-2 clearfix icon-left text-center">
+                    <div
+                      class="wprt-counter style-2 clearfix icon-left text-center"
+                    >
                       <div class="inner">
                         <div class="icon-wrap">
                           <div class="icon">
@@ -171,7 +197,13 @@
                         <div class="text-wrap">
                           <div class="number-wrap font-heading">
                             <span class="prefix"></span>
-                            <span class="number " data-speed="2000" data-to="320" data-inviewport="yes">320</span>
+                            <span
+                              class="number "
+                              data-speed="2000"
+                              data-to="320"
+                              data-inviewport="yes"
+                              >320</span
+                            >
                             <span class="suffix">+</span>
                           </div>
                           <h3 class="heading">TECHNICIALS</h3>
@@ -180,23 +212,34 @@
                     </div>
                     <!-- /.wprt-counter -->
 
-                    <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="35" data-smobi="35"></div>
+                    <div
+                      class="wprt-spacer clearfix"
+                      data-desktop="0"
+                      data-mobi="35"
+                      data-smobi="35"
+                    ></div>
                   </div>
                   <!-- /.col-md-3 -->
 
                   <div class="col-md-3">
-                    <div class="wprt-counter style-2 clearfix icon-left text-center">
+                    <div
+                      class="wprt-counter style-2 clearfix icon-left text-center"
+                    >
                       <div class="inner">
                         <div class="icon-wrap">
-                          <div class="icon">
-                            <i class="as-icon-key2"></i>
-                          </div>
+                          <div class="icon"><i class="as-icon-key2"></i></div>
                         </div>
 
                         <div class="text-wrap">
                           <div class="number-wrap font-heading">
                             <span class="prefix"></span>
-                            <span class="number " data-speed="2000" data-to="100" data-inviewport="yes">100</span>
+                            <span
+                              class="number "
+                              data-speed="2000"
+                              data-to="100"
+                              data-inviewport="yes"
+                              >100</span
+                            >
                             <span class="suffix">%</span>
                           </div>
                           <h3 class="heading">TRANSPARENCY</h3>
@@ -205,12 +248,19 @@
                     </div>
                     <!-- /.wprt-counter -->
 
-                    <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="35" data-smobi="35"></div>
+                    <div
+                      class="wprt-spacer clearfix"
+                      data-desktop="0"
+                      data-mobi="35"
+                      data-smobi="35"
+                    ></div>
                   </div>
                   <!-- /.col-md-3 -->
 
                   <div class="col-md-3">
-                    <div class="wprt-counter style-2 clearfix icon-left text-center">
+                    <div
+                      class="wprt-counter style-2 clearfix icon-left text-center"
+                    >
                       <div class="inner">
                         <div class="icon-wrap">
                           <div class="icon">
@@ -221,7 +271,13 @@
                         <div class="text-wrap">
                           <div class="number-wrap font-heading">
                             <span class="prefix"></span>
-                            <span class="number " data-speed="2000" data-to="890" data-inviewport="yes">890</span>
+                            <span
+                              class="number "
+                              data-speed="2000"
+                              data-to="890"
+                              data-inviewport="yes"
+                              >890</span
+                            >
                             <span class="suffix">+</span>
                           </div>
                           <h3 class="heading">DONE PROJECTS</h3>
@@ -230,12 +286,19 @@
                     </div>
                     <!-- /.wprt-counter -->
 
-                    <div class="wprt-spacer clearfix" data-desktop="0" data-mobi="35" data-smobi="35"></div>
+                    <div
+                      class="wprt-spacer clearfix"
+                      data-desktop="0"
+                      data-mobi="35"
+                      data-smobi="35"
+                    ></div>
                   </div>
                   <!-- /.col-md-3 -->
 
                   <div class="col-md-3">
-                    <div class="wprt-counter style-2 clearfix icon-left text-center">
+                    <div
+                      class="wprt-counter style-2 clearfix icon-left text-center"
+                    >
                       <div class="inner">
                         <div class="icon-wrap">
                           <div class="icon">
@@ -245,7 +308,13 @@
                         <div class="text-wrap">
                           <div class="number-wrap font-heading">
                             <span class="prefix"></span>
-                            <span class="number " data-speed="2000" data-to="640" data-inviewport="yes">640</span>
+                            <span
+                              class="number "
+                              data-speed="2000"
+                              data-to="640"
+                              data-inviewport="yes"
+                              >640</span
+                            >
                             <span class="suffix">+</span>
                           </div>
                           <h3 class="heading">WON AWARDS</h3>
@@ -260,60 +329,22 @@
 
                 <div class="row">
                   <div class="col-md-12">
-                    <div class="wprt-spacer clearfix" data-desktop="90" data-mobi="60" data-smobi="60"></div>
+                    <div
+                      class="wprt-spacer clearfix"
+                      data-desktop="90"
+                      data-mobi="60"
+                      data-smobi="60"
+                    ></div>
                   </div>
-                  <!-- /.col-md-12 -->
                 </div>
-                <!-- /.row -->
               </div>
-              <!-- /.container -->
             </div>
-
-
 
             <!-- PROMOTION -->
-            <div class="row-promotion bg-accent">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="wprt-spacer clearfix" data-desktop="25" data-mobi="35" data-smobi="37"></div>
-
-                    <div class="wprt-action-box style-1 has-icon">
-                      <div class="inner">
-                        <div class="heading-wrap">
-                          <div class="text-wrap">
-                            <h3 class="heading">
-                              We Are Here To Help With Your Transportation All Repair Needs
-                            </h3>
-                            <span class="icon">
-                              <i class="as-icon-speedometer2"></i>
-                            </span>
-                          </div>
-                        </div>
-                        <div class="button-wrap">
-                          <a href="#" class="wprt-button white">BOOK YOUR MOD</a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="wprt-spacer clearfix" data-desktop="25" data-mobi="35" data-smobi="37"></div>
-                  </div>
-                  <!-- /.col-md-12 -->
-                </div>
-                <!-- /.row -->
-              </div>
-              <!-- /.container -->
-            </div>
-            <!-- END PROMOTION -->
-
-
+            {{>promotion}}
           </div>
-          <!-- /.col-md-12 -->
         </div>
-        <!-- /.row -->
       </div>
-      <!-- /.container -->
     </div>
-
   </div>
 </template>

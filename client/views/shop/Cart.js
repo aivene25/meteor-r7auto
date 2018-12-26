@@ -56,7 +56,7 @@ export default class Cart {
     return total;
   }
 
-  vat() {
+  static vat() {
     // 5% vat
     const vat = this.cartPrice() * 0.05;
     return vat;
