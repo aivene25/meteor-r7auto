@@ -1,0 +1,310 @@
+<template name="shopPartsItem">
+  <!-- Featured Title -->
+  <div id="featured-title" class="clearfix featured-title-left">
+    <div id="featured-title-inner" class="wprt-container clearfix">
+      <div class="featured-title-inner-wrap">
+        <div class="featured-title-heading-wrap">
+          <h1 class="featured-title-heading font-weight-600">{{ title }}</h1>
+        </div>
+
+        <div id="breadcrumbs">
+          <div class="breadcrumbs-inner">
+            <div class="breadcrumb-trail">
+              <a href="/" title="Home" rel="home" class="trail-begin">Home</a>
+              <span class="sep"> <i class="rt-icon-right-arrow12"></i> </span>
+              <a
+                href="/shop/parts"
+                title="parts"
+                rel="parts"
+                class="trail-begin"
+                >Shop</a
+              >
+              <span class="sep"> <i class="rt-icon-right-arrow12"></i> </span>
+              <span class="trail-end">Parts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- #featured-title -->
+
+  <div
+    class="wprt-spacer clearfix"
+    data-desktop="80"
+    data-mobi="30"
+    data-smobi="30"
+  ></div>
+
+  <!-- Main Content -->
+  <div id="main-content" class="site-main clearfix margin-bottom-30">
+    <div id="content-wrap" class="wprt-container">
+      <div id="site-content" class="site-content clearfix">
+        {{#if success}}
+        <div class="isa_success"><i class="fa fa-check"></i>{{ success }}</div>
+        {{/if}}
+
+        {{#if error}}
+        <div class="isa_error">
+          <i class="fa fa-times-circle"></i> {{ error }}
+        </div>
+        {{/if}}
+
+        <div id="inner-content" class="inner-content-wrap">
+          <div class="content-woocommerce">
+            <div class="woo-single-post-class">
+              <div class="inner clearfix">
+                <div class="images">
+                  <img class="product-image" src="{{ image }}" />
+                </div>
+
+                <div class="summary entry-summary">
+                  <h1 class="product_title entry-title font-weight-600">
+                    {{ title }}
+                  </h1>
+                  <p class="price">
+                    <ins>
+                      <span class="woocommerce-Price-amount amount">
+                        <span class="woocommerce-Price-currencySymbol"
+                          >&#8358; </span
+                        >{{formatPrice price}}</span
+                      >
+                    </ins>
+                  </p>
+
+                  <div class="woocommerce-product-details__short-description">
+                    <p>{{{description}}}.</p>
+                  </div>
+
+                  <div class="cart">
+                    <div class="quantity">
+                      <label class="screen-reader-text">Quantity</label>
+                      <input
+                        type="number"
+                        class="input-text qty text"
+                        id="quantity"
+                        value="1"
+                        min="1"
+                      />
+                    </div>
+
+                    <button
+                      name="add-to-cart"
+                      id="add-to-cart"
+                      class="single_add_to_cart_button button"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+
+                  <div class="product_meta">
+                    <span class="posted_in">
+                      Categories: <a href="#" rel="tag">Tools</a>,
+                      <a href="#" rel="tag">Fluid</a>,
+                      <a href="#" rel="tag">Oil</a>
+                    </span>
+                  </div>
+                </div>
+                <!-- /.summary -->
+              </div>
+              <!-- /.inner -->
+
+              <div class="wprt-tabs woocommerce-tabs clearfix style-1">
+                <ul class="tab-title clearfix">
+                  <li class="item-title active">
+                    <span class="inner">Description</span>
+                  </li>
+                  <li class="item-title">
+                    <span class="inner">Addition Info</span>
+                  </li>
+                  <li class="item-title">
+                    <span class="inner">Reviews (0)</span>
+                  </li>
+                </ul>
+
+                <div class="tab-content-wrap">
+                  <div class="tab-content">
+                    <div class="item-content">
+                      <h4>Product Description</h4>
+                      <p>{{{description}}}</p>
+                    </div>
+                  </div>
+                  <!-- /.tab-content -->
+
+                  <div class="tab-content">
+                    <div class="item-content">
+                      <h4>Addition Information</h4>
+                      <p>No Additional Information</p>
+                    </div>
+                  </div>
+                  <!-- /.tab-content -->
+
+                  <div class="tab-content">
+                    <div class="item-content">
+                      <h4>Reviews</h4>
+                      <p>There are no reviews yet.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="sidebar">
+        <div id="inner-sidebar" class="inner-content-wrap">
+          <div class="widget woocommerce widget_top_rated_products">
+            <h2 class="widget-title"><span>Top Products</span></h2>
+
+            <ul class="product_list_widget">
+              {{#each relatedProducts}}
+              <li>
+                <a href="/shop/parts/{{ this._id }}">
+                  <img
+                    width="150"
+                    height="150"
+                    src="{{ this.image }}"
+                    alt="Image"
+                  />
+                  <span class="product-title font-weight-600">{{
+                    this.title
+                  }}</span>
+                </a>
+                <ins>
+                  <span class="woocommerce-Price-amount amount">
+                    <span class="woocommerce-Price-currencySymbol"
+                      >&#8358; </span
+                    >{{ this.price }}</span
+                  >
+                </ins>
+                <div class="star-rating">
+                  <span class="four"
+                    >Rated <strong class="rating">5.00</strong> out of 5</span
+                  >
+                </div>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+
+          <div class="widget woocommerce widget_product_tag_cloud">
+            <h2 class="widget-title"><span>Popular Tags</span></h2>
+
+            <div class="tagcloud">
+              <a href="#" class="tag-cloud-link">Tyres</a>
+              <a href="#" class="tag-cloud-link">Bumper</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="wprt-spacer clearfix"
+      data-desktop="80"
+      data-mobi="30"
+      data-smobi="30"
+    ></div>
+
+    <div class="related products" style="margin-left: 50px; margin-right:50px">
+      <h2>Related products</h2>
+      <div
+        class="wprt-carousel-box has-arrows arrow-center offset20 offset-v-120 has-bullets bullet-circle bullet30"
+        data-auto="false"
+        data-loop="false"
+        data-gap="25"
+        data-column="3"
+        data-column2="2"
+        data-column3="1"
+      >
+        <div class="owl-carousel owl-theme">
+          {{#each relatedProducts}}
+          <div class="wprt-image-box style-1 clearfix text-center has-shadow">
+            <div class="item">
+              <div class="inner">
+                <div class="thumb">
+                  <img
+                    style="height: 300px; padding: 30px"
+                    src="{{ this.image }}"
+                    alt="Image"
+                  />
+                </div>
+
+                <div class="text-wrap">
+                  <h1 class="uppercase title font-weight-600">
+                    {{ this.title }}
+                  </h1>
+                  <p class="price">
+                    <ins>
+                      <span class="woocommerce-Price-amount amount">
+                        <span class="woocommerce-Price-currencySymbol"
+                          >&#8358; </span
+                        >{{formatPrice this.price}}</span
+                      >
+                    </ins>
+                  </p>
+                  <div class="elm-btn">
+                    <a
+                      class="small wprt-button outline ol-accent"
+                      href="/shop/parts/{{ this._id }}"
+                      >View</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+
+      <div
+        class="wprt-spacer clearfix"
+        data-desktop="94"
+        data-mobi="60"
+        data-smobi="60"
+      ></div>
+    </div>
+  </div>
+
+  <div class="row-promotion bg-accent">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div
+            class="wprt-spacer clearfix"
+            data-desktop="25"
+            data-mobi="25"
+            data-smobi="35"
+          ></div>
+
+          <div class="wprt-action-box style-1 has-icon">
+            <div class="inner">
+              <div class="heading-wrap">
+                <div class="text-wrap">
+                  <h3 class="heading">
+                    Fixed Price MOT Test includes a Comprehensive Safety Check
+                  </h3>
+                  <span class="icon">
+                    <i class="as-icon-speedometer2"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="button-wrap">
+                <a href="#" class="wprt-button white">BOOK YOUR MOT</a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="wprt-spacer clearfix"
+            data-desktop="25"
+            data-mobi="25"
+            data-smobi="35"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

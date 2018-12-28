@@ -1,0 +1,165 @@
+<template name="shopParts">
+  <div id="featured-title" class="clearfix featured-title-left">
+    <div id="featured-title-inner" class="wprt-container clearfix">
+      <div class="featured-title-inner-wrap">
+        <div class="featured-title-heading-wrap">
+          <h1 class="featured-title-heading">SPARE PARTS</h1>
+        </div>
+
+        <div id="breadcrumbs">
+          <div class="breadcrumbs-inner">
+            <div class="breadcrumb-trail">
+              <a href="/" title="Home" rel="home" class="trail-begin">Home</a>
+              <span class="sep"> <i class="rt-icon-right-arrow12"></i> </span>
+              <span class="trail-end">Products</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- #featured-title -->
+
+  <div
+    class="wprt-spacer clearfix"
+    data-desktop="60"
+    data-mobi="30"
+    data-smobi="30"
+  ></div>
+
+  <!-- Main Content -->
+  <div id="main-content" class="site-main clearfix margin-bottom-50">
+    <div id="content-wrap" class="wprt-container">
+      <div id="site-content" class="site-content clearfix">
+        <div id="inner-content" class="inner-content-wrap">
+          <div class="content-woocommerce">
+            <p class="woocommerce-result-count">
+              Showing 1–6 of {{dataCount data}} result(s)
+            </p>
+
+            <form class="woocommerce-ordering">
+              <select name="orderby" class="orderby">
+                <option value="menu_order" selected="selected"
+                  >Default sorting</option
+                >
+                <option value="popularity">Sort by popularity</option>
+                <option value="rating">Sort by average rating</option>
+                <option value="date">Sort by newness</option>
+                <option value="price">Sort by price: low to high</option>
+                <option value="price-desc">Sort by price: high to low</option>
+              </select>
+            </form>
+
+            <ul class="products">
+              {{#each data}}
+              <li class="product">
+                <div class="inner">
+                  <a href="#" class="woocommerce-LoopProduct-link">
+                    <div class="product-thumbnail">
+                      <img
+                        style="height: 270px"
+                        src="{{ image }}"
+                        alt="{{ title }}"
+                      />
+                    </div>
+                  </a>
+
+                  <div class="product-info">
+                    <a
+                      href="/shop/parts/{{ _id }}"
+                      class="woocommerce-LoopProduct-link"
+                    >
+                      <h2
+                        class="woocommerce-loop-product__title font-weight-600"
+                      >
+                        {{ title }}
+                      </h2>
+                      <span class="price">
+                        <span
+                          class="woocommerce-Price-amount amount"
+                          style="font-size: 15px"
+                        >
+                          <span class="woocommerce-Price-currencySymbol"
+                            >&#8358;</span
+                          >{{formatPrice price}}</span
+                        >
+                      </span>
+                    </a>
+                    <a
+                      href="/shop/parts/{{ _id }}"
+                      class="button add_to_cart_button"
+                      >View</a
+                    >
+                  </div>
+                </div>
+              </li>
+              {{/each}}
+            </ul>
+
+            <nav class="woocommerce-pagination">
+              <ul class="page-numbers">
+                <li><span class="page-numbers current">1</span></li>
+
+                <li><a class="next page-numbers" href="#">→</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div id="sidebar">
+        <div id="inner-sidebar" class="inner-content-wrap">
+          <div class="widget woocommerce widget_product_search">
+            <h2 class="widget-title"><span>Product Search</span></h2>
+
+            <form class="woocommerce-product-search">
+              <label class="screen-reader-text">Search for:</label>
+              <input
+                id="product_search"
+                class="search-field"
+                placeholder="Search for Spare Parts"
+              />
+            </form>
+          </div>
+
+          <div class="widget woocommerce widget_top_rated_products">
+            <h2 class="widget-title"><span>Top Products</span></h2>
+
+            <ul class="product_list_widget">
+              {{#each relatedProducts}}
+              <li>
+                <a href="#">
+                  <img width="150" height="150" src="{{ image }}" alt="Image" />
+                  <span class="product-title font-weight-600">{{ title }}</span>
+                </a>
+                <div class="star-rating">
+                  <span class="six"
+                    >Rated <strong class="rating">5.00</strong> out of 5</span
+                  >
+                </div>
+                <ins>
+                  <span class="woocommerce-Price-amount amount">
+                    <span class="woocommerce-Price-currencySymbol">&#8358;</span
+                    >{{formatPrice price}}</span
+                  >
+                </ins>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+
+          <div class="widget woocommerce widget_product_tag_cloud">
+            <h2 class="widget-title"><span>Popular Tags</span></h2>
+
+            <div class="tagcloud">
+              <a href="#" class="tag-cloud-link">Engine</a>
+              <a href="#" class="tag-cloud-link">Fluids</a>
+              <a href="#" class="tag-cloud-link">Brain Box</a>
+              <a href="#" class="tag-cloud-link">Wiper</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

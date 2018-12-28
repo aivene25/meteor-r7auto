@@ -1,0 +1,69 @@
+<template name="login_modal">
+  <div id="login_modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body">
+          {{#if success}}
+          <div class="isa_success">
+            <i class="fa fa-check"></i> Login successful !
+          </div>
+          {{/if}} {{#if validation_error}} {{#each validation_error_messages}}
+          <div class="isa_error">
+            <i class="fa fa-times-circle"></i>
+            {{this}}
+         </div>
+          {{/each}} {{/if}}
+          <div class="wprt-contact-form style-1 margin-top-10">
+            <span>Kindly login to continue</span>
+            <form class="wpcf7-form" id="login_modal_form">
+              <span class="wpcf7-form-control-wrap your-name">
+                <input
+                  type="email"
+                  class="wpcf7-form-control"
+                  placeholder="Email *"
+                  required
+                  name="login_email"
+                />
+              </span>
+              <span class="wpcf7-form-control-wrap your-email">
+                <input
+                  type="password"
+                  class="wpcf7-form-control"
+                  placeholder="Password *"
+                  required
+                  name="login_password"
+                />
+              </span>
+              {{#if isLoading}} {{>spinner}} {{else}}
+              <div class="wrap-submit">
+                <input
+                  type="submit"
+                  value="Login"
+                  class="submit wpcf7-form-control wpcf7-submit"
+                />
+              </div>
+              {{/if}}
+              <p>
+                Dont have an account with us ?
+                <a id="show_register">Register here</a>
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

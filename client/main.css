@@ -1,6 +1,50 @@
 /* CSS declarations go here */
 
-.float-left{
+.product-image {
+  border: 1px solid black;
+  padding: 20px;
+}
+
+#spinner {
+  border: 1px solid #f3f3f3; /* Light grey */
+  border-top: 1px solid #1c63b8; /* Blue */
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  animation: spin 1s linear infinite;
+  display: flex;
+}
+
+#overlay-spinner {
+  border: 1px solid #f3f3f3; /* Light grey */
+  border-top: 1px solid #1c63b8; /* Blue */
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  animation: spin 1s linear infinite;
+}
+
+.overlay {
+  display: flex;
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.float-left {
   float: left;
 }
 #main-content {
@@ -47,4 +91,53 @@
   border-radius: 0px;
   padding: 15px 18px;
   color: black;
+}
+.error {
+  color: red;
+}
+.success {
+  color: green;
+}
+.car-servicing-box {
+  margin: 10px;
+  height: 300px;
+}
+.wprt-contact-form .wpcf7-form-control-wrap.your-message textarea {
+  height: 140px;
+}
+.isa_info,
+.isa_success,
+.isa_warning,
+.isa_error {
+  padding: 3px;
+  margin-bottom: 10px;
+}
+.isa_info {
+  color: #00529b;
+  background-color: #bde5f8;
+}
+.isa_success {
+  color: #4f8a10;
+  background-color: #dff2bf;
+}
+.isa_warning {
+  color: #9f6000;
+  background-color: #feefb3;
+}
+.isa_error {
+  color: #d8000c;
+  background-color: #ffd2d2;
+}
+.isa_info i,
+.isa_success i,
+.isa_warning i,
+.isa_error i {
+  margin: 10px 22px;
+  font-size: 2em;
+  vertical-align: middle;
+}
+@media (min-width: 992px) {
+  .car-servicing-box {
+    width: 31.333333%;
+  }
 }
